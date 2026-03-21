@@ -44,7 +44,7 @@ export function FeatureSection({
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-gray-500 mb-4 block">
               {label}
             </span>
-            <h3 className="text-display mb-6">{title}</h3>
+            <h2 className="text-display mb-6">{title}</h2>
             <p className="text-body-large max-w-[440px]">{description}</p>
           </AnimatedSection>
         </div>

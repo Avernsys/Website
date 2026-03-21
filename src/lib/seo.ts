@@ -1,5 +1,15 @@
 import type { Metadata } from "next";
 
+function parseSameAsUrls(raw: string | undefined): string[] {
+  if (!raw?.trim()) {
+    return [];
+  }
+  return raw
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
 export const siteConfig = {
   name: "Avernsys",
   legalName: "Avernsys",
@@ -10,7 +20,9 @@ export const siteConfig = {
   locale: "en_US",
   description:
     "Avernsys builds B2B software for connected organizations and last-mile delivery optimization.",
-} as const;
+  /** Public profile URLs for Organization JSON-LD (comma-separated in env). */
+  sameAs: parseSameAsUrls(process.env.NEXT_PUBLIC_ORGANIZATION_SAME_AS),
+};
 
 export type PageKey =
   | "home"
@@ -24,6 +36,8 @@ type PageSeo = {
   description: string;
   path: string;
   keywords: string[];
+  /** ISO 8601 date (YYYY-MM-DD) for sitemap lastmod; omit when unknown. */
+  lastModified?: string;
   socialTitle?: string;
   socialDescription?: string;
 };
@@ -34,6 +48,7 @@ export const pageSeo: Record<PageKey, PageSeo> = {
     description:
       "Avernsys builds B2B software that connects organizations and optimizes last-mile operations with ChapterSys and PrimeRoute.",
     path: "/",
+    lastModified: "2025-03-21",
     keywords: [
       "Avernsys",
       "B2B software company",
@@ -48,6 +63,7 @@ export const pageSeo: Record<PageKey, PageSeo> = {
     description:
       "Meet the Avernsys founders and learn how we build thoughtful software for member communities and delivery operations.",
     path: "/about",
+    lastModified: "2025-03-21",
     keywords: [
       "about Avernsys",
       "Avernsys founders",
@@ -60,6 +76,7 @@ export const pageSeo: Record<PageKey, PageSeo> = {
     description:
       "Contact Avernsys to request a demo, ask questions about ChapterSys and PrimeRoute, or discuss a partnership.",
     path: "/contact",
+    lastModified: "2025-03-21",
     keywords: [
       "contact Avernsys",
       "Avernsys demo",
@@ -72,6 +89,7 @@ export const pageSeo: Record<PageKey, PageSeo> = {
     description:
       "ChapterSys is a private community platform for alumni associations and member organizations to discover businesses, build communities, and stay connected.",
     path: "/chaptersys",
+    lastModified: "2025-03-21",
     keywords: [
       "ChapterSys",
       "alumni platform",
@@ -86,6 +104,7 @@ export const pageSeo: Record<PageKey, PageSeo> = {
     description:
       "PrimeRoute helps delivery teams optimize last-mile routes in seconds with smarter routing, lower costs, and faster deliveries.",
     path: "/primeroute",
+    lastModified: "2025-03-21",
     keywords: [
       "PrimeRoute",
       "route optimization software",
@@ -133,13 +152,25 @@ function getTwitterImage(path: string) {
   }
 }
 
+/** Full `<title>` / social title: home as-is; otherwise append brand unless already present. */
+export function resolvePageTitle(page: PageSeo): string {
+  if (page.path === "/") {
+    return page.title;
+  }
+  if (page.title.includes(siteConfig.name)) {
+    return page.title;
+  }
+  return `${page.title} | ${siteConfig.name}`;
+}
+
 export function buildPageMetadata(page: PageSeo): Metadata {
   const canonical = absoluteUrl(page.path);
-  const title = page.path === "/" ? page.title : `${page.title} | Avernsys`;
+  const resolvedTitle = resolvePageTitle(page);
   const description = page.socialDescription ?? page.description;
+  const socialTitle = page.socialTitle ?? resolvedTitle;
 
   return {
-    title: page.path === "/" ? page.title : page.title,
+    title: { absolute: resolvedTitle },
     description: page.description,
     keywords: page.keywords,
     alternates: {
@@ -150,7 +181,7 @@ export function buildPageMetadata(page: PageSeo): Metadata {
       url: canonical,
       siteName: siteConfig.name,
       locale: siteConfig.locale,
-      title: page.socialTitle ?? title,
+      title: socialTitle,
       description,
       images: [
         {
@@ -163,7 +194,7 @@ export function buildPageMetadata(page: PageSeo): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: page.socialTitle ?? title,
+      title: socialTitle,
       description,
       images: [getTwitterImage(page.path)],
     },
@@ -188,7 +219,7 @@ export function buildOrganizationJsonLd() {
     name: siteConfig.legalName,
     url: siteConfig.url,
     logo: absoluteUrl("/icon"),
-    sameAs: [],
+    ...(siteConfig.sameAs.length > 0 ? { sameAs: siteConfig.sameAs } : {}),
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -219,7 +250,7 @@ export function buildWebPageJsonLd(page: PageSeo) {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: page.title,
+    name: resolvePageTitle(page),
     description: page.description,
     url: absoluteUrl(page.path),
     isPartOf: {

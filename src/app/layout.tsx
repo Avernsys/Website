@@ -23,10 +23,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   ...buildPageMetadata(pageSeo.home),
   metadataBase: new URL(siteConfig.url),
-  title: {
-    default: pageSeo.home.title,
-    template: "%s | Avernsys",
-  },
   applicationName: siteConfig.name,
   category: "technology",
   referrer: "origin-when-cross-origin",

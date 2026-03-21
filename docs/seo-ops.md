@@ -10,6 +10,7 @@ This repo now supports site-wide SEO and analytics wiring in code, but a few ste
 - Page titles and descriptions
 - Open Graph and Twitter metadata
 - JSON-LD structured data
+- Sitemap `lastmod` from per-page `lastModified` in [`src/lib/seo.ts`](../src/lib/seo.ts) (bump the date when page content changes meaningfully)
 - GTM, GA4, and Microsoft Clarity injection via env vars
 
 ## External setup checklist
@@ -56,6 +57,10 @@ This repo now supports site-wide SEO and analytics wiring in code, but a few ste
 - Test the homepage and each product page on mobile first.
 - Use it to watch Core Web Vitals regressions after code changes.
 
+### CI (GitHub Actions)
+
+- The SEO workflow runs **Lighthouse SEO** (score ≥ 0.9) and **Lighthouse Performance** (score ≥ 0.65) against the production build, home page only. Adjust thresholds in [`.github/workflows/seo-checks.yml`](../.github/workflows/seo-checks.yml) if the runner environment is too noisy.
+
 ### Rich Results Test
 
 - Validate any JSON-LD before shipping.
@@ -72,7 +77,8 @@ This repo now supports site-wide SEO and analytics wiring in code, but a few ste
 
 ## Env vars
 
-- `NEXT_PUBLIC_SITE_URL`
+- `NEXT_PUBLIC_SITE_URL` — canonical origin for metadata, JSON-LD, and sitemap URLs. Use the real public URL per environment (if a preview deployment is publicly crawlable, set this to that preview origin or block crawlers at the host).
+- `NEXT_PUBLIC_ORGANIZATION_SAME_AS` — optional comma-separated profile URLs (e.g. LinkedIn, X) included in Organization JSON-LD `sameAs`.
 - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`
 - `NEXT_PUBLIC_BING_SITE_VERIFICATION`
 - `NEXT_PUBLIC_GTM_ID`

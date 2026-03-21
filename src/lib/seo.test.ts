@@ -3,10 +3,12 @@ import assert from "node:assert/strict";
 import {
   absoluteUrl,
   buildBreadcrumbJsonLd,
+  buildOrganizationJsonLd,
   buildPageMetadata,
   buildVerificationMetadata,
   getIndexablePages,
   pageSeo,
+  resolvePageTitle,
 } from "./seo";
 
 function createEnv(values: Record<string, string>): NodeJS.ProcessEnv {
@@ -34,6 +36,20 @@ function getOpenGraphImageUrl(pageMetadata: ReturnType<typeof buildPageMetadata>
   return image?.url?.toString();
 }
 
+function getMetadataAbsoluteTitle(
+  pageMetadata: ReturnType<typeof buildPageMetadata>,
+) {
+  const t = pageMetadata.title;
+  if (t && typeof t === "object" && "absolute" in t) {
+    return (t as { absolute?: string }).absolute;
+  }
+  return undefined;
+}
+
+function getOpenGraphTitle(pageMetadata: ReturnType<typeof buildPageMetadata>) {
+  return pageMetadata.openGraph?.title ?? undefined;
+}
+
 function getTwitterImageUrl(pageMetadata: ReturnType<typeof buildPageMetadata>) {
   const images = pageMetadata.twitter?.images;
 
@@ -58,6 +74,32 @@ function getTwitterImageUrl(pageMetadata: ReturnType<typeof buildPageMetadata>) 
 test("builds absolute URLs from relative paths", () => {
   assert.equal(absoluteUrl("/chaptersys"), "https://avernsys.com/chaptersys");
   assert.equal(absoluteUrl("contact"), "https://avernsys.com/contact");
+});
+
+test("resolvePageTitle appends brand only when not already in title", () => {
+  assert.equal(
+    resolvePageTitle(pageSeo.home),
+    pageSeo.home.title,
+  );
+  assert.equal(resolvePageTitle(pageSeo.about), "About Avernsys");
+  assert.equal(
+    resolvePageTitle(pageSeo.chaptersys),
+    "ChapterSys | Alumni and Member Community Platform | Avernsys",
+  );
+});
+
+test("buildPageMetadata aligns document and social titles", () => {
+  const metadata = buildPageMetadata(pageSeo.chaptersys);
+
+  assert.equal(
+    getMetadataAbsoluteTitle(metadata),
+    "ChapterSys | Alumni and Member Community Platform | Avernsys",
+  );
+  assert.equal(getOpenGraphTitle(metadata), getMetadataAbsoluteTitle(metadata));
+  assert.equal(
+    metadata.twitter?.title,
+    getMetadataAbsoluteTitle(metadata),
+  );
 });
 
 test("builds route metadata with route-specific social images", () => {
@@ -99,6 +141,11 @@ test("builds breadcrumb schema with ordered positions", () => {
     breadcrumb.itemListElement[1].item,
     "https://avernsys.com/primeroute",
   );
+});
+
+test("organization JSON-LD omits sameAs when empty", () => {
+  const org = buildOrganizationJsonLd() as Record<string, unknown>;
+  assert.equal("sameAs" in org, false);
 });
 
 test("builds verification metadata from env values", () => {

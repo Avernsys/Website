@@ -42,3 +42,10 @@ jobs:
       - name: Enforce Lighthouse SEO threshold
         run: |
           node -e "const fs = require('fs'); const report = JSON.parse(fs.readFileSync('./lighthouse-seo.json', 'utf8')); const score = report.categories.seo.score; if (score < 0.9) { console.error('Lighthouse SEO score below threshold:', score); process.exit(1); } console.log('Lighthouse SEO score:', score);"
+
+      - name: Run Lighthouse performance audit (home)
+        run: npx -y lighthouse http://127.0.0.1:3000 --only-categories=performance --chrome-flags='--headless=new --no-sandbox' --output=json --output-path=./lighthouse-performance.json
+
+      - name: Enforce Lighthouse performance threshold (home)
+        run: |
+          node -e "const fs = require('fs'); const report = JSON.parse(fs.readFileSync('./lighthouse-performance.json', 'utf8')); const score = report.categories.performance.score; if (score < 0.65) { console.error('Lighthouse performance score below threshold:', score); process.exit(1); } console.log('Lighthouse performance score (home):', score);"
