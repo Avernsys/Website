@@ -3,6 +3,16 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { SeoIntegrations } from "@/components/SeoIntegrations";
+import { StructuredData } from "@/components/StructuredData";
+import {
+  buildOrganizationJsonLd,
+  buildPageMetadata,
+  buildVerificationMetadata,
+  buildWebSiteJsonLd,
+  pageSeo,
+  siteConfig,
+} from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,9 +21,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Avernsys — Built for what's next.",
-  description:
-    "Avernsys builds technology that connects organizations and optimizes operations. Discover ChapterSys and PrimeRoute.",
+  ...buildPageMetadata(pageSeo.home),
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: pageSeo.home.title,
+    template: "%s | Avernsys",
+  },
+  applicationName: siteConfig.name,
+  category: "technology",
+  referrer: "origin-when-cross-origin",
+  verification: buildVerificationMetadata(),
 };
 
 export default function RootLayout({
@@ -24,6 +41,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-sans">
+        <StructuredData
+          data={[buildOrganizationJsonLd(), buildWebSiteJsonLd()]}
+        />
+        <SeoIntegrations />
         <Navbar />
         <main>{children}</main>
         <Footer />

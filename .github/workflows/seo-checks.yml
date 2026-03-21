@@ -1,0 +1,44 @@
+name: SEO Checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build production app
+        run: npm run build
+
+      - name: Start app
+        run: npm run start > /tmp/avernsys-next.log 2>&1 &
+
+      - name: Wait for app
+        run: npx -y wait-on http://127.0.0.1:3000
+
+      - name: Run Lighthouse SEO audit
+        run: npx -y lighthouse http://127.0.0.1:3000 --only-categories=seo --chrome-flags='--headless=new --no-sandbox' --output=json --output-path=./lighthouse-seo.json
+
+      - name: Enforce Lighthouse SEO threshold
+        run: |
+          node -e "const fs = require('fs'); const report = JSON.parse(fs.readFileSync('./lighthouse-seo.json', 'utf8')); const score = report.categories.seo.score; if (score < 0.9) { console.error('Lighthouse SEO score below threshold:', score); process.exit(1); } console.log('Lighthouse SEO score:', score);"

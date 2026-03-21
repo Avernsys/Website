@@ -7,3 +7,4 @@ out/
 .env.development.local
 .DS_Store
 *.tgz
+*.tsbuildinfo
