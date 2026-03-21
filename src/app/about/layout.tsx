@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { StructuredData } from "@/components/StructuredData";
 import {
+  buildAllFoundersPersonJsonLd,
   buildBreadcrumbJsonLd,
   buildPageMetadata,
   buildWebPageJsonLd,
@@ -19,6 +20,7 @@ export default function AboutLayout({
       <StructuredData
         data={[
           buildWebPageJsonLd(pageSeo.about),
+          ...buildAllFoundersPersonJsonLd(),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },
             { name: "About", path: "/about" },

@@ -6,9 +6,11 @@ import { Footer } from "@/components/Footer";
 import { SeoIntegrations } from "@/components/SeoIntegrations";
 import { StructuredData } from "@/components/StructuredData";
 import {
+  buildHomeItemListJsonLd,
   buildOrganizationJsonLd,
   buildPageMetadata,
   buildVerificationMetadata,
+  buildWebPageJsonLd,
   buildWebSiteJsonLd,
   pageSeo,
   siteConfig,
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   category: "technology",
-  referrer: "origin-when-cross-origin",
+  referrer: "strict-origin-when-cross-origin",
   verification: buildVerificationMetadata(),
 };
 
@@ -38,7 +40,12 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className="font-sans">
         <StructuredData
-          data={[buildOrganizationJsonLd(), buildWebSiteJsonLd()]}
+          data={[
+            buildOrganizationJsonLd(),
+            buildWebSiteJsonLd(),
+            buildWebPageJsonLd(pageSeo.home),
+            buildHomeItemListJsonLd(),
+          ]}
         />
         <SeoIntegrations />
         <Navbar />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { founders } from "./founders";
 
 function parseSameAsUrls(raw: string | undefined): string[] {
   if (!raw?.trim()) {
@@ -126,6 +127,28 @@ export function absoluteUrl(path = "/") {
   return new URL(normalizedPath, `${siteConfig.url}/`).toString();
 }
 
+/** Stable JSON-LD `@id` values for cross-references on the same page / site. */
+export function schemaOrganizationId() {
+  return `${siteConfig.url}/#organization`;
+}
+
+export function schemaWebSiteId() {
+  return `${siteConfig.url}/#website`;
+}
+
+export function schemaWebPageId(path: string) {
+  return `${absoluteUrl(path)}#webpage`;
+}
+
+export function schemaSoftwareApplicationId(path: string) {
+  return `${absoluteUrl(path)}#softwareapplication`;
+}
+
+function founderPersonId(name: string) {
+  const slug = name.toLowerCase().replace(/\s+/g, "-");
+  return `${absoluteUrl("/about")}#${slug}`;
+}
+
 function defaultSocialImage() {
   return absoluteUrl("/opengraph-image");
 }
@@ -216,9 +239,13 @@ export function buildOrganizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": schemaOrganizationId(),
     name: siteConfig.legalName,
     url: siteConfig.url,
-    logo: absoluteUrl("/icon"),
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl("/icon"),
+    },
     ...(siteConfig.sameAs.length > 0 ? { sameAs: siteConfig.sameAs } : {}),
     contactPoint: [
       {
@@ -235,14 +262,11 @@ export function buildWebSiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": schemaWebSiteId(),
     name: siteConfig.name,
     url: siteConfig.url,
     inLanguage: "en",
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.legalName,
-      url: siteConfig.url,
-    },
+    publisher: { "@id": schemaOrganizationId() },
   };
 }
 
@@ -250,20 +274,52 @@ export function buildWebPageJsonLd(page: PageSeo) {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": schemaWebPageId(page.path),
     name: resolvePageTitle(page),
     description: page.description,
     url: absoluteUrl(page.path),
-    isPartOf: {
-      "@type": "WebSite",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
-    about: {
-      "@type": "Organization",
-      name: siteConfig.legalName,
-      url: siteConfig.url,
-    },
+    isPartOf: { "@id": schemaWebSiteId() },
+    about: { "@id": schemaOrganizationId() },
   };
+}
+
+/** Product cards on the home page — aligns with visible ChapterSys / PrimeRoute links. */
+export function buildHomeItemListJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${absoluteUrl("/")}#product-list`,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "ChapterSys",
+        item: absoluteUrl("/chaptersys"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Avernsys PrimeRoute",
+        item: absoluteUrl("/primeroute"),
+      },
+    ],
+  };
+}
+
+export function buildFounderPersonJsonLd(person: (typeof founders)[number]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": founderPersonId(person.name),
+    name: person.name,
+    jobTitle: person.role,
+    description: person.bio,
+    worksFor: { "@id": schemaOrganizationId() },
+  };
+}
+
+export function buildAllFoundersPersonJsonLd() {
+  return founders.map((f) => buildFounderPersonJsonLd(f));
 }
 
 export function buildBreadcrumbJsonLd(items: Breadcrumb[]) {
@@ -279,25 +335,47 @@ export function buildBreadcrumbJsonLd(items: Breadcrumb[]) {
   };
 }
 
+const chapterSysFeatureList = [
+  "Private community spaces for organizations and alumni",
+  "Member business discovery on an interactive map",
+  "Direct messaging, group chats, and community channels",
+  "Events and member profiles in one place",
+] as const;
+
+const primeRouteFeatureList = [
+  "Last-mile route optimization from your orders",
+  "Faster deliveries and lower operational cost",
+  "Web-based workflow for delivery teams",
+] as const;
+
 export function buildSoftwareApplicationJsonLd(page: PageSeo) {
   const category =
     page.path === "/chaptersys"
       ? "BusinessApplication"
       : "LogisticsApplication";
 
+  const featureList =
+    page.path === "/chaptersys"
+      ? [...chapterSysFeatureList]
+      : [...primeRouteFeatureList];
+
+  const applicationSubCategory =
+    page.path === "/chaptersys"
+      ? "Member community software"
+      : "Last-mile delivery software";
+
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": schemaSoftwareApplicationId(page.path),
     name: page.path === "/chaptersys" ? "ChapterSys" : "PrimeRoute",
     applicationCategory: category,
+    applicationSubCategory,
     operatingSystem: "Web",
     description: page.description,
+    featureList,
     url: absoluteUrl(page.path),
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.legalName,
-      url: siteConfig.url,
-    },
+    publisher: { "@id": schemaOrganizationId() },
   };
 }
 

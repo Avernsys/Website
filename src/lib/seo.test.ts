@@ -1,14 +1,22 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { founders } from "./founders";
 import {
   absoluteUrl,
   buildBreadcrumbJsonLd,
+  buildFounderPersonJsonLd,
+  buildHomeItemListJsonLd,
   buildOrganizationJsonLd,
   buildPageMetadata,
+  buildSoftwareApplicationJsonLd,
   buildVerificationMetadata,
+  buildWebPageJsonLd,
+  buildWebSiteJsonLd,
   getIndexablePages,
   pageSeo,
   resolvePageTitle,
+  schemaOrganizationId,
+  schemaWebSiteId,
 } from "./seo";
 
 function createEnv(values: Record<string, string>): NodeJS.ProcessEnv {
@@ -146,6 +154,60 @@ test("builds breadcrumb schema with ordered positions", () => {
 test("organization JSON-LD omits sameAs when empty", () => {
   const org = buildOrganizationJsonLd() as Record<string, unknown>;
   assert.equal("sameAs" in org, false);
+});
+
+test("organization and WebSite JSON-LD use stable @id graph", () => {
+  const org = buildOrganizationJsonLd() as Record<string, unknown>;
+  const site = buildWebSiteJsonLd() as Record<string, unknown>;
+
+  assert.equal(org["@id"], schemaOrganizationId());
+  assert.equal(org.logo && typeof org.logo === "object" && (org.logo as { url?: string }).url, absoluteUrl("/icon"));
+  assert.deepEqual(site.publisher, { "@id": schemaOrganizationId() });
+});
+
+test("WebPage JSON-LD references WebSite and Organization by @id", () => {
+  const page = buildWebPageJsonLd(pageSeo.chaptersys) as Record<string, unknown>;
+  assert.deepEqual(page.isPartOf, { "@id": schemaWebSiteId() });
+  assert.deepEqual(page.about, { "@id": schemaOrganizationId() });
+});
+
+test("SoftwareApplication JSON-LD includes featureList and publisher @id", () => {
+  const app = buildSoftwareApplicationJsonLd(pageSeo.primeroute) as Record<
+    string,
+    unknown
+  >;
+  assert.ok(Array.isArray(app.featureList));
+  assert.equal((app.featureList as string[]).length >= 3, true);
+  assert.deepEqual(app.publisher, { "@id": schemaOrganizationId() });
+});
+
+test("home ItemList JSON-LD lists product URLs", () => {
+  const list = buildHomeItemListJsonLd() as {
+    itemListElement: Array<{ item?: string }>;
+  };
+  assert.equal(list.itemListElement[0]?.item, absoluteUrl("/chaptersys"));
+  assert.equal(list.itemListElement[1]?.item, absoluteUrl("/primeroute"));
+});
+
+test("founder Person JSON-LD links to Organization", () => {
+  const person = buildFounderPersonJsonLd(founders[0]) as Record<string, unknown>;
+  assert.equal(person["@id"], `${absoluteUrl("/about")}#doruk-yalcin`);
+  assert.deepEqual(person.worksFor, { "@id": schemaOrganizationId() });
+});
+
+test("JSON-LD builders round-trip through JSON.stringify", () => {
+  const nodes = [
+    buildOrganizationJsonLd(),
+    buildWebSiteJsonLd(),
+    buildWebPageJsonLd(pageSeo.contact),
+    buildHomeItemListJsonLd(),
+    buildSoftwareApplicationJsonLd(pageSeo.chaptersys),
+    buildFounderPersonJsonLd(founders[1]),
+    buildBreadcrumbJsonLd([{ name: "Home", path: "/" }]),
+  ];
+  for (const node of nodes) {
+    JSON.parse(JSON.stringify(node));
+  }
 });
 
 test("builds verification metadata from env values", () => {

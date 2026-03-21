@@ -9,7 +9,7 @@ This repo now supports site-wide SEO and analytics wiring in code, but a few ste
 - Canonical URLs
 - Page titles and descriptions
 - Open Graph and Twitter metadata
-- JSON-LD structured data
+- JSON-LD structured data (linked with stable `@id` values; Organization, WebSite, WebPage, SoftwareApplication, ItemList on home, Person on About — validate after changes in Rich Results Test)
 - Sitemap `lastmod` from per-page `lastModified` in [`src/lib/seo.ts`](../src/lib/seo.ts) (bump the date when page content changes meaningfully)
 - GTM, GA4, and Microsoft Clarity injection via env vars
 
