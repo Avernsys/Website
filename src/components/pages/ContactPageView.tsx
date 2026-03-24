@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { headingClassNames } from "@/components/headingStyles";
 import { TextLines } from "@/components/TextLines";
 import { getDictionary, type Locale } from "@/lib/i18n";
+import { getPageHeroSectionClassName } from "./pageHero";
 
 type ContactPageViewProps = {
   locale: Locale;
@@ -17,7 +19,7 @@ export function ContactPageView({ locale }: ContactPageViewProps) {
 
   return (
     <>
-      <section className="relative min-h-[60vh] flex items-center justify-center gradient-mesh grain overflow-hidden">
+      <section className={getPageHeroSectionClassName("min-h-[60vh]")}>
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-white/[0.015] blur-[100px]" />
 
         <div className="relative z-10 text-center px-6 max-w-[600px]">
@@ -25,7 +27,7 @@ export function ContactPageView({ locale }: ContactPageViewProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-6"
+            className={headingClassNames.heroEyebrow}
           >
             {page.hero.eyebrow}
           </motion.p>
@@ -43,7 +45,7 @@ export function ContactPageView({ locale }: ContactPageViewProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-body-large mt-8 max-w-[420px] mx-auto"
+            className={`${headingClassNames.heroDescription} max-w-[420px] mx-auto`}
           >
             {page.hero.description}
           </motion.p>

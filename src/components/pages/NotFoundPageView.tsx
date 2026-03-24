@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/Button";
+import { headingClassNames } from "@/components/headingStyles";
 import { getDictionary, getPagePath, type Locale, type PageLinkKey } from "@/lib/i18n";
+import { getPageHeroSectionClassName } from "./pageHero";
 
 type NotFoundPageViewProps = {
   locale: Locale;
@@ -11,19 +13,21 @@ export function NotFoundPageView({ locale }: NotFoundPageViewProps) {
   const page = dictionary.pages.notFound;
 
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center gradient-mesh grain overflow-hidden px-6">
+    <section className={getPageHeroSectionClassName("min-h-[70vh]", "px-6")}>
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-white/[0.015] blur-[100px]" />
 
       <div className="relative z-10 text-center max-w-lg">
-        <p className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-6">
+        <p className={headingClassNames.heroEyebrow}>
           404
         </p>
         <h1 className="text-hero">{page.title}</h1>
-        <p className="text-body-large mt-6 text-gray-400">
+        <p className={`${headingClassNames.heroDescription} text-gray-400`}>
           {page.description}
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div
+          className={`${headingClassNames.heroActionsTopMargin} flex flex-col sm:flex-row items-center justify-center gap-4`}
+        >
           <Button href={getPagePath(locale, "home")}>{page.primaryCta}</Button>
           <Button href={getPagePath(locale, "contact")} variant="secondary">
             {page.secondaryCta}

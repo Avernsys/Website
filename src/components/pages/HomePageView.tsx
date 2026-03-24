@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
+import { headingClassNames } from "@/components/headingStyles";
 import { TextLines } from "@/components/TextLines";
 import { getDictionary, getPagePath, type Locale, type PageLinkKey } from "@/lib/i18n";
 
@@ -31,7 +32,7 @@ export function HomePageView({ locale }: HomePageViewProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-6"
+            className={headingClassNames.heroEyebrow}
           >
             {page.hero.eyebrow}
           </motion.p>
@@ -49,7 +50,7 @@ export function HomePageView({ locale }: HomePageViewProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="text-body-large mt-8 max-w-[560px] mx-auto"
+            className={`${headingClassNames.heroDescription} max-w-[560px] mx-auto`}
           >
             {page.hero.description}
           </motion.p>
@@ -58,7 +59,7 @@ export function HomePageView({ locale }: HomePageViewProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-10 flex items-center justify-center gap-4"
+            className={`${headingClassNames.heroActionsTopMargin} flex items-center justify-center gap-4`}
           >
             <Button href="#products">{page.hero.primaryCta}</Button>
             <Button href={getPagePath(locale, "contact")} variant="secondary">
@@ -84,10 +85,10 @@ export function HomePageView({ locale }: HomePageViewProps) {
       <section id="products" className="py-32 md:py-48">
         <div className="mx-auto max-w-[1200px] px-6">
           <AnimatedSection>
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-4 text-center">
+            <p className={headingClassNames.centeredSectionEyebrow}>
               {page.products.eyebrow}
             </p>
-            <h2 className="text-display text-center mb-20">
+            <h2 className={headingClassNames.centeredSectionTitle}>
               <TextLines lines={page.products.titleLines} />
             </h2>
           </AnimatedSection>

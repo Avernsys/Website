@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { FeatureSection } from "@/components/FeatureSection";
 import { Button } from "@/components/Button";
+import { headingClassNames } from "@/components/headingStyles";
 import { RouteHeroAnimation } from "@/components/RouteHeroAnimation";
 import {
   OrderDotsVisual,
@@ -17,6 +18,7 @@ import {
 } from "@/components/PrimeRouteFeatureVisuals";
 import { TextLines } from "@/components/TextLines";
 import { getDictionary, getPagePath, type Locale } from "@/lib/i18n";
+import { getPageHeroSectionClassName } from "./pageHero";
 
 const BoltIcon = (
   <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
@@ -60,7 +62,7 @@ export function PrimeRoutePageView({ locale }: PrimeRoutePageViewProps) {
 
   return (
     <>
-      <section className="relative min-h-[85vh] flex items-center justify-center gradient-mesh grain overflow-hidden">
+      <section className={getPageHeroSectionClassName("min-h-[85vh]")}>
         <div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[100px]"
           style={{
@@ -76,7 +78,7 @@ export function PrimeRoutePageView({ locale }: PrimeRoutePageViewProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-6"
+            className={headingClassNames.heroEyebrow}
           >
             {page.hero.eyebrow}
           </motion.p>
@@ -94,7 +96,7 @@ export function PrimeRoutePageView({ locale }: PrimeRoutePageViewProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-body-large mt-8 max-w-[520px] mx-auto"
+            className={`${headingClassNames.heroDescription} max-w-[520px] mx-auto`}
           >
             {page.hero.description}
           </motion.p>
@@ -103,7 +105,7 @@ export function PrimeRoutePageView({ locale }: PrimeRoutePageViewProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-10"
+            className={headingClassNames.heroActionsTopMargin}
           >
             <Button href={getPagePath(locale, "contact")}>
               {page.hero.primaryCta}
@@ -115,10 +117,10 @@ export function PrimeRoutePageView({ locale }: PrimeRoutePageViewProps) {
       <section className="py-32 md:py-48">
         <div className="mx-auto max-w-[1200px] px-6">
           <AnimatedSection>
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-4 text-center">
+            <p className={headingClassNames.centeredSectionEyebrow}>
               {page.steps.eyebrow}
             </p>
-            <h2 className="text-display text-center mb-20">
+            <h2 className={headingClassNames.centeredSectionTitle}>
               <TextLines lines={page.steps.titleLines} />
             </h2>
           </AnimatedSection>
@@ -164,10 +166,12 @@ export function PrimeRoutePageView({ locale }: PrimeRoutePageViewProps) {
       <section className="py-32 md:py-48">
         <div className="mx-auto max-w-[800px] px-6 text-center">
           <AnimatedSection>
-            <h2 className="text-display mb-6">
+            <h2 className={headingClassNames.centeredSectionTitleTight}>
               <TextLines lines={page.cta.titleLines} />
             </h2>
-            <p className="text-body-large mb-10 max-w-[480px] mx-auto">
+            <p
+              className={`${headingClassNames.sectionBodyWithActions} max-w-[480px] mx-auto`}
+            >
               {page.cta.description}
             </p>
             <div className="flex items-center justify-center gap-4">

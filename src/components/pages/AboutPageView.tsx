@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { headingClassNames } from "@/components/headingStyles";
 import { TextLines } from "@/components/TextLines";
 import { founders } from "@/lib/founders";
 import { getDictionary, type Locale } from "@/lib/i18n";
+import { getPageHeroSectionClassName } from "./pageHero";
 
 type AboutPageViewProps = {
   locale: Locale;
@@ -16,7 +18,7 @@ export function AboutPageView({ locale }: AboutPageViewProps) {
 
   return (
     <>
-      <section className="relative min-h-[70vh] flex items-center justify-center gradient-mesh grain overflow-hidden">
+      <section className={getPageHeroSectionClassName("min-h-[70vh]")}>
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-white/[0.015] blur-[100px]" />
 
         <div className="relative z-10 text-center px-6 max-w-[700px]">
@@ -24,7 +26,7 @@ export function AboutPageView({ locale }: AboutPageViewProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-6"
+            className={headingClassNames.heroEyebrow}
           >
             {page.hero.eyebrow}
           </motion.p>
@@ -42,7 +44,7 @@ export function AboutPageView({ locale }: AboutPageViewProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-body-large mt-8 max-w-[480px] mx-auto"
+            className={`${headingClassNames.heroDescription} max-w-[480px] mx-auto`}
           >
             {page.hero.description}
           </motion.p>
@@ -52,7 +54,7 @@ export function AboutPageView({ locale }: AboutPageViewProps) {
       <section className="py-32 md:py-48">
         <div className="mx-auto max-w-[700px] px-6">
           <AnimatedSection>
-            <h2 className="text-display mb-8">{page.story.title}</h2>
+            <h2 className={headingClassNames.sectionTitle}>{page.story.title}</h2>
             <div className="space-y-6 text-body-large">
               {page.story.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -67,10 +69,10 @@ export function AboutPageView({ locale }: AboutPageViewProps) {
       <section className="py-32 md:py-48">
         <div className="mx-auto max-w-[1200px] px-6">
           <AnimatedSection>
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-4 text-center">
+            <p className={headingClassNames.centeredSectionEyebrow}>
               {page.founders.eyebrow}
             </p>
-            <h2 className="text-display text-center mb-20">
+            <h2 className={headingClassNames.centeredSectionTitle}>
               {page.founders.title}
             </h2>
           </AnimatedSection>
@@ -107,10 +109,10 @@ export function AboutPageView({ locale }: AboutPageViewProps) {
       <section className="py-32 md:py-48">
         <div className="mx-auto max-w-[1200px] px-6">
           <AnimatedSection>
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-4 text-center">
+            <p className={headingClassNames.centeredSectionEyebrow}>
               {page.values.eyebrow}
             </p>
-            <h2 className="text-display text-center mb-20">
+            <h2 className={headingClassNames.centeredSectionTitle}>
               {page.values.title}
             </h2>
           </AnimatedSection>

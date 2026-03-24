@@ -5,6 +5,7 @@ import {
   getDictionary,
   getPagePath,
   localizePath,
+  locales,
   pageBasePaths,
   pageKeys,
   type Locale,
@@ -42,6 +43,15 @@ type PageSeo = {
   lastModified?: string;
   socialImageAlt: string;
 };
+
+function buildAlternateLanguageMetadata(path: string) {
+  return Object.fromEntries(
+    Object.entries(getAlternateLanguageLinks(path)).map(([language, url]) => [
+      language,
+      absoluteUrl(url),
+    ]),
+  );
+}
 
 const lastModifiedByPage: Record<PageKey, string> = {
   home: "2025-03-21",
@@ -146,11 +156,7 @@ export function buildPageMetadata(
     keywords: page.keywords,
     alternates: {
       canonical,
-      languages: {
-        en: absoluteUrl(getAlternateLanguageLinks(basePath).en),
-        tr: absoluteUrl(getAlternateLanguageLinks(basePath).tr),
-        "x-default": absoluteUrl(getAlternateLanguageLinks(basePath)["x-default"]),
-      },
+      languages: buildAlternateLanguageMetadata(basePath),
     },
     openGraph: {
       type: "website",
@@ -212,7 +218,9 @@ export function buildOrganizationJsonLd(locale: Locale) {
         "@type": "ContactPoint",
         contactType: "sales",
         url: absoluteUrl(getPagePath(locale, "contact")),
-        availableLanguage: ["English", "Turkish"],
+        availableLanguage: locales.map(
+          (supportedLocale) => getDictionary(supportedLocale).language.htmlLang,
+        ),
       },
     ],
   };
@@ -358,12 +366,12 @@ export function buildVerificationMetadata(
 }
 
 export function getIndexablePages() {
-  return ["en", "tr"].flatMap((locale) =>
+  return locales.flatMap((locale) =>
     pageKeys.map((pageKey) => {
-      const page = getPageSeo(locale as Locale, pageKey);
+      const page = getPageSeo(locale, pageKey);
       return {
         ...page,
-        locale: locale as Locale,
+        locale,
         pageKey,
         url: absoluteUrl(page.path),
       };

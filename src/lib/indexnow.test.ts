@@ -45,10 +45,12 @@ test("returns undefined when IndexNow is not configured", () => {
   assert.equal(payload, undefined);
 });
 
-test("provides default IndexNow URLs for both locales", () => {
+test("provides default IndexNow URLs for every supported locale", () => {
   const urls = getDefaultIndexNowUrls();
 
-  assert.equal(urls.length, 10);
+  assert.equal(urls.length, 20);
   assert.ok(urls.includes("https://avernsys.com/primeroute"));
   assert.ok(urls.includes("https://avernsys.com/tr/primeroute"));
+  assert.ok(urls.includes("https://avernsys.com/de/primeroute"));
+  assert.ok(urls.includes("https://avernsys.com/nl/primeroute"));
 });

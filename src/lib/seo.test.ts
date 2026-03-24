@@ -113,12 +113,42 @@ test("builds English route metadata with localized alternates", () => {
     "https://avernsys.com/tr/chaptersys",
   );
   assert.equal(
+    metadata.alternates?.languages?.de,
+    "https://avernsys.com/de/chaptersys",
+  );
+  assert.equal(
+    metadata.alternates?.languages?.nl,
+    "https://avernsys.com/nl/chaptersys",
+  );
+  assert.equal(
     getOpenGraphImageUrl(metadata),
     "https://avernsys.com/chaptersys/opengraph-image",
   );
   assert.equal(
     getTwitterImageUrl(metadata),
     "https://avernsys.com/chaptersys/twitter-image",
+  );
+});
+
+test("builds German route metadata with German locale and assets", () => {
+  const metadata = buildPageMetadata("de", "primeroute");
+
+  assert.equal(
+    getMetadataAbsoluteTitle(metadata),
+    "PrimeRoute | Software zur Last-Mile-Routenoptimierung | Avernsys",
+  );
+  assert.equal(
+    metadata.alternates?.canonical,
+    "https://avernsys.com/de/primeroute",
+  );
+  assert.equal(metadata.openGraph?.locale, "de_DE");
+  assert.equal(
+    getOpenGraphImageUrl(metadata),
+    "https://avernsys.com/de/primeroute/opengraph-image",
+  );
+  assert.equal(
+    getTwitterImageUrl(metadata),
+    "https://avernsys.com/de/primeroute/twitter-image",
   );
 });
 
@@ -162,6 +192,19 @@ test("organization JSON-LD omits sameAs when empty", () => {
   const org = buildOrganizationJsonLd("en") as Record<string, unknown>;
 
   assert.equal("sameAs" in org, false);
+});
+
+test("organization JSON-LD lists all supported languages in the contact point", () => {
+  const org = buildOrganizationJsonLd("en") as {
+    contactPoint?: Array<{ availableLanguage?: string[] }>;
+  };
+
+  assert.deepEqual(org.contactPoint?.[0]?.availableLanguage, [
+    "en",
+    "tr",
+    "de",
+    "nl",
+  ]);
 });
 
 test("organization and WebSite JSON-LD use stable ids and localized descriptions", () => {
@@ -256,14 +299,20 @@ test("builds verification metadata from env values", () => {
   assert.equal(verification?.other?.["msvalidate.01"], "bing-token");
 });
 
-test("returns all indexable pages across both locales", () => {
+test("returns all indexable pages across all locales", () => {
   const pages = getIndexablePages();
 
-  assert.equal(pages.length, 10);
+  assert.equal(pages.length, 20);
   assert.ok(
     pages.some((page) => page.locale === "en" && page.path === "/contact"),
   );
   assert.ok(
     pages.some((page) => page.locale === "tr" && page.path === "/tr/contact"),
+  );
+  assert.ok(
+    pages.some((page) => page.locale === "de" && page.path === "/de/contact"),
+  );
+  assert.ok(
+    pages.some((page) => page.locale === "nl" && page.path === "/nl/contact"),
   );
 });

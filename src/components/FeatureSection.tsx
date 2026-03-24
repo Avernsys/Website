@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatedSection } from "./AnimatedSection";
+import { headingClassNames } from "./headingStyles";
 
 interface FeatureSectionProps {
   label: string;
@@ -41,11 +42,13 @@ export function FeatureSection({
 
           {/* Content */}
           <AnimatedSection className="flex-1 w-full" delay={0.2}>
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-gray-500 mb-4 block">
+            <span className={headingClassNames.featureLabel}>
               {label}
             </span>
-            <h2 className="text-display mb-6">{title}</h2>
-            <p className="text-body-large max-w-[440px]">{description}</p>
+            <h2 className={headingClassNames.sectionTitle}>{title}</h2>
+            <p className={`${headingClassNames.sectionBody} max-w-[440px]`}>
+              {description}
+            </p>
           </AnimatedSection>
         </div>
       </div>

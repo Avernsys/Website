@@ -1,15 +1,22 @@
 import en from "@/dictionaries/en.json";
+import de from "@/dictionaries/de.json";
+import nl from "@/dictionaries/nl.json";
 import tr from "@/dictionaries/tr.json";
 
-export const locales = ["en", "tr"] as const;
+export const locales = ["en", "tr", "de", "nl"] as const;
 
 export type Locale = (typeof locales)[number];
 export type Dictionary = typeof en;
 
 export const defaultLocale: Locale = "en";
+export const prefixedLocales = locales.filter(
+  (locale) => locale !== defaultLocale,
+) as Exclude<Locale, typeof defaultLocale>[];
 
 const dictionaries = {
   en,
+  de,
+  nl,
   tr,
 } as const satisfies Record<Locale, Dictionary>;
 
@@ -74,18 +81,33 @@ export function getPageLabel(locale: Locale, pageKey: PageKey): string {
   );
 }
 
+function getLocalePrefixFromPathname(pathname: string) {
+  const [firstSegment] = pathname.split("/").filter(Boolean);
+
+  if (
+    firstSegment &&
+    isLocale(firstSegment) &&
+    firstSegment !== defaultLocale
+  ) {
+    return firstSegment;
+  }
+
+  return undefined;
+}
+
 export function getPathnameLocale(pathname: string): Locale {
-  return pathname === "/tr" || pathname.startsWith("/tr/") ? "tr" : "en";
+  return getLocalePrefixFromPathname(pathname) ?? defaultLocale;
 }
 
 export function stripLocaleFromPathname(pathname: string): string {
-  if (pathname === "/tr") {
-    return "/";
+  const normalizedPathname = pathname || "/";
+  const localePrefix = getLocalePrefixFromPathname(normalizedPathname);
+
+  if (!localePrefix) {
+    return normalizedPathname;
   }
-  if (pathname.startsWith("/tr/")) {
-    return pathname.slice(3) || "/";
-  }
-  return pathname || "/";
+
+  return normalizedPathname.slice(localePrefix.length + 1) || "/";
 }
 
 export function switchLocalePathname(
@@ -97,8 +119,9 @@ export function switchLocalePathname(
 
 export function getAlternateLanguageLinks(path: string) {
   return {
-    en: localizePath("en", path),
-    tr: localizePath("tr", path),
+    ...Object.fromEntries(
+      locales.map((locale) => [locale, localizePath(locale, path)]),
+    ),
     "x-default": localizePath(defaultLocale, path),
   };
 }

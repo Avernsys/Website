@@ -15,9 +15,11 @@ test("publishes a crawlable robots policy with sitemap", () => {
 test("publishes sitemap entries for every localized indexable page", () => {
   const entries = sitemap();
 
-  assert.equal(entries.length, 10);
+  assert.equal(entries.length, 20);
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/"));
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/tr"));
+  assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/de"));
+  assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/nl"));
   assert.ok(
     entries.every((entry) => entry.lastModified instanceof Date),
   );
