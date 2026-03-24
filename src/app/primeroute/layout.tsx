@@ -6,6 +6,7 @@ import {
   buildSoftwareApplicationJsonLd,
   buildWebPageJsonLd,
   pageSeo,
+  schemaSoftwareApplicationId,
 } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata(pageSeo.primeroute);
@@ -19,7 +20,9 @@ export default function PrimeRouteLayout({
     <>
       <StructuredData
         data={[
-          buildWebPageJsonLd(pageSeo.primeroute),
+          buildWebPageJsonLd(pageSeo.primeroute, {
+            mainEntityId: schemaSoftwareApplicationId(pageSeo.primeroute.path),
+          }),
           buildSoftwareApplicationJsonLd(pageSeo.primeroute),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },

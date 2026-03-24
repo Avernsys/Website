@@ -16,7 +16,9 @@ import {
   pageSeo,
   resolvePageTitle,
   schemaOrganizationId,
+  schemaSoftwareApplicationId,
   schemaWebSiteId,
+  siteConfig,
 } from "./seo";
 
 function createEnv(values: Record<string, string>): NodeJS.ProcessEnv {
@@ -161,14 +163,25 @@ test("organization and WebSite JSON-LD use stable @id graph", () => {
   const site = buildWebSiteJsonLd() as Record<string, unknown>;
 
   assert.equal(org["@id"], schemaOrganizationId());
+  assert.equal(org.description, siteConfig.description);
   assert.equal(org.logo && typeof org.logo === "object" && (org.logo as { url?: string }).url, absoluteUrl("/icon"));
+  assert.deepEqual(org.founder, founders.map((founder) => ({
+    "@id": `${absoluteUrl("/about")}#${founder.name.toLowerCase().replace(/\s+/g, "-")}`,
+  })));
+  assert.ok(Array.isArray(org.knowsAbout));
   assert.deepEqual(site.publisher, { "@id": schemaOrganizationId() });
+  assert.equal(site.description, siteConfig.description);
 });
 
 test("WebPage JSON-LD references WebSite and Organization by @id", () => {
-  const page = buildWebPageJsonLd(pageSeo.chaptersys) as Record<string, unknown>;
+  const page = buildWebPageJsonLd(pageSeo.chaptersys, {
+    mainEntityId: schemaSoftwareApplicationId(pageSeo.chaptersys.path),
+  }) as Record<string, unknown>;
   assert.deepEqual(page.isPartOf, { "@id": schemaWebSiteId() });
   assert.deepEqual(page.about, { "@id": schemaOrganizationId() });
+  assert.deepEqual(page.mainEntity, {
+    "@id": schemaSoftwareApplicationId(pageSeo.chaptersys.path),
+  });
 });
 
 test("SoftwareApplication JSON-LD includes featureList and publisher @id", () => {

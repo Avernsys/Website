@@ -6,6 +6,7 @@ import {
   buildSoftwareApplicationJsonLd,
   buildWebPageJsonLd,
   pageSeo,
+  schemaSoftwareApplicationId,
 } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata(pageSeo.chaptersys);
@@ -19,7 +20,9 @@ export default function ChapterSysLayout({
     <>
       <StructuredData
         data={[
-          buildWebPageJsonLd(pageSeo.chaptersys),
+          buildWebPageJsonLd(pageSeo.chaptersys, {
+            mainEntityId: schemaSoftwareApplicationId(pageSeo.chaptersys.path),
+          }),
           buildSoftwareApplicationJsonLd(pageSeo.chaptersys),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },

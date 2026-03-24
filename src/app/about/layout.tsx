@@ -6,6 +6,7 @@ import {
   buildPageMetadata,
   buildWebPageJsonLd,
   pageSeo,
+  schemaOrganizationId,
 } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata(pageSeo.about);
@@ -19,7 +20,9 @@ export default function AboutLayout({
     <>
       <StructuredData
         data={[
-          buildWebPageJsonLd(pageSeo.about),
+          buildWebPageJsonLd(pageSeo.about, {
+            mainEntityId: schemaOrganizationId(),
+          }),
           ...buildAllFoundersPersonJsonLd(),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },

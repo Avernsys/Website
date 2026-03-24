@@ -36,7 +36,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-6"
           >
-            About
+            About Avernsys
           </motion.p>
 
           <motion.h1
@@ -45,9 +45,9 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="text-hero"
           >
-            Two founders.
+            About
             <br />
-            One mission.
+            Avernsys.
           </motion.h1>
 
           <motion.p
@@ -56,8 +56,8 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-body-large mt-8 max-w-[480px] mx-auto"
           >
-            Avernsys was built on a simple belief: technology should connect
-            people and make things work better. That&apos;s what we do.
+            Avernsys builds B2B software for member organizations and last-mile
+            delivery teams with two focused products: ChapterSys and PrimeRoute.
           </motion.p>
         </div>
       </section>

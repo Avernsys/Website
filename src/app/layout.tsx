@@ -13,6 +13,7 @@ import {
   buildWebPageJsonLd,
   buildWebSiteJsonLd,
   pageSeo,
+  schemaOrganizationId,
   siteConfig,
 } from "@/lib/seo";
 
@@ -43,7 +44,9 @@ export default function RootLayout({
           data={[
             buildOrganizationJsonLd(),
             buildWebSiteJsonLd(),
-            buildWebPageJsonLd(pageSeo.home),
+            buildWebPageJsonLd(pageSeo.home, {
+              mainEntityId: schemaOrganizationId(),
+            }),
             buildHomeItemListJsonLd(),
           ]}
         />

@@ -242,11 +242,22 @@ export function buildOrganizationJsonLd() {
     "@id": schemaOrganizationId(),
     name: siteConfig.legalName,
     url: siteConfig.url,
+    description: siteConfig.description,
     logo: {
       "@type": "ImageObject",
       url: absoluteUrl("/icon"),
     },
     ...(siteConfig.sameAs.length > 0 ? { sameAs: siteConfig.sameAs } : {}),
+    founder: founders.map((founder) => ({
+      "@id": founderPersonId(founder.name),
+    })),
+    knowsAbout: [
+      "B2B software",
+      "Member community platforms",
+      "Alumni association software",
+      "Last-mile delivery optimization",
+      "Route optimization software",
+    ],
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -265,12 +276,16 @@ export function buildWebSiteJsonLd() {
     "@id": schemaWebSiteId(),
     name: siteConfig.name,
     url: siteConfig.url,
+    description: siteConfig.description,
     inLanguage: "en",
     publisher: { "@id": schemaOrganizationId() },
   };
 }
 
-export function buildWebPageJsonLd(page: PageSeo) {
+export function buildWebPageJsonLd(
+  page: PageSeo,
+  options?: { mainEntityId?: string },
+) {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -280,6 +295,13 @@ export function buildWebPageJsonLd(page: PageSeo) {
     url: absoluteUrl(page.path),
     isPartOf: { "@id": schemaWebSiteId() },
     about: { "@id": schemaOrganizationId() },
+    ...(options?.mainEntityId
+      ? {
+          mainEntity: {
+            "@id": options.mainEntityId,
+          },
+        }
+      : {}),
   };
 }
 
