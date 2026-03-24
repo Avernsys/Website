@@ -54,7 +54,7 @@ export default function PrimeRoutePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-6"
           >
-            PrimeRoute
+            Avernsys PrimeRoute
           </motion.p>
 
           <motion.h1
@@ -63,9 +63,9 @@ export default function PrimeRoutePage() {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="text-hero"
           >
-            Last-mile route
+            Last-mile delivery,
             <br />
-            optimization software.
+            solved.
           </motion.h1>
 
           <motion.p
@@ -74,8 +74,8 @@ export default function PrimeRoutePage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-body-large mt-8 max-w-[520px] mx-auto"
           >
-            PrimeRoute helps delivery teams turn orders into optimized routes
-            in seconds, cut mileage, and improve on-time delivery performance.
+            Enter your orders. Get optimized delivery routes in seconds.
+            Faster deliveries, lower costs, zero guesswork.
           </motion.p>
 
           <motion.div

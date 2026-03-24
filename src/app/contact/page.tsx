@@ -20,7 +20,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-6"
           >
-            Contact Avernsys
+            Contact
           </motion.p>
 
           <motion.h1
@@ -29,9 +29,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="text-hero"
           >
-            Contact
-            <br />
-            Avernsys.
+            Let&apos;s talk.
           </motion.h1>
 
           <motion.p
@@ -40,8 +38,8 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-body-large mt-8 max-w-[420px] mx-auto"
           >
-            Request a ChapterSys or PrimeRoute demo, ask product questions, or
-            talk partnerships. We&apos;d love to hear from you.
+            Have a question, want a demo, or just want to say hello?
+            We&apos;d love to hear from you.
           </motion.p>
         </div>
       </section>

@@ -9,17 +9,17 @@ import { Button } from "@/components/Button";
 const products = [
   {
     name: "ChapterSys",
-    tagline: "Community software for alumni and member organizations.",
+    tagline: "Your organization, connected.",
     description:
-      "A private platform where alumni and members discover businesses, build communities, host events, and stay connected in one place.",
+      "A private social platform where alumni and members discover businesses, build communities, and stay connected — all in one place.",
     href: "/chaptersys",
     hoverGlow: "from-amber-500/[0.03]",
   },
   {
-    name: "PrimeRoute",
-    tagline: "Route optimization software for delivery teams.",
+    name: "Avernsys PrimeRoute",
+    tagline: "Last-mile delivery, solved.",
     description:
-      "Turn orders into optimized last-mile delivery routes in seconds. Fewer miles, lower costs, and more reliable delivery windows.",
+      "Enter your orders. Get optimized delivery routes in seconds. Faster deliveries, lower costs, zero guesswork.",
     href: "/primeroute",
     hoverGlow: "from-blue-500/[0.03]",
   },
@@ -40,7 +40,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500 mb-6"
           >
-            Avernsys
+            Introducing Avernsys
           </motion.p>
 
           <motion.h1
@@ -49,11 +49,9 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="text-hero"
           >
-            B2B software for
+            Built for
             <br />
-            connected organizations
-            <br />
-            and smarter delivery.
+            what&apos;s next.
           </motion.h1>
 
           <motion.p
@@ -62,9 +60,8 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-body-large mt-8 max-w-[560px] mx-auto"
           >
-            Avernsys builds two focused products: ChapterSys for alumni and
-            member communities, and PrimeRoute for last-mile route
-            optimization.
+            We build technology that connects people and moves things forward.
+            Two products. One vision.
           </motion.p>
 
           <motion.div
@@ -160,17 +157,12 @@ export default function Home() {
         <div className="mx-auto max-w-[800px] px-6 text-center">
           <AnimatedSection>
             <h2 className="text-display">
-              Focused products.
+              We don&apos;t just build software.
               <br />
               <span className="text-gray-500">
-                Real operational problems.
+                We build what should already exist.
               </span>
             </h2>
-            <p className="text-body-large mt-8 max-w-[620px] mx-auto">
-              We build software for organizations that need stronger member
-              communities and for delivery teams that need faster, more
-              efficient routes.
-            </p>
           </AnimatedSection>
         </div>
       </section>

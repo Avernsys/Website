@@ -83,9 +83,9 @@ export default function ChapterSysPage() {
             }}
             className="text-hero"
           >
-            Alumni and member
+            Your organization,
             <br />
-            community software.
+            connected.
           </motion.h1>
 
           <motion.p
@@ -94,9 +94,9 @@ export default function ChapterSysPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-body-large mt-8 max-w-[520px] mx-auto"
           >
-            ChapterSys helps alumni associations, member organizations, and
-            private communities discover businesses, host events, and stay
-            connected in one shared platform.
+            A private social platform built for organizations and their alumni.
+            Discover businesses, form communities, and stay connected — all in
+            one space.
           </motion.p>
 
           <motion.div
