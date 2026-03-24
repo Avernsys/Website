@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
-import { ShareImage } from "./_seo/share-image";
+import { ShareImage, type ShareTone } from "./_seo/share-image";
+import { getDictionary } from "@/lib/i18n";
 
 export const runtime = "edge";
 
@@ -10,28 +11,21 @@ export const size = {
 
 export const contentType = "image/png";
 
-export const alt = "Avernsys homepage preview";
+const dictionary = getDictionary("en");
+const copy = dictionary.shareImages.homeTwitter;
+
+export const alt = dictionary.seo.home.socialImageAlt;
 
 export default function TwitterImage() {
   return new ImageResponse(
     (
       <ShareImage
-        eyebrow="Avernsys"
-        title="Built for what's next."
-        description="A product company focused on connected organizations and route optimization."
-        tone="amber"
-        highlights={[
-          {
-            label: "Product 01",
-            title: "ChapterSys",
-            description: "Community software for alumni and member networks.",
-          },
-          {
-            label: "Product 02",
-            title: "PrimeRoute",
-            description: "Route optimization for last-mile operations.",
-          },
-        ]}
+        eyebrow={copy.eyebrow}
+        title={copy.title}
+        description={copy.description}
+        tone={copy.tone as ShareTone}
+        highlights={copy.highlights}
+        footer={dictionary.site.tagline}
       />
     ),
     size

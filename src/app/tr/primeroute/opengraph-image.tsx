@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { ShareImage, type ShareTone } from "../_seo/share-image";
+import { ShareImage, type ShareTone } from "../../_seo/share-image";
 import { getDictionary } from "@/lib/i18n";
 
 export const runtime = "edge";
@@ -11,12 +11,12 @@ export const size = {
 
 export const contentType = "image/png";
 
-const dictionary = getDictionary("en");
-const copy = dictionary.shareImages.chaptersys;
+const dictionary = getDictionary("tr");
+const copy = dictionary.shareImages.primeroute;
 
-export const alt = dictionary.seo.chaptersys.socialImageAlt;
+export const alt = dictionary.seo.primeroute.socialImageAlt;
 
-export default function TwitterImage() {
+export default function OpenGraphImage() {
   return new ImageResponse(
     (
       <ShareImage

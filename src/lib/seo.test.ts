@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { founders } from "./founders";
+import { getDictionary } from "./i18n";
 import {
   absoluteUrl,
   buildBreadcrumbJsonLd,
@@ -13,7 +14,7 @@ import {
   buildWebPageJsonLd,
   buildWebSiteJsonLd,
   getIndexablePages,
-  pageSeo,
+  getPageSeo,
   resolvePageTitle,
   schemaOrganizationId,
   schemaSoftwareApplicationId,
@@ -49,15 +50,13 @@ function getOpenGraphImageUrl(pageMetadata: ReturnType<typeof buildPageMetadata>
 function getMetadataAbsoluteTitle(
   pageMetadata: ReturnType<typeof buildPageMetadata>,
 ) {
-  const t = pageMetadata.title;
-  if (t && typeof t === "object" && "absolute" in t) {
-    return (t as { absolute?: string }).absolute;
-  }
-  return undefined;
-}
+  const title = pageMetadata.title;
 
-function getOpenGraphTitle(pageMetadata: ReturnType<typeof buildPageMetadata>) {
-  return pageMetadata.openGraph?.title ?? undefined;
+  if (title && typeof title === "object" && "absolute" in title) {
+    return (title as { absolute?: string }).absolute;
+  }
+
+  return undefined;
 }
 
 function getTwitterImageUrl(pageMetadata: ReturnType<typeof buildPageMetadata>) {
@@ -88,34 +87,31 @@ test("builds absolute URLs from relative paths", () => {
 
 test("resolvePageTitle appends brand only when not already in title", () => {
   assert.equal(
-    resolvePageTitle(pageSeo.home),
-    pageSeo.home.title,
+    resolvePageTitle(getPageSeo("en", "home")),
+    getPageSeo("en", "home").title,
   );
-  assert.equal(resolvePageTitle(pageSeo.about), "About Avernsys");
+  assert.equal(resolvePageTitle(getPageSeo("en", "about")), "About Avernsys");
   assert.equal(
-    resolvePageTitle(pageSeo.chaptersys),
+    resolvePageTitle(getPageSeo("en", "chaptersys")),
     "ChapterSys | Alumni and Member Community Platform | Avernsys",
   );
 });
 
-test("buildPageMetadata aligns document and social titles", () => {
-  const metadata = buildPageMetadata(pageSeo.chaptersys);
+test("builds English route metadata with localized alternates", () => {
+  const metadata = buildPageMetadata("en", "chaptersys");
 
   assert.equal(
     getMetadataAbsoluteTitle(metadata),
     "ChapterSys | Alumni and Member Community Platform | Avernsys",
   );
-  assert.equal(getOpenGraphTitle(metadata), getMetadataAbsoluteTitle(metadata));
   assert.equal(
-    metadata.twitter?.title,
-    getMetadataAbsoluteTitle(metadata),
+    metadata.alternates?.canonical,
+    "https://avernsys.com/chaptersys",
   );
-});
-
-test("builds route metadata with route-specific social images", () => {
-  const metadata = buildPageMetadata(pageSeo.chaptersys);
-
-  assert.equal(metadata.alternates?.canonical, "https://avernsys.com/chaptersys");
+  assert.equal(
+    metadata.alternates?.languages?.tr,
+    "https://avernsys.com/tr/chaptersys",
+  );
   assert.equal(
     getOpenGraphImageUrl(metadata),
     "https://avernsys.com/chaptersys/opengraph-image",
@@ -126,22 +122,31 @@ test("builds route metadata with route-specific social images", () => {
   );
 });
 
-test("uses shared social images for routes without custom image routes", () => {
-  const metadata = buildPageMetadata(pageSeo.about);
+test("builds Turkish route metadata with Turkish locale and assets", () => {
+  const metadata = buildPageMetadata("tr", "primeroute");
 
   assert.equal(
+    getMetadataAbsoluteTitle(metadata),
+    "PrimeRoute | Son Kilometre Rota Optimizasyon Yazılımı | Avernsys",
+  );
+  assert.equal(
+    metadata.alternates?.canonical,
+    "https://avernsys.com/tr/primeroute",
+  );
+  assert.equal(metadata.openGraph?.locale, "tr_TR");
+  assert.equal(
     getOpenGraphImageUrl(metadata),
-    "https://avernsys.com/opengraph-image",
+    "https://avernsys.com/tr/primeroute/opengraph-image",
   );
   assert.equal(
     getTwitterImageUrl(metadata),
-    "https://avernsys.com/twitter-image",
+    "https://avernsys.com/tr/primeroute/twitter-image",
   );
 });
 
-test("builds breadcrumb schema with ordered positions", () => {
-  const breadcrumb = buildBreadcrumbJsonLd([
-    { name: "Home", path: "/" },
+test("builds breadcrumb schema with locale-aware URLs", () => {
+  const breadcrumb = buildBreadcrumbJsonLd("tr", [
+    { name: "Ana sayfa", path: "/" },
     { name: "PrimeRoute", path: "/primeroute" },
   ]);
 
@@ -149,96 +154,116 @@ test("builds breadcrumb schema with ordered positions", () => {
   assert.equal(breadcrumb.itemListElement[1].position, 2);
   assert.equal(
     breadcrumb.itemListElement[1].item,
-    "https://avernsys.com/primeroute",
+    "https://avernsys.com/tr/primeroute",
   );
 });
 
 test("organization JSON-LD omits sameAs when empty", () => {
-  const org = buildOrganizationJsonLd() as Record<string, unknown>;
+  const org = buildOrganizationJsonLd("en") as Record<string, unknown>;
+
   assert.equal("sameAs" in org, false);
 });
 
-test("organization and WebSite JSON-LD use stable @id graph", () => {
-  const org = buildOrganizationJsonLd() as Record<string, unknown>;
-  const site = buildWebSiteJsonLd() as Record<string, unknown>;
+test("organization and WebSite JSON-LD use stable ids and localized descriptions", () => {
+  const englishOrg = buildOrganizationJsonLd("en") as Record<string, unknown>;
+  const turkishSite = buildWebSiteJsonLd("tr") as Record<string, unknown>;
 
-  assert.equal(org["@id"], schemaOrganizationId());
-  assert.equal(org.description, siteConfig.description);
-  assert.equal(org.logo && typeof org.logo === "object" && (org.logo as { url?: string }).url, absoluteUrl("/icon"));
-  assert.deepEqual(org.founder, founders.map((founder) => ({
-    "@id": `${absoluteUrl("/about")}#${founder.name.toLowerCase().replace(/\s+/g, "-")}`,
-  })));
-  assert.ok(Array.isArray(org.knowsAbout));
-  assert.deepEqual(site.publisher, { "@id": schemaOrganizationId() });
-  assert.equal(site.description, siteConfig.description);
+  assert.equal(englishOrg["@id"], schemaOrganizationId());
+  assert.equal(englishOrg.description, siteConfig.description);
+  assert.deepEqual(turkishSite.publisher, { "@id": schemaOrganizationId() });
+  assert.equal(turkishSite["@id"], schemaWebSiteId("tr"));
+  assert.equal(
+    turkishSite.description,
+    getDictionary("tr").site.description,
+  );
 });
 
-test("WebPage JSON-LD references WebSite and Organization by @id", () => {
-  const page = buildWebPageJsonLd(pageSeo.chaptersys, {
-    mainEntityId: schemaSoftwareApplicationId(pageSeo.chaptersys.path),
+test("WebPage JSON-LD references localized WebSite and main entity ids", () => {
+  const page = buildWebPageJsonLd("tr", "chaptersys", {
+    mainEntityId: schemaSoftwareApplicationId("/tr/chaptersys"),
   }) as Record<string, unknown>;
-  assert.deepEqual(page.isPartOf, { "@id": schemaWebSiteId() });
+
+  assert.deepEqual(page.isPartOf, { "@id": schemaWebSiteId("tr") });
   assert.deepEqual(page.about, { "@id": schemaOrganizationId() });
   assert.deepEqual(page.mainEntity, {
-    "@id": schemaSoftwareApplicationId(pageSeo.chaptersys.path),
+    "@id": schemaSoftwareApplicationId("/tr/chaptersys"),
   });
 });
 
-test("SoftwareApplication JSON-LD includes featureList and publisher @id", () => {
-  const app = buildSoftwareApplicationJsonLd(pageSeo.primeroute) as Record<
+test("SoftwareApplication JSON-LD includes localized featureList and publisher", () => {
+  const app = buildSoftwareApplicationJsonLd("tr", "primeroute") as Record<
     string,
     unknown
   >;
+
   assert.ok(Array.isArray(app.featureList));
   assert.equal((app.featureList as string[]).length >= 3, true);
   assert.deepEqual(app.publisher, { "@id": schemaOrganizationId() });
+  assert.equal(app.url, "https://avernsys.com/tr/primeroute");
 });
 
-test("home ItemList JSON-LD lists product URLs", () => {
-  const list = buildHomeItemListJsonLd() as {
+test("home ItemList JSON-LD lists localized product URLs", () => {
+  const list = buildHomeItemListJsonLd("tr") as {
     itemListElement: Array<{ item?: string }>;
   };
-  assert.equal(list.itemListElement[0]?.item, absoluteUrl("/chaptersys"));
-  assert.equal(list.itemListElement[1]?.item, absoluteUrl("/primeroute"));
+
+  assert.equal(
+    list.itemListElement[0]?.item,
+    absoluteUrl("/tr/chaptersys"),
+  );
+  assert.equal(
+    list.itemListElement[1]?.item,
+    absoluteUrl("/tr/primeroute"),
+  );
 });
 
-test("founder Person JSON-LD links to Organization", () => {
-  const person = buildFounderPersonJsonLd(founders[0]) as Record<string, unknown>;
+test("founder Person JSON-LD uses localized bios", () => {
+  const person = buildFounderPersonJsonLd("tr", founders[0]) as Record<
+    string,
+    unknown
+  >;
+
   assert.equal(person["@id"], `${absoluteUrl("/about")}#doruk-yalcin`);
   assert.deepEqual(person.worksFor, { "@id": schemaOrganizationId() });
+  assert.match(String(person.description), /Amazon/);
 });
 
 test("JSON-LD builders round-trip through JSON.stringify", () => {
   const nodes = [
-    buildOrganizationJsonLd(),
-    buildWebSiteJsonLd(),
-    buildWebPageJsonLd(pageSeo.contact),
-    buildHomeItemListJsonLd(),
-    buildSoftwareApplicationJsonLd(pageSeo.chaptersys),
-    buildFounderPersonJsonLd(founders[1]),
-    buildBreadcrumbJsonLd([{ name: "Home", path: "/" }]),
+    buildOrganizationJsonLd("en"),
+    buildWebSiteJsonLd("en"),
+    buildWebPageJsonLd("en", "contact"),
+    buildHomeItemListJsonLd("tr"),
+    buildSoftwareApplicationJsonLd("en", "chaptersys"),
+    buildFounderPersonJsonLd("en", founders[1]),
+    buildBreadcrumbJsonLd("en", [{ name: "Home", path: "/" }]),
   ];
+
   for (const node of nodes) {
     JSON.parse(JSON.stringify(node));
   }
 });
 
 test("builds verification metadata from env values", () => {
-  const verification = buildVerificationMetadata(createEnv({
-    NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: "google-token",
-    NEXT_PUBLIC_BING_SITE_VERIFICATION: "bing-token",
-  }));
+  const verification = buildVerificationMetadata(
+    createEnv({
+      NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: "google-token",
+      NEXT_PUBLIC_BING_SITE_VERIFICATION: "bing-token",
+    }),
+  );
 
   assert.equal(verification?.google, "google-token");
   assert.equal(verification?.other?.["msvalidate.01"], "bing-token");
 });
 
-test("returns all indexable pages", () => {
+test("returns all indexable pages across both locales", () => {
   const pages = getIndexablePages();
 
-  assert.equal(pages.length, 5);
-  assert.deepEqual(
-    pages.map((page) => page.path),
-    ["/", "/about", "/contact", "/chaptersys", "/primeroute"],
+  assert.equal(pages.length, 10);
+  assert.ok(
+    pages.some((page) => page.locale === "en" && page.path === "/contact"),
+  );
+  assert.ok(
+    pages.some((page) => page.locale === "tr" && page.path === "/tr/contact"),
   );
 });

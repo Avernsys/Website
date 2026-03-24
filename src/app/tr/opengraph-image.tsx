@@ -11,12 +11,12 @@ export const size = {
 
 export const contentType = "image/png";
 
-const dictionary = getDictionary("en");
-const copy = dictionary.shareImages.chaptersys;
+const dictionary = getDictionary("tr");
+const copy = dictionary.shareImages.homeOpenGraph;
 
-export const alt = dictionary.seo.chaptersys.socialImageAlt;
+export const alt = dictionary.seo.home.socialImageAlt;
 
-export default function TwitterImage() {
+export default function OpenGraphImage() {
   return new ImageResponse(
     (
       <ShareImage

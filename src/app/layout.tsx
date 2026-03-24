@@ -1,21 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { SeoIntegrations } from "@/components/SeoIntegrations";
-import { StructuredData } from "@/components/StructuredData";
-import {
-  buildHomeItemListJsonLd,
-  buildOrganizationJsonLd,
-  buildPageMetadata,
-  buildVerificationMetadata,
-  buildWebPageJsonLd,
-  buildWebSiteJsonLd,
-  pageSeo,
-  schemaOrganizationId,
-  siteConfig,
-} from "@/lib/seo";
+import { SiteShell } from "@/components/SiteShell";
+import { buildVerificationMetadata, siteConfig } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +12,6 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  ...buildPageMetadata(pageSeo.home),
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   category: "technology",
@@ -40,20 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-sans">
-        <StructuredData
-          data={[
-            buildOrganizationJsonLd(),
-            buildWebSiteJsonLd(),
-            buildWebPageJsonLd(pageSeo.home, {
-              mainEntityId: schemaOrganizationId(),
-            }),
-            buildHomeItemListJsonLd(),
-          ]}
-        />
         <SeoIntegrations />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

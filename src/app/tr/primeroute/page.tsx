@@ -10,11 +10,11 @@ import {
   schemaSoftwareApplicationId,
 } from "@/lib/seo";
 
-const locale = "en" as const;
+const locale = "tr" as const;
 
 export const metadata = buildPageMetadata(locale, "primeroute");
 
-export default function PrimeRoutePage() {
+export default function TurkishPrimeRoutePage() {
   const homeLabel = getPageLabel(locale, "home");
   const currentLabel = getPageLabel(locale, "primeroute");
   const applicationId = schemaSoftwareApplicationId(getPagePath(locale, "primeroute"));

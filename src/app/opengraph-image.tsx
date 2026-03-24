@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
-import { ShareImage } from "./_seo/share-image";
+import { ShareImage, type ShareTone } from "./_seo/share-image";
+import { getDictionary } from "@/lib/i18n";
 
 export const runtime = "edge";
 
@@ -10,33 +11,21 @@ export const size = {
 
 export const contentType = "image/png";
 
-export const alt = "Avernsys homepage preview";
+const dictionary = getDictionary("en");
+const copy = dictionary.shareImages.homeOpenGraph;
+
+export const alt = dictionary.seo.home.socialImageAlt;
 
 export default function OpenGraphImage() {
   return new ImageResponse(
     (
       <ShareImage
-        eyebrow="Technology that connects people and operations"
-        title="Avernsys"
-        description="Two products, one vision. ChapterSys connects organizations. PrimeRoute solves last-mile delivery."
-        tone="neutral"
-        highlights={[
-          {
-            label: "ChapterSys",
-            title: "Connected communities",
-            description: "Private social networking for organizations and alumni.",
-          },
-          {
-            label: "PrimeRoute",
-            title: "Smarter delivery routes",
-            description: "Optimize last-mile logistics in seconds.",
-          },
-          {
-            label: "Avernsys",
-            title: "Built for what's next",
-            description: "Modern product design for practical operations.",
-          },
-        ]}
+        eyebrow={copy.eyebrow}
+        title={copy.title}
+        description={copy.description}
+        tone={copy.tone as ShareTone}
+        highlights={copy.highlights}
+        footer={dictionary.site.tagline}
       />
     ),
     size

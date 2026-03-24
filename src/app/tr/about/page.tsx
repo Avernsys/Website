@@ -10,11 +10,11 @@ import {
   schemaOrganizationId,
 } from "@/lib/seo";
 
-const locale = "en" as const;
+const locale = "tr" as const;
 
 export const metadata = buildPageMetadata(locale, "about");
 
-export default function AboutPage() {
+export default function TurkishAboutPage() {
   const homeLabel = getPageLabel(locale, "home");
   const currentLabel = getPageLabel(locale, "about");
 

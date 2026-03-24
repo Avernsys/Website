@@ -8,11 +8,11 @@ import {
   buildWebPageJsonLd,
 } from "@/lib/seo";
 
-const locale = "en" as const;
+const locale = "tr" as const;
 
 export const metadata = buildPageMetadata(locale, "contact");
 
-export default function ContactPage() {
+export default function TurkishContactPage() {
   const homeLabel = getPageLabel(locale, "home");
   const currentLabel = getPageLabel(locale, "contact");
 

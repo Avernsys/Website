@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
-import { ShareImage } from "../_seo/share-image";
+import { ShareImage, type ShareTone } from "../_seo/share-image";
+import { getDictionary } from "@/lib/i18n";
 
 export const runtime = "edge";
 
@@ -10,33 +11,21 @@ export const size = {
 
 export const contentType = "image/png";
 
-export const alt = "PrimeRoute social preview";
+const dictionary = getDictionary("en");
+const copy = dictionary.shareImages.primeroute;
+
+export const alt = dictionary.seo.primeroute.socialImageAlt;
 
 export default function OpenGraphImage() {
   return new ImageResponse(
     (
       <ShareImage
-        eyebrow="PrimeRoute"
-        title="Last-mile delivery, solved."
-        description="Turn orders into optimized routes in seconds with an API-first engine built for operational speed."
-        tone="blue"
-        highlights={[
-          {
-            label: "Optimization",
-            title: "Fewer miles",
-            description: "Reduce route waste and deliver more efficiently.",
-          },
-          {
-            label: "Speed",
-            title: "Results in seconds",
-            description: "Move from manual planning to instant routing.",
-          },
-          {
-            label: "Integration",
-            title: "Fits your stack",
-            description: "Connect order systems, WMS, or e-commerce flows.",
-          },
-        ]}
+        eyebrow={copy.eyebrow}
+        title={copy.title}
+        description={copy.description}
+        tone={copy.tone as ShareTone}
+        highlights={copy.highlights}
+        footer={dictionary.site.tagline}
       />
     ),
     size

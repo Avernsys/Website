@@ -1,4 +1,4 @@
-type ShareTone = "amber" | "blue" | "neutral";
+export type ShareTone = "amber" | "blue" | "neutral";
 
 type ShareHighlight = {
   label: string;

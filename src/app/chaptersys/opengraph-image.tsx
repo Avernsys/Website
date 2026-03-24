@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
-import { ShareImage } from "../_seo/share-image";
+import { ShareImage, type ShareTone } from "../_seo/share-image";
+import { getDictionary } from "@/lib/i18n";
 
 export const runtime = "edge";
 
@@ -10,33 +11,21 @@ export const size = {
 
 export const contentType = "image/png";
 
-export const alt = "ChapterSys social preview";
+const dictionary = getDictionary("en");
+const copy = dictionary.shareImages.chaptersys;
+
+export const alt = dictionary.seo.chaptersys.socialImageAlt;
 
 export default function OpenGraphImage() {
   return new ImageResponse(
     (
       <ShareImage
-        eyebrow="ChapterSys"
-        title="Your organization, connected."
-        description="Private community software for alumni networks, member discovery, and verified business listings."
-        tone="amber"
-        highlights={[
-          {
-            label: "Private spaces",
-            title: "Members only",
-            description: "Keep your chapter or organization focused and verified.",
-          },
-          {
-            label: "Discovery",
-            title: "Find alumni businesses",
-            description: "Support trusted people and services inside your network.",
-          },
-          {
-            label: "Community",
-            title: "Stay connected",
-            description: "Groups, events, and messaging in one place.",
-          },
-        ]}
+        eyebrow={copy.eyebrow}
+        title={copy.title}
+        description={copy.description}
+        tone={copy.tone as ShareTone}
+        highlights={copy.highlights}
+        footer={dictionary.site.tagline}
       />
     ),
     size

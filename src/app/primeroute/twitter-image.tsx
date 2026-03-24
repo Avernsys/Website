@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
-import { ShareImage } from "../_seo/share-image";
+import { ShareImage, type ShareTone } from "../_seo/share-image";
+import { getDictionary } from "@/lib/i18n";
 
 export const runtime = "edge";
 
@@ -10,28 +11,21 @@ export const size = {
 
 export const contentType = "image/png";
 
-export const alt = "PrimeRoute social preview";
+const dictionary = getDictionary("en");
+const copy = dictionary.shareImages.primeroute;
+
+export const alt = dictionary.seo.primeroute.socialImageAlt;
 
 export default function TwitterImage() {
   return new ImageResponse(
     (
       <ShareImage
-        eyebrow="PrimeRoute"
-        title="Stop wasting miles."
-        description="Route optimization for delivery teams that want speed without guesswork."
-        tone="blue"
-        highlights={[
-          {
-            label: "Routing",
-            title: "Smarter plans",
-            description: "Automatically find better delivery sequences.",
-          },
-          {
-            label: "Ops",
-            title: "Lower costs",
-            description: "Cut fuel, time, and operational overhead.",
-          },
-        ]}
+        eyebrow={copy.eyebrow}
+        title={copy.title}
+        description={copy.description}
+        tone={copy.tone as ShareTone}
+        highlights={copy.highlights}
+        footer={dictionary.site.tagline}
       />
     ),
     size

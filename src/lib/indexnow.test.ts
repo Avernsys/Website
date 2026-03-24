@@ -11,10 +11,12 @@ function createEnv(values: Record<string, string>): NodeJS.ProcessEnv {
 }
 
 test("builds IndexNow config from env", () => {
-  const config = getIndexNowConfig(createEnv({
-    INDEXNOW_KEY: "indexnow-key",
-    INDEXNOW_ENDPOINT: "https://example.com/indexnow",
-  }));
+  const config = getIndexNowConfig(
+    createEnv({
+      INDEXNOW_KEY: "indexnow-key",
+      INDEXNOW_ENDPOINT: "https://example.com/indexnow",
+    }),
+  );
 
   assert.equal(config.endpoint, "https://example.com/indexnow");
   assert.equal(config.key, "indexnow-key");
@@ -23,7 +25,7 @@ test("builds IndexNow config from env", () => {
 
 test("builds an IndexNow payload with deduplicated absolute URLs", () => {
   const payload = buildIndexNowPayload(
-    ["/chaptersys", "https://avernsys.com/chaptersys", "/primeroute"],
+    ["/chaptersys", "https://avernsys.com/chaptersys", "/tr/primeroute"],
     createEnv({
       INDEXNOW_KEY: "indexnow-key",
     }),
@@ -33,7 +35,7 @@ test("builds an IndexNow payload with deduplicated absolute URLs", () => {
   assert.equal(payload?.key, "indexnow-key");
   assert.deepEqual(payload?.urlList, [
     "https://avernsys.com/chaptersys",
-    "https://avernsys.com/primeroute",
+    "https://avernsys.com/tr/primeroute",
   ]);
 });
 
@@ -43,9 +45,10 @@ test("returns undefined when IndexNow is not configured", () => {
   assert.equal(payload, undefined);
 });
 
-test("provides default IndexNow URLs from the site map", () => {
+test("provides default IndexNow URLs for both locales", () => {
   const urls = getDefaultIndexNowUrls();
 
-  assert.equal(urls.length, 5);
+  assert.equal(urls.length, 10);
   assert.ok(urls.includes("https://avernsys.com/primeroute"));
+  assert.ok(urls.includes("https://avernsys.com/tr/primeroute"));
 });

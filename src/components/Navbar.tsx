@@ -3,17 +3,18 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { getDictionary, getPagePath, type Locale, type PageLinkKey } from "@/lib/i18n";
 
-const links = [
-  { href: "/chaptersys", label: "ChapterSys" },
-  { href: "/primeroute", label: "PrimeRoute" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+type NavbarProps = {
+  locale: Locale;
+};
 
-export function Navbar() {
+export function Navbar({ locale }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const dictionary = getDictionary(locale);
+  const links = dictionary.navigation.links;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -47,30 +48,31 @@ export function Navbar() {
         <div className="mx-auto max-w-[1200px] px-6 flex items-center justify-between h-[60px]">
           {/* Logo */}
           <Link
-            href="/"
+            href={getPagePath(locale, "home")}
             className="text-[15px] font-semibold tracking-[-0.01em] text-white hover:opacity-80 transition-opacity"
           >
-            Avernsys
+            {dictionary.navigation.brand}
           </Link>
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
               <Link
-                key={link.href}
-                href={link.href}
+                key={link.key}
+                href={getPagePath(locale, link.key as PageLinkKey)}
                 className="text-[13px] text-gray-400 hover:text-white transition-colors duration-300"
               >
                 {link.label}
               </Link>
             ))}
+            <LanguageSwitcher locale={locale} />
           </div>
 
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden relative w-6 h-6 flex items-center justify-center"
-            aria-label="Toggle menu"
+            aria-label={dictionary.navigation.menuLabel}
           >
             <span
               className={`absolute h-[1px] w-4 bg-white transition-all duration-300 ${
@@ -97,15 +99,22 @@ export function Navbar() {
             className="fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl pt-[80px] px-6 md:hidden"
           >
             <div className="flex flex-col gap-1">
+              <div className="mb-6">
+                <LanguageSwitcher
+                  locale={locale}
+                  mobile
+                  onNavigate={() => setMobileOpen(false)}
+                />
+              </div>
               {links.map((link, i) => (
                 <motion.div
-                  key={link.href}
+                  key={link.key}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05, duration: 0.3 }}
                 >
                   <Link
-                    href={link.href}
+                    href={getPagePath(locale, link.key as PageLinkKey)}
                     onClick={() => setMobileOpen(false)}
                     className="block py-4 text-2xl font-semibold text-white/90 hover:text-white transition-colors border-b border-white/[0.06]"
                   >

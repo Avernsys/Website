@@ -1,5 +1,5 @@
 import { StructuredData } from "@/components/StructuredData";
-import { PrimeRoutePageView } from "@/components/pages/PrimeRoutePageView";
+import { ChapterSysPageView } from "@/components/pages/ChapterSysPageView";
 import { getPageLabel, getPagePath } from "@/lib/i18n";
 import {
   buildBaseStructuredData,
@@ -10,31 +10,31 @@ import {
   schemaSoftwareApplicationId,
 } from "@/lib/seo";
 
-const locale = "en" as const;
+const locale = "tr" as const;
 
-export const metadata = buildPageMetadata(locale, "primeroute");
+export const metadata = buildPageMetadata(locale, "chaptersys");
 
-export default function PrimeRoutePage() {
+export default function TurkishChapterSysPage() {
   const homeLabel = getPageLabel(locale, "home");
-  const currentLabel = getPageLabel(locale, "primeroute");
-  const applicationId = schemaSoftwareApplicationId(getPagePath(locale, "primeroute"));
+  const currentLabel = getPageLabel(locale, "chaptersys");
+  const applicationId = schemaSoftwareApplicationId(getPagePath(locale, "chaptersys"));
 
   return (
     <>
       <StructuredData
         data={[
           ...buildBaseStructuredData(locale),
-          buildWebPageJsonLd(locale, "primeroute", {
+          buildWebPageJsonLd(locale, "chaptersys", {
             mainEntityId: applicationId,
           }),
-          buildSoftwareApplicationJsonLd(locale, "primeroute"),
+          buildSoftwareApplicationJsonLd(locale, "chaptersys"),
           buildBreadcrumbJsonLd(locale, [
             { name: homeLabel, path: "/" },
-            { name: currentLabel, path: "/primeroute" },
+            { name: currentLabel, path: "/chaptersys" },
           ]),
         ]}
       />
-      <PrimeRoutePageView locale={locale} />
+      <ChapterSysPageView locale={locale} />
     </>
   );
 }

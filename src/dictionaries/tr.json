@@ -1,0 +1,460 @@
+{
+  "language": {
+    "code": "tr",
+    "label": "Türkçe",
+    "shortLabel": "TR",
+    "htmlLang": "tr",
+    "ogLocale": "tr_TR"
+  },
+  "site": {
+    "name": "Avernsys",
+    "description": "Avernsys, kurumları birbirine bağlayan ve son kilometre operasyonlarını optimize eden B2B yazılımlar geliştirir.",
+    "tagline": "Yarının ihtiyaçları için.",
+    "copyright": "Tüm hakları saklıdır."
+  },
+  "navigation": {
+    "brand": "Avernsys",
+    "menuLabel": "Menüyü aç veya kapat",
+    "languageLabel": "Dil",
+    "links": [
+      { "key": "chaptersys", "label": "ChapterSys" },
+      { "key": "primeroute", "label": "PrimeRoute" },
+      { "key": "about", "label": "Hakkımızda" },
+      { "key": "contact", "label": "İletişim" }
+    ]
+  },
+  "footer": {
+    "brandDescription": "Yarının ihtiyaçları için.",
+    "columns": [
+      {
+        "title": "Ürünler",
+        "links": [
+          { "key": "chaptersys", "label": "ChapterSys" },
+          { "key": "primeroute", "label": "PrimeRoute" }
+        ]
+      },
+      {
+        "title": "Şirket",
+        "links": [
+          { "key": "about", "label": "Hakkımızda" },
+          { "key": "contact", "label": "İletişim" }
+        ]
+      }
+    ]
+  },
+  "seo": {
+    "home": {
+      "title": "Avernsys | Bağlı Kurumlar ve Rota Optimizasyonu için Yazılım",
+      "description": "Avernsys, kurumları bir araya getiren ve son kilometre operasyonlarını optimize eden B2B yazılımlar geliştirir. ChapterSys ve PrimeRoute bu vizyonun iki ürünüdür.",
+      "keywords": [
+        "Avernsys",
+        "B2B yazılım şirketi",
+        "mezun platformu",
+        "üye topluluğu platformu",
+        "son kilometre teslimat yazılımı",
+        "rota optimizasyon yazılımı"
+      ],
+      "socialImageAlt": "Avernsys ana sayfa önizlemesi"
+    },
+    "about": {
+      "title": "Avernsys Hakkında",
+      "description": "Avernsys kurucularını tanıyın; topluluk yönetimi ve teslimat operasyonları için nasıl özenli yazılımlar geliştirdiğimizi keşfedin.",
+      "keywords": [
+        "Avernsys hakkında",
+        "Avernsys kurucuları",
+        "B2B yazılım şirketi",
+        "lojistik yazılım girişimi"
+      ],
+      "socialImageAlt": "Avernsys ana sayfa önizlemesi"
+    },
+    "contact": {
+      "title": "Avernsys ile İletişime Geçin",
+      "description": "ChapterSys ve PrimeRoute için demo talep etmek, sorularınızı iletmek ya da iş birliği konuşmak için Avernsys ile iletişime geçin.",
+      "keywords": [
+        "Avernsys iletişim",
+        "Avernsys demo",
+        "ChapterSys demo",
+        "PrimeRoute demo"
+      ],
+      "socialImageAlt": "Avernsys ana sayfa önizlemesi"
+    },
+    "chaptersys": {
+      "title": "ChapterSys | Mezun ve Üye Topluluğu Platformu",
+      "description": "ChapterSys; mezun dernekleri ve üye tabanlı kurumlar için işletmeleri keşfetmeyi, topluluk kurmayı ve bağlı kalmayı kolaylaştıran kapalı bir platformdur.",
+      "keywords": [
+        "ChapterSys",
+        "mezun platformu",
+        "üye topluluğu platformu",
+        "dernek yazılımı",
+        "kapalı sosyal platform",
+        "kurumsal topluluk yazılımı"
+      ],
+      "socialImageAlt": "ChapterSys sosyal medya önizlemesi"
+    },
+    "primeroute": {
+      "title": "PrimeRoute | Son Kilometre Rota Optimizasyon Yazılımı",
+      "description": "PrimeRoute, teslimat ekiplerinin rotalarını saniyeler içinde optimize ederek daha düşük maliyet, daha hızlı teslimat ve daha verimli operasyon sunar.",
+      "keywords": [
+        "PrimeRoute",
+        "rota optimizasyon yazılımı",
+        "son kilometre teslimat yazılımı",
+        "dağıtım rota planlama",
+        "filo rota optimizasyonu",
+        "lojistik optimizasyon yazılımı"
+      ],
+      "socialImageAlt": "PrimeRoute sosyal medya önizlemesi"
+    }
+  },
+  "structuredData": {
+    "organizationKnowsAbout": [
+      "B2B yazılım",
+      "üye ve mezun topluluk platformları",
+      "mezun derneği yazılımları",
+      "son kilometre teslimat optimizasyonu",
+      "rota optimizasyon yazılımları"
+    ],
+    "softwareApplications": {
+      "chaptersys": {
+        "applicationSubCategory": "Üye topluluğu yazılımı",
+        "featureList": [
+          "Kurumlar ve mezunlar için kapalı topluluk alanları",
+          "Harita üzerinde üye işletmelerini keşfetme",
+          "Doğrudan mesajlaşma, grup sohbetleri ve topluluk kanalları",
+          "Etkinlikler ve üye profillerini tek yerde yönetme"
+        ]
+      },
+      "primeroute": {
+        "applicationSubCategory": "Son kilometre teslimat yazılımı",
+        "featureList": [
+          "Siparişlerden son kilometre rotaları oluşturma ve optimize etme",
+          "Daha hızlı teslimat ve daha düşük operasyon maliyeti",
+          "Teslimat ekipleri için web tabanlı iş akışları"
+        ]
+      }
+    }
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "eyebrow": "Avernsys",
+        "titleLines": ["Yarının iş akışları", "için üretilen yazılım."],
+        "description": "İnsanları birbirine bağlayan, operasyonları hızlandıran ürünler geliştiriyoruz. İki ürün, tek vizyon.",
+        "primaryCta": "Ürünleri incele",
+        "secondaryCta": "İletişime geç"
+      },
+      "products": {
+        "eyebrow": "Ürünler",
+        "titleLines": ["İki ürün.", "Tek bir net vizyon."],
+        "items": [
+          {
+            "name": "ChapterSys",
+            "tagline": "Topluluğunuzu tek yerde buluşturun.",
+            "description": "Mezunların ve üyelerin birbirini bulduğu, işletmeleri keşfettiği, etkinliklere katıldığı ve bağlı kaldığı kapalı bir topluluk platformu.",
+            "key": "chaptersys",
+            "hoverGlow": "from-amber-500/[0.03]"
+          },
+          {
+            "name": "Avernsys PrimeRoute",
+            "tagline": "Son kilometreyi daha akıllı yönetin.",
+            "description": "Siparişlerinizi saniyeler içinde optimize edilmiş rotalara dönüştürün. Daha az kilometre, daha düşük maliyet, daha düzenli teslimat.",
+            "key": "primeroute",
+            "hoverGlow": "from-blue-500/[0.03]"
+          }
+        ],
+        "learnMore": "Detayları gör"
+      },
+      "vision": {
+        "titleLines": [
+          "Sadece yazılım geliştirmiyoruz.",
+          "Eksik olanı ortaya çıkarıyoruz."
+        ]
+      }
+    },
+    "about": {
+      "hero": {
+        "eyebrow": "Hakkımızda",
+        "titleLines": ["İki kurucu.", "Tek odak."],
+        "description": "Avernsys, teknolojinin insanları bir araya getirmesi ve işlerin daha iyi işlemesini sağlaması gerektiği fikriyle kuruldu."
+      },
+      "story": {
+        "title": "Hikayemiz",
+        "paragraphs": [
+          "Avernsys, kurumların üyeleriyle daha güçlü bağlar kurması ve şirketlerin son kilometre operasyonlarını daha iyi yönetmesi gerektiğini fark eden iki kişinin girişimiyle doğdu.",
+          "Bu problemleri başkasının çözmesini beklemek yerine, ürünleri kendimiz geliştirdik. ChapterSys topluluk bağlarını yeniden düşünüyor. PrimeRoute ise teslimat operasyonlarını daha hızlı ve daha verimli hale getiriyor.",
+          "Az sayıda işe odaklanıp bunu çok iyi yapmak isteyen bir şirketiz. Özenle geliştirilen, uzun ömürlü iki ürün."
+        ]
+      },
+      "founders": {
+        "eyebrow": "Ekip",
+        "title": "Kurucular",
+        "people": {
+          "doruk": {
+            "role": "Kurucu Ortak",
+            "bio": "Amazon'da global lojistik sistemleri üzerinde çalıştı. UCLA'de bilgisayarlı görü alanında araştırma yaptı, ardından Tesla'da otonom sürüş algı sistemlerine katkıda bulundu. Optimizasyon, makine öğrenmesi ve gerçek dünyada çalışan yazılımlar konusunda derin deneyime sahip."
+          },
+          "murat": {
+            "role": "Kurucu Ortak",
+            "bio": "PwC ve Deloitte deneyimiyle gelen danışmanlık ve iş stratejisi arka planına sahip. Operasyon, büyüme ve kurumların ölçeklenme ihtiyaçları konusunda güçlü bir bakış açısı getiriyor. Kurumsal beklentileri anlayıp güven veren çözümler geliştirmeye odaklanıyor."
+          }
+        }
+      },
+      "values": {
+        "eyebrow": "Değerler",
+        "title": "Bizi yönlendiren ilkeler",
+        "items": [
+          {
+            "title": "Taviz yerine özen",
+            "description": "Her detay önemlidir. Kullanıcıların sadece çalışan değil, ince düşünülmüş yazılımlar hak ettiğine inanıyoruz."
+          },
+          {
+            "title": "Gerçekten önemli olanı çıkar",
+            "description": "Gerçek insanların gerçek problemlerini çözüyoruz. Kullanıcıya hizmet etmeyen hiçbir şey ürüne dönüşmez."
+          },
+          {
+            "title": "Yalın kal, hızlı ilerle",
+            "description": "İki kurucu, minimum bürokrasi. Kararları hızla alır, sürekli iterasyon yapar ve işin kalitesiyle konuşuruz."
+          }
+        ]
+      }
+    },
+    "chaptersys": {
+      "hero": {
+        "eyebrow": "ChapterSys",
+        "titleLines": ["Topluluğunuzu", "gerçekten birbirine bağlayın."],
+        "description": "Mezun dernekleri, üye yapıları ve özel topluluklar için geliştirilmiş kapalı bir platform. Üyeler birbirini bulur, işletmeleri keşfeder ve aynı yerde bağlı kalır.",
+        "primaryCta": "Demo talep et"
+      },
+      "steps": {
+        "eyebrow": "Nasıl çalışır",
+        "titleLines": ["Üç adım.", "Hepsi bu."],
+        "items": [
+          {
+            "step": "01",
+            "title": "Topluluğunuzu kurun",
+            "description": "Kurumunuza özel alanı oluşturun. Markanızı uyarlayın, doğrulama kurallarını belirleyin ve yöneticilerinizi davet edin."
+          },
+          {
+            "step": "02",
+            "title": "Ağınızı büyütün",
+            "description": "Üyeleri e-posta, bağlantı ya da entegrasyonla davet edin. Doğrulanmış mezunlar katılır, profillerini oluşturur ve işlerini görünür hale getirir."
+          },
+          {
+            "step": "03",
+            "title": "Topluluğun canlandığını görün",
+            "description": "Üyeler işletmeleri keşfeder, gruplar kurar, etkinlikler planlar ve hepsi aynı yerde etkileşimde kalır."
+          }
+        ]
+      },
+      "features": [
+        {
+          "label": "Keşif",
+          "title": "Mezun ağınızı harita üzerinde görün.",
+          "description": "Üyeler işletmelerini ve hizmetlerini interaktif harita üzerine ekler. Avukata mı ihtiyacınız var? Fotoğrafçıya mı? Ağınızın içinde arayın, bulun ve destek olun."
+        },
+        {
+          "label": "Topluluk",
+          "title": "Gerçek sohbetler, güçlü bağlar.",
+          "description": "Doğrudan mesajlaşma, grup sohbetleri ve topluluk kanalları kurumlar için tasarlandı. Gürültü yok, reklam yok; sadece önemli insanlar var."
+        },
+        {
+          "label": "Etkinlikler",
+          "title": "Takvim ve topluluk aynı yerde.",
+          "description": "Buluşmaları, yemekleri, atölyeleri ve etkinlikleri kolayca oluşturun, paylaşın ve yönetin. Topluluğunuzun ihtiyaç duyduğu her şey zaten burada."
+        },
+        {
+          "label": "İş Profilleri",
+          "title": "Ürettiklerinizi görünür kılın.",
+          "description": "Her üye profesyonel yolculuğunu ve işlerini sergileyebileceği bir profile sahip olur. Topluluğun sizi tanıması ve desteklemesi daha kolay hale gelir."
+        }
+      ],
+      "cta": {
+        "titleLines": ["Topluluğunuzu", "tek yerde bir araya getirmeye hazır mısınız?"],
+        "description": "ChapterSys, topluluğunu ciddiye alan kurumlar için geliştirildi. Size nasıl uyacağını birlikte konuşalım.",
+        "primaryCta": "Başlayın",
+        "secondaryCta": "Satış ekibiyle görüşün"
+      }
+    },
+    "primeroute": {
+      "hero": {
+        "eyebrow": "Avernsys PrimeRoute",
+        "titleLines": ["Son kilometreyi", "daha akıllı yönetin."],
+        "description": "Siparişlerinizi yükleyin, saniyeler içinde optimize edilmiş teslimat rotalarına dönüşsün. Daha hızlı teslimat, daha düşük maliyet, daha net operasyon.",
+        "primaryCta": "Optimizasyona başla"
+      },
+      "steps": {
+        "eyebrow": "Nasıl çalışır",
+        "titleLines": ["Üç adım.", "Hepsi bu."],
+        "items": [
+          {
+            "step": "01",
+            "title": "Siparişleri yükleyin",
+            "description": "Adresleri, zaman aralıklarını ve paket bilgilerini sisteme aktarın. Dosya yükleyin ya da API ile bağlanın."
+          },
+          {
+            "step": "02",
+            "title": "Biz optimize edelim",
+            "description": "Motorumuz tüm değişkenleri hesaba katarak en verimli rotaları gerçek zamanlı olarak hesaplar."
+          },
+          {
+            "step": "03",
+            "title": "Daha akıllı teslim edin",
+            "description": "Sürücüleriniz optimize edilmiş rotaları anında kullanır. Siz de daha mutlu müşteriler ve daha verimli operasyonlar elde edersiniz."
+          }
+        ]
+      },
+      "features": [
+        {
+          "label": "Hız",
+          "title": "Saatler değil, saniyeler içinde sonuç.",
+          "description": "PrimeRoute binlerce teslimat noktasını gerçek zamanlı olarak optimize eder. Manuel planlama yerine sürücülerinizin hemen kullanabileceği rotalar üretir."
+        },
+        {
+          "label": "Optimizasyon",
+          "title": "Her rota daha verimli.",
+          "description": "Trafik, zaman pencereleri, araç kapasitesi ve saha kısıtları birlikte değerlendirilir. Sonuç: daha az kilometre, daha az yakıt ve zamanında teslimat."
+        },
+        {
+          "label": "Entegrasyon",
+          "title": "Mevcut sistemlerinize uyum sağlar.",
+          "description": "API öncelikli mimarisi sayesinde PrimeRoute, mevcut sipariş, depo ve e-ticaret altyapınızla hızla entegre olur."
+        }
+      ],
+      "cta": {
+        "titleLines": ["Boşa kilometre yapmayın.", "Teslimatı daha akıllı yönetin."],
+        "description": "Günde 50 teslimat da yapsanız 5.000 teslimat da, PrimeRoute sizinle birlikte ölçeklenir. Son kilometreyi birlikte optimize edelim.",
+        "primaryCta": "Başlayın",
+        "secondaryCta": "Demoyu görün"
+      }
+    },
+    "contact": {
+      "hero": {
+        "eyebrow": "İletişim",
+        "titleLines": ["Konuşalım."],
+        "description": "Bir sorunuz varsa, demo talep etmek istiyorsanız ya da sadece merhaba demek istiyorsanız bize ulaşın."
+      },
+      "success": {
+        "title": "Mesajınız alındı.",
+        "description": "Size en kısa sürede geri döneceğiz."
+      },
+      "form": {
+        "nameLabel": "Ad Soyad",
+        "namePlaceholder": "Adınız soyadınız",
+        "emailLabel": "E-posta",
+        "emailPlaceholder": "siz@sirketiniz.com",
+        "subjectLabel": "Konu",
+        "subjectPlaceholder": "Bir konu seçin",
+        "subjectOptions": [
+          { "value": "chaptersys", "label": "ChapterSys" },
+          { "value": "primeroute", "label": "PrimeRoute" },
+          { "value": "general", "label": "Genel Bilgi" },
+          { "value": "partnership", "label": "İş Birliği" }
+        ],
+        "messageLabel": "Mesaj",
+        "messagePlaceholder": "Neye ihtiyacınız olduğunu kısaca anlatın...",
+        "submitLabel": "Mesaj Gönder"
+      }
+    },
+    "notFound": {
+      "title": "Sayfa bulunamadı",
+      "description": "Bağlantı bozuk olabilir ya da sayfa kaldırılmış olabilir. Aşağıdaki sayfalardan birini deneyebilir veya iletişim sayfasından bize ulaşabilirsiniz.",
+      "primaryCta": "Ana sayfaya dön",
+      "secondaryCta": "İletişim",
+      "navigationLabel": "Sık ziyaret edilen sayfalar",
+      "links": [
+        { "key": "home", "label": "Ana sayfa" },
+        { "key": "chaptersys", "label": "ChapterSys" },
+        { "key": "primeroute", "label": "PrimeRoute" },
+        { "key": "contact", "label": "İletişim" }
+      ]
+    }
+  },
+  "shareImages": {
+    "homeOpenGraph": {
+      "eyebrow": "İnsanları ve operasyonları bir araya getiren teknoloji",
+      "title": "Avernsys",
+      "description": "İki ürün, tek vizyon. ChapterSys kurumları birbirine bağlar. PrimeRoute son kilometre teslimatı optimize eder.",
+      "tone": "neutral",
+      "highlights": [
+        {
+          "label": "ChapterSys",
+          "title": "Daha güçlü topluluklar",
+          "description": "Kurumlar ve mezunlar için kapalı sosyal ağ deneyimi."
+        },
+        {
+          "label": "PrimeRoute",
+          "title": "Daha akıllı teslimat rotaları",
+          "description": "Son kilometre lojistiğini saniyeler içinde optimize edin."
+        },
+        {
+          "label": "Avernsys",
+          "title": "Yarının ihtiyaçları için",
+          "description": "Gerçek operasyonlar için modern ürün anlayışı."
+        }
+      ]
+    },
+    "homeTwitter": {
+      "eyebrow": "Avernsys",
+      "title": "Yarının ihtiyaçları için.",
+      "description": "Bağlı kurumlar ve rota optimizasyonu için ürün geliştiren bir teknoloji şirketi.",
+      "tone": "amber",
+      "highlights": [
+        {
+          "label": "Ürün 01",
+          "title": "ChapterSys",
+          "description": "Mezun ve üye ağları için topluluk yazılımı."
+        },
+        {
+          "label": "Ürün 02",
+          "title": "PrimeRoute",
+          "description": "Son kilometre operasyonları için rota optimizasyonu."
+        }
+      ]
+    },
+    "chaptersys": {
+      "eyebrow": "ChapterSys",
+      "title": "Topluluğunuzu tek yerde buluşturun.",
+      "description": "Mezun ağları, üye keşfi ve doğrulanmış işletme listeleri için kapalı topluluk yazılımı.",
+      "tone": "amber",
+      "highlights": [
+        {
+          "label": "Kapalı alanlar",
+          "title": "Sadece üyelere özel",
+          "description": "Topluluğunuzu odaklı ve güvenli tutun."
+        },
+        {
+          "label": "Keşif",
+          "title": "Mezun işletmelerini bulun",
+          "description": "Ağınızın içindeki güvenilir kişi ve hizmetleri kolayca keşfedin."
+        },
+        {
+          "label": "Topluluk",
+          "title": "Bağlı kalın",
+          "description": "Gruplar, etkinlikler ve mesajlaşma tek yerde."
+        }
+      ]
+    },
+    "primeroute": {
+      "eyebrow": "PrimeRoute",
+      "title": "Son kilometreyi daha akıllı yönetin.",
+      "description": "Operasyon hızı için tasarlanmış API öncelikli bir motorla siparişleri saniyeler içinde optimize edilmiş rotalara dönüştürün.",
+      "tone": "blue",
+      "highlights": [
+        {
+          "label": "Optimizasyon",
+          "title": "Daha az kilometre",
+          "description": "Rota kaybını azaltın, daha verimli teslim edin."
+        },
+        {
+          "label": "Hız",
+          "title": "Saniyeler içinde sonuç",
+          "description": "Manuel planlamadan anında rotalamaya geçin."
+        },
+        {
+          "label": "Entegrasyon",
+          "title": "Altyapınıza uyumlu",
+          "description": "Sipariş sistemleri, WMS ve e-ticaret akışlarına kolayca bağlanın."
+        }
+      ]
+    }
+  }
+}

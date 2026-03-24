@@ -12,10 +12,13 @@ test("publishes a crawlable robots policy with sitemap", () => {
   assert.equal(rules[0]?.allow, "/");
 });
 
-test("publishes sitemap entries for every indexable page", () => {
+test("publishes sitemap entries for every localized indexable page", () => {
   const entries = sitemap();
 
-  assert.equal(entries.length, 5);
-  assert.equal(entries[0]?.url, "https://avernsys.com/");
-  assert.ok(entries.every((entry) => entry.lastModified instanceof Date));
+  assert.equal(entries.length, 10);
+  assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/"));
+  assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/tr"));
+  assert.ok(
+    entries.every((entry) => entry.lastModified instanceof Date),
+  );
 });

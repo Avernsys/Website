@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { ShareImage, type ShareTone } from "../_seo/share-image";
+import { ShareImage, type ShareTone } from "../../_seo/share-image";
 import { getDictionary } from "@/lib/i18n";
 
 export const runtime = "edge";
@@ -11,7 +11,7 @@ export const size = {
 
 export const contentType = "image/png";
 
-const dictionary = getDictionary("en");
+const dictionary = getDictionary("tr");
 const copy = dictionary.shareImages.chaptersys;
 
 export const alt = dictionary.seo.chaptersys.socialImageAlt;

@@ -8,11 +8,11 @@ import {
   schemaOrganizationId,
 } from "@/lib/seo";
 
-const locale = "en" as const;
+const locale = "tr" as const;
 
 export const metadata = buildPageMetadata(locale, "home");
 
-export default function HomePage() {
+export default function TurkishHomePage() {
   return (
     <>
       <StructuredData
