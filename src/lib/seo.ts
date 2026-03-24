@@ -97,7 +97,7 @@ function getOpenGraphImage(locale: Locale, pageKey: PageKey) {
     case "chaptersys":
       return absoluteUrl(localizePath(locale, "/chaptersys/opengraph-image"));
     case "primeroute":
-      return absoluteUrl(localizePath(locale, "/primeroute/opengraph-image"));
+      return absoluteUrl(localizePath(locale, "/flowsys/opengraph-image"));
     default:
       return absoluteUrl(localizePath(locale, "/opengraph-image"));
   }
@@ -108,7 +108,7 @@ function getTwitterImage(locale: Locale, pageKey: PageKey) {
     case "chaptersys":
       return absoluteUrl(localizePath(locale, "/chaptersys/twitter-image"));
     case "primeroute":
-      return absoluteUrl(localizePath(locale, "/primeroute/twitter-image"));
+      return absoluteUrl(localizePath(locale, "/flowsys/twitter-image"));
     default:
       return absoluteUrl(localizePath(locale, "/twitter-image"));
   }
@@ -338,7 +338,7 @@ export function buildSoftwareApplicationJsonLd(
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": schemaSoftwareApplicationId(page.path),
-    name: pageKey === "chaptersys" ? "ChapterSys" : "PrimeRoute",
+    name: pageKey === "chaptersys" ? "ChapterSys" : "FlowSys",
     applicationCategory: category,
     applicationSubCategory: structuredData.applicationSubCategory,
     operatingSystem: "Web",

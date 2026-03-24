@@ -18,7 +18,7 @@
     "languageLabel": "Sprache",
     "links": [
       { "key": "chaptersys", "label": "ChapterSys" },
-      { "key": "primeroute", "label": "PrimeRoute" },
+      { "key": "primeroute", "label": "FlowSys" },
       { "key": "about", "label": "Über uns" },
       { "key": "contact", "label": "Kontakt" }
     ]
@@ -30,7 +30,7 @@
         "title": "Produkte",
         "links": [
           { "key": "chaptersys", "label": "ChapterSys" },
-          { "key": "primeroute", "label": "PrimeRoute" }
+          { "key": "primeroute", "label": "FlowSys" }
         ]
       },
       {
@@ -45,7 +45,7 @@
   "seo": {
     "home": {
       "title": "Avernsys | Software für vernetzte Organisationen und intelligente Routenplanung",
-      "description": "Avernsys entwickelt B2B-Software, die Organisationen enger vernetzt und Last-Mile-Abläufe mit ChapterSys und PrimeRoute effizienter macht.",
+      "description": "Avernsys entwickelt B2B-Software, die Organisationen enger vernetzt und Last-Mile-Abläufe mit ChapterSys und FlowSys effizienter macht.",
       "keywords": [
         "Avernsys",
         "B2B-Softwareunternehmen",
@@ -69,12 +69,12 @@
     },
     "contact": {
       "title": "Kontakt mit Avernsys",
-      "description": "Sprechen Sie mit Avernsys über Demos für ChapterSys und PrimeRoute, Fragen zu unseren Produkten oder mögliche Partnerschaften.",
+      "description": "Sprechen Sie mit Avernsys über Demos für ChapterSys und FlowSys, Fragen zu unseren Produkten oder mögliche Partnerschaften.",
       "keywords": [
         "Avernsys Kontakt",
         "Avernsys Demo",
         "ChapterSys Demo",
-        "PrimeRoute Demo"
+        "FlowSys Demo"
       ],
       "socialImageAlt": "Vorschau der Avernsys-Startseite"
     },
@@ -92,17 +92,17 @@
       "socialImageAlt": "Social-Vorschau für ChapterSys"
     },
     "primeroute": {
-      "title": "PrimeRoute | Software zur Last-Mile-Routenoptimierung",
-      "description": "PrimeRoute hilft Lieferteams, ihre letzte Meile in Sekunden zu optimieren: mit besseren Touren, niedrigeren Kosten und zuverlässigeren Zustellungen.",
+      "title": "FlowSys | Software zur Last-Mile-Routenoptimierung",
+      "description": "FlowSys hilft Lieferteams, ihre letzte Meile in Sekunden zu optimieren: mit besseren Touren, niedrigeren Kosten und zuverlässigeren Zustellungen.",
       "keywords": [
-        "PrimeRoute",
+        "FlowSys",
         "Routenoptimierungssoftware",
         "Last-Mile-Software",
         "Software für Lieferrouten",
         "Tourenplanung Flotte",
         "Logistikoptimierungssoftware"
       ],
-      "socialImageAlt": "Social-Vorschau für PrimeRoute"
+      "socialImageAlt": "Social-Vorschau für FlowSys"
     }
   },
   "structuredData": {
@@ -154,7 +154,7 @@
             "hoverGlow": "from-amber-500/[0.03]"
           },
           {
-            "name": "Avernsys PrimeRoute",
+            "name": "Avernsys FlowSys",
             "tagline": "Die letzte Meile im Griff.",
             "description": "Aufträge rein, optimierte Touren in Sekunden. Weniger Leerlauf, geringere Kosten und klarere Abläufe für Ihre Zustellung.",
             "key": "primeroute",
@@ -180,7 +180,7 @@
         "title": "Unsere Geschichte",
         "paragraphs": [
           "Avernsys begann mit zwei Menschen, die Lücken darin gesehen haben, wie Organisationen ihre Mitglieder vernetzen und wie Unternehmen ihre letzte Meile steuern.",
-          "Statt darauf zu warten, dass jemand anderes diese Probleme löst, haben wir die Lösungen selbst gebaut. ChapterSys denkt Community-Verbindungen neu. PrimeRoute macht Lieferprozesse einfacher und effizienter.",
+          "Statt darauf zu warten, dass jemand anderes diese Probleme löst, haben wir die Lösungen selbst gebaut. ChapterSys denkt Community-Verbindungen neu. FlowSys macht Lieferprozesse einfacher und effizienter.",
           "Wir glauben daran, lieber wenige Dinge wirklich gut zu machen. Zwei Produkte, mit Sorgfalt entwickelt und darauf ausgelegt, lange relevant zu bleiben."
         ]
       },
@@ -276,7 +276,7 @@
     },
     "primeroute": {
       "hero": {
-        "eyebrow": "Avernsys PrimeRoute",
+        "eyebrow": "Avernsys FlowSys",
         "titleLines": ["Die letzte Meile,", "endlich effizient."],
         "description": "Laden Sie Ihre Aufträge hoch und erhalten Sie in Sekunden optimierte Touren. Schnellere Zustellungen, geringere Kosten und weniger Rätselraten im Tagesgeschäft.",
         "primaryCta": "Jetzt optimieren"
@@ -306,7 +306,7 @@
         {
           "label": "Geschwindigkeit",
           "title": "Ergebnisse in Sekunden statt in Stunden.",
-          "description": "PrimeRoute verarbeitet Tausende Lieferpunkte in Echtzeit. Kein manuelles Planen, kein Warten, sondern sofort einsatzbereite Touren für Ihr Fahrerteam."
+          "description": "FlowSys verarbeitet Tausende Lieferpunkte in Echtzeit. Kein manuelles Planen, kein Warten, sondern sofort einsatzbereite Touren für Ihr Fahrerteam."
         },
         {
           "label": "Optimierung",
@@ -316,12 +316,12 @@
         {
           "label": "Integration",
           "title": "Passt zu Ihrem bestehenden Setup.",
-          "description": "Dank API-first-Architektur fügt sich PrimeRoute in Ihre vorhandenen Systeme ein. Ob Auftragsmanagement, Lager oder E-Commerce: die Anbindung geht schnell und ohne unnötigen Overhead."
+          "description": "Dank API-first-Architektur fügt sich FlowSys in Ihre vorhandenen Systeme ein. Ob Auftragsmanagement, Lager oder E-Commerce: die Anbindung geht schnell und ohne unnötigen Overhead."
         }
       ],
       "cta": {
         "titleLines": ["Schluss mit unnötigen Kilometern.", "Liefern Sie intelligenter."],
-        "description": "Ob 50 Stopps am Tag oder 5.000: PrimeRoute wächst mit Ihrem Betrieb mit. Lassen Sie uns Ihre letzte Meile gemeinsam optimieren.",
+        "description": "Ob 50 Stopps am Tag oder 5.000: FlowSys wächst mit Ihrem Betrieb mit. Lassen Sie uns Ihre letzte Meile gemeinsam optimieren.",
         "primaryCta": "Loslegen",
         "secondaryCta": "Demo ansehen"
       }
@@ -345,7 +345,7 @@
         "subjectPlaceholder": "Thema auswählen",
         "subjectOptions": [
           { "value": "chaptersys", "label": "ChapterSys" },
-          { "value": "primeroute", "label": "PrimeRoute" },
+          { "value": "primeroute", "label": "FlowSys" },
           { "value": "general", "label": "Allgemeine Anfrage" },
           { "value": "partnership", "label": "Partnerschaft" }
         ],
@@ -363,7 +363,7 @@
       "links": [
         { "key": "home", "label": "Startseite" },
         { "key": "chaptersys", "label": "ChapterSys" },
-        { "key": "primeroute", "label": "PrimeRoute" },
+        { "key": "primeroute", "label": "FlowSys" },
         { "key": "contact", "label": "Kontakt" }
       ]
     }
@@ -372,7 +372,7 @@
     "homeOpenGraph": {
       "eyebrow": "Technologie, die Menschen und Abläufe verbindet",
       "title": "Avernsys",
-      "description": "Zwei Produkte, ein klarer Fokus. ChapterSys vernetzt Organisationen. PrimeRoute optimiert die letzte Meile.",
+      "description": "Zwei Produkte, ein klarer Fokus. ChapterSys vernetzt Organisationen. FlowSys optimiert die letzte Meile.",
       "tone": "neutral",
       "highlights": [
         {
@@ -381,7 +381,7 @@
           "description": "Geschlossene Community-Software für Organisationen und Alumni."
         },
         {
-          "label": "PrimeRoute",
+          "label": "FlowSys",
           "title": "Bessere Lieferrouten",
           "description": "Optimieren Sie die letzte Meile in Sekunden."
         },
@@ -405,7 +405,7 @@
         },
         {
           "label": "Produkt 02",
-          "title": "PrimeRoute",
+          "title": "FlowSys",
           "description": "Routenoptimierung für Last-Mile-Abläufe."
         }
       ]
@@ -434,7 +434,7 @@
       ]
     },
     "primeroute": {
-      "eyebrow": "PrimeRoute",
+      "eyebrow": "FlowSys",
       "title": "Die letzte Meile im Griff.",
       "description": "Verwandeln Sie Aufträge in Sekunden in optimierte Touren mit einer API-first-Engine für schnelle operative Entscheidungen.",
       "tone": "blue",

@@ -135,20 +135,20 @@ test("builds German route metadata with German locale and assets", () => {
 
   assert.equal(
     getMetadataAbsoluteTitle(metadata),
-    "PrimeRoute | Software zur Last-Mile-Routenoptimierung | Avernsys",
+    "FlowSys | Software zur Last-Mile-Routenoptimierung | Avernsys",
   );
   assert.equal(
     metadata.alternates?.canonical,
-    "https://avernsys.com/de/primeroute",
+    "https://avernsys.com/de/flowsys",
   );
   assert.equal(metadata.openGraph?.locale, "de_DE");
   assert.equal(
     getOpenGraphImageUrl(metadata),
-    "https://avernsys.com/de/primeroute/opengraph-image",
+    "https://avernsys.com/de/flowsys/opengraph-image",
   );
   assert.equal(
     getTwitterImageUrl(metadata),
-    "https://avernsys.com/de/primeroute/twitter-image",
+    "https://avernsys.com/de/flowsys/twitter-image",
   );
 });
 
@@ -157,34 +157,34 @@ test("builds Turkish route metadata with Turkish locale and assets", () => {
 
   assert.equal(
     getMetadataAbsoluteTitle(metadata),
-    "PrimeRoute | Son Kilometre Rota Optimizasyon Yazılımı | Avernsys",
+    "FlowSys | Son Kilometre Rota Optimizasyon Yazılımı | Avernsys",
   );
   assert.equal(
     metadata.alternates?.canonical,
-    "https://avernsys.com/tr/primeroute",
+    "https://avernsys.com/tr/flowsys",
   );
   assert.equal(metadata.openGraph?.locale, "tr_TR");
   assert.equal(
     getOpenGraphImageUrl(metadata),
-    "https://avernsys.com/tr/primeroute/opengraph-image",
+    "https://avernsys.com/tr/flowsys/opengraph-image",
   );
   assert.equal(
     getTwitterImageUrl(metadata),
-    "https://avernsys.com/tr/primeroute/twitter-image",
+    "https://avernsys.com/tr/flowsys/twitter-image",
   );
 });
 
 test("builds breadcrumb schema with locale-aware URLs", () => {
   const breadcrumb = buildBreadcrumbJsonLd("tr", [
     { name: "Ana sayfa", path: "/" },
-    { name: "PrimeRoute", path: "/primeroute" },
+    { name: "FlowSys", path: "/flowsys" },
   ]);
 
   assert.equal(breadcrumb.itemListElement.length, 2);
   assert.equal(breadcrumb.itemListElement[1].position, 2);
   assert.equal(
     breadcrumb.itemListElement[1].item,
-    "https://avernsys.com/tr/primeroute",
+    "https://avernsys.com/tr/flowsys",
   );
 });
 
@@ -242,7 +242,7 @@ test("SoftwareApplication JSON-LD includes localized featureList and publisher",
   assert.ok(Array.isArray(app.featureList));
   assert.equal((app.featureList as string[]).length >= 3, true);
   assert.deepEqual(app.publisher, { "@id": schemaOrganizationId() });
-  assert.equal(app.url, "https://avernsys.com/tr/primeroute");
+  assert.equal(app.url, "https://avernsys.com/tr/flowsys");
 });
 
 test("home ItemList JSON-LD lists localized product URLs", () => {
@@ -256,7 +256,7 @@ test("home ItemList JSON-LD lists localized product URLs", () => {
   );
   assert.equal(
     list.itemListElement[1]?.item,
-    absoluteUrl("/tr/primeroute"),
+    absoluteUrl("/tr/flowsys"),
   );
 });
 

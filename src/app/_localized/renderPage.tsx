@@ -123,7 +123,7 @@ export function renderLocalizedPrimeRoutePage(locale: Locale) {
           buildSoftwareApplicationJsonLd(locale, "primeroute"),
           buildBreadcrumbJsonLd(locale, [
             { name: homeLabel, path: "/" },
-            { name: currentLabel, path: "/primeroute" },
+            { name: currentLabel, path: "/flowsys" },
           ]),
         ]}
       />

@@ -17,9 +17,21 @@ test("publishes sitemap entries for every localized indexable page", () => {
 
   assert.equal(entries.length, 20);
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/"));
+  assert.ok(
+    entries.some((entry) => entry.url === "https://avernsys.com/flowsys"),
+  );
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/tr"));
+  assert.ok(
+    entries.some((entry) => entry.url === "https://avernsys.com/tr/flowsys"),
+  );
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/de"));
+  assert.ok(
+    entries.some((entry) => entry.url === "https://avernsys.com/de/flowsys"),
+  );
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/nl"));
+  assert.ok(
+    entries.some((entry) => entry.url === "https://avernsys.com/nl/flowsys"),
+  );
   assert.ok(
     entries.every((entry) => entry.lastModified instanceof Date),
   );

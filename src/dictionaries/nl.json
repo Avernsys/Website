@@ -18,7 +18,7 @@
     "languageLabel": "Taal",
     "links": [
       { "key": "chaptersys", "label": "ChapterSys" },
-      { "key": "primeroute", "label": "PrimeRoute" },
+      { "key": "primeroute", "label": "FlowSys" },
       { "key": "about", "label": "Over ons" },
       { "key": "contact", "label": "Contact" }
     ]
@@ -30,7 +30,7 @@
         "title": "Producten",
         "links": [
           { "key": "chaptersys", "label": "ChapterSys" },
-          { "key": "primeroute", "label": "PrimeRoute" }
+          { "key": "primeroute", "label": "FlowSys" }
         ]
       },
       {
@@ -45,7 +45,7 @@
   "seo": {
     "home": {
       "title": "Avernsys | Software voor verbonden organisaties en slimme routeplanning",
-      "description": "Avernsys bouwt B2B-software die organisaties dichter bij elkaar brengt en last-mile-processen slimmer maakt met ChapterSys en PrimeRoute.",
+      "description": "Avernsys bouwt B2B-software die organisaties dichter bij elkaar brengt en last-mile-processen slimmer maakt met ChapterSys en FlowSys.",
       "keywords": [
         "Avernsys",
         "B2B softwarebedrijf",
@@ -69,12 +69,12 @@
     },
     "contact": {
       "title": "Contact met Avernsys",
-      "description": "Neem contact op met Avernsys voor een demo van ChapterSys of PrimeRoute, productvragen of een mogelijk partnership.",
+      "description": "Neem contact op met Avernsys voor een demo van ChapterSys of FlowSys, productvragen of een mogelijk partnership.",
       "keywords": [
         "Avernsys contact",
         "Avernsys demo",
         "ChapterSys demo",
-        "PrimeRoute demo"
+        "FlowSys demo"
       ],
       "socialImageAlt": "Voorbeeld van de homepage van Avernsys"
     },
@@ -92,17 +92,17 @@
       "socialImageAlt": "Social preview van ChapterSys"
     },
     "primeroute": {
-      "title": "PrimeRoute | Software voor last-mile routeoptimalisatie",
-      "description": "PrimeRoute helpt bezorgteams om de last mile in seconden te optimaliseren, met slimmere routes, lagere kosten en betrouwbaardere leveringen.",
+      "title": "FlowSys | Software voor last-mile routeoptimalisatie",
+      "description": "FlowSys helpt bezorgteams om de last mile in seconden te optimaliseren, met slimmere routes, lagere kosten en betrouwbaardere leveringen.",
       "keywords": [
-        "PrimeRoute",
+        "FlowSys",
         "route optimalisatie software",
         "last-mile software",
         "bezorgroutes software",
         "fleet route planning",
         "logistieke optimalisatie software"
       ],
-      "socialImageAlt": "Social preview van PrimeRoute"
+      "socialImageAlt": "Social preview van FlowSys"
     }
   },
   "structuredData": {
@@ -154,7 +154,7 @@
             "hoverGlow": "from-amber-500/[0.03]"
           },
           {
-            "name": "Avernsys PrimeRoute",
+            "name": "Avernsys FlowSys",
             "tagline": "De last mile, slimmer geregeld.",
             "description": "Zet orders in seconden om naar geoptimaliseerde routes. Minder verspilling, lagere kosten en meer rust in de dagelijkse operatie.",
             "key": "primeroute",
@@ -180,7 +180,7 @@
         "title": "Ons verhaal",
         "paragraphs": [
           "Avernsys begon met twee mensen die zagen waar het misging: organisaties die hun leden onvoldoende weten te verbinden en bedrijven die te veel tijd verliezen op de last mile.",
-          "In plaats van te wachten tot iemand anders daar iets voor zou bouwen, hebben we die oplossingen zelf ontwikkeld. ChapterSys geeft communities een betere basis. PrimeRoute brengt rust en efficiëntie in bezorgoperaties.",
+          "In plaats van te wachten tot iemand anders daar iets voor zou bouwen, hebben we die oplossingen zelf ontwikkeld. ChapterSys geeft communities een betere basis. FlowSys brengt rust en efficiëntie in bezorgoperaties.",
           "Wij geloven in een kleine focus en hoge kwaliteit. Twee producten, met aandacht gebouwd en bedoeld om lang relevant te blijven."
         ]
       },
@@ -276,7 +276,7 @@
     },
     "primeroute": {
       "hero": {
-        "eyebrow": "Avernsys PrimeRoute",
+        "eyebrow": "Avernsys FlowSys",
         "titleLines": ["De last mile,", "slimmer geregeld."],
         "description": "Voer je orders in en ontvang in seconden geoptimaliseerde routes. Snellere leveringen, lagere kosten en meer grip op de dagelijkse operatie.",
         "primaryCta": "Start met optimaliseren"
@@ -306,7 +306,7 @@
         {
           "label": "Snelheid",
           "title": "Resultaten in seconden, niet in uren.",
-          "description": "PrimeRoute verwerkt duizenden afleverpunten in realtime. Geen handmatige planning meer, maar direct routes waar je chauffeurs meteen mee verder kunnen."
+          "description": "FlowSys verwerkt duizenden afleverpunten in realtime. Geen handmatige planning meer, maar direct routes waar je chauffeurs meteen mee verder kunnen."
         },
         {
           "label": "Optimalisatie",
@@ -316,12 +316,12 @@
         {
           "label": "Integratie",
           "title": "Past in wat je al gebruikt.",
-          "description": "Dankzij een API-first architectuur sluit PrimeRoute aan op je bestaande systemen. Van ordermanagement tot warehouse en e-commerce: koppelen gaat snel en zonder gedoe."
+          "description": "Dankzij een API-first architectuur sluit FlowSys aan op je bestaande systemen. Van ordermanagement tot warehouse en e-commerce: koppelen gaat snel en zonder gedoe."
         }
       ],
       "cta": {
         "titleLines": ["Stop met onnodige kilometers.", "Ga slimmer leveren."],
-        "description": "Of je nu 50 orders per dag bezorgt of 5.000, PrimeRoute groeit met je mee. Laten we samen je last mile optimaliseren.",
+        "description": "Of je nu 50 orders per dag bezorgt of 5.000, FlowSys groeit met je mee. Laten we samen je last mile optimaliseren.",
         "primaryCta": "Aan de slag",
         "secondaryCta": "Bekijk een demo"
       }
@@ -345,7 +345,7 @@
         "subjectPlaceholder": "Kies een onderwerp",
         "subjectOptions": [
           { "value": "chaptersys", "label": "ChapterSys" },
-          { "value": "primeroute", "label": "PrimeRoute" },
+          { "value": "primeroute", "label": "FlowSys" },
           { "value": "general", "label": "Algemene vraag" },
           { "value": "partnership", "label": "Partnership" }
         ],
@@ -363,7 +363,7 @@
       "links": [
         { "key": "home", "label": "Home" },
         { "key": "chaptersys", "label": "ChapterSys" },
-        { "key": "primeroute", "label": "PrimeRoute" },
+        { "key": "primeroute", "label": "FlowSys" },
         { "key": "contact", "label": "Contact" }
       ]
     }
@@ -372,7 +372,7 @@
     "homeOpenGraph": {
       "eyebrow": "Technologie die mensen en operatie samenbrengt",
       "title": "Avernsys",
-      "description": "Twee producten, één duidelijke visie. ChapterSys verbindt organisaties. PrimeRoute optimaliseert de last mile.",
+      "description": "Twee producten, één duidelijke visie. ChapterSys verbindt organisaties. FlowSys optimaliseert de last mile.",
       "tone": "neutral",
       "highlights": [
         {
@@ -381,7 +381,7 @@
           "description": "Besloten communitysoftware voor organisaties en alumni."
         },
         {
-          "label": "PrimeRoute",
+          "label": "FlowSys",
           "title": "Slimmere bezorgroutes",
           "description": "Optimaliseer de last mile in seconden."
         },
@@ -405,7 +405,7 @@
         },
         {
           "label": "Product 02",
-          "title": "PrimeRoute",
+          "title": "FlowSys",
           "description": "Routeoptimalisatie voor last-mile-operaties."
         }
       ]
@@ -434,7 +434,7 @@
       ]
     },
     "primeroute": {
-      "eyebrow": "PrimeRoute",
+      "eyebrow": "FlowSys",
       "title": "De last mile, slimmer geregeld.",
       "description": "Zet orders in seconden om in geoptimaliseerde routes met een API-first engine voor snelle operationele keuzes.",
       "tone": "blue",

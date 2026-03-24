@@ -18,7 +18,7 @@
     "languageLabel": "Language",
     "links": [
       { "key": "chaptersys", "label": "ChapterSys" },
-      { "key": "primeroute", "label": "PrimeRoute" },
+      { "key": "primeroute", "label": "FlowSys" },
       { "key": "about", "label": "About" },
       { "key": "contact", "label": "Contact" }
     ]
@@ -30,7 +30,7 @@
         "title": "Products",
         "links": [
           { "key": "chaptersys", "label": "ChapterSys" },
-          { "key": "primeroute", "label": "PrimeRoute" }
+          { "key": "primeroute", "label": "FlowSys" }
         ]
       },
       {
@@ -45,7 +45,7 @@
   "seo": {
     "home": {
       "title": "Avernsys | Software for Connected Organizations and Route Optimization",
-      "description": "Avernsys builds B2B software that connects organizations and optimizes last-mile operations with ChapterSys and PrimeRoute.",
+      "description": "Avernsys builds B2B software that connects organizations and optimizes last-mile operations with ChapterSys and FlowSys.",
       "keywords": [
         "Avernsys",
         "B2B software company",
@@ -69,12 +69,12 @@
     },
     "contact": {
       "title": "Contact Avernsys",
-      "description": "Contact Avernsys to request a demo, ask questions about ChapterSys and PrimeRoute, or discuss a partnership.",
+      "description": "Contact Avernsys to request a demo, ask questions about ChapterSys and FlowSys, or discuss a partnership.",
       "keywords": [
         "contact Avernsys",
         "Avernsys demo",
         "ChapterSys demo",
-        "PrimeRoute demo"
+        "FlowSys demo"
       ],
       "socialImageAlt": "Avernsys homepage preview"
     },
@@ -92,17 +92,17 @@
       "socialImageAlt": "ChapterSys social preview"
     },
     "primeroute": {
-      "title": "PrimeRoute | Last-Mile Route Optimization Software",
-      "description": "PrimeRoute helps delivery teams optimize last-mile routes in seconds with smarter routing, lower costs, and faster deliveries.",
+      "title": "FlowSys | Last-Mile Route Optimization Software",
+      "description": "FlowSys helps delivery teams optimize last-mile routes in seconds with smarter routing, lower costs, and faster deliveries.",
       "keywords": [
-        "PrimeRoute",
+        "FlowSys",
         "route optimization software",
         "last-mile delivery software",
         "delivery routing software",
         "fleet route planning",
         "logistics optimization software"
       ],
-      "socialImageAlt": "PrimeRoute social preview"
+      "socialImageAlt": "FlowSys social preview"
     }
   },
   "structuredData": {
@@ -154,7 +154,7 @@
             "hoverGlow": "from-amber-500/[0.03]"
           },
           {
-            "name": "Avernsys PrimeRoute",
+            "name": "Avernsys FlowSys",
             "tagline": "Last-mile delivery, solved.",
             "description": "Enter your orders. Get optimized delivery routes in seconds. Faster deliveries, lower costs, zero guesswork.",
             "key": "primeroute",
@@ -180,7 +180,7 @@
         "title": "Our story",
         "paragraphs": [
           "Avernsys started with two people who saw gaps in how organizations connect their members and how businesses handle last-mile logistics.",
-          "Instead of waiting for someone else to solve these problems, we built the solutions ourselves. ChapterSys reimagines how alumni networks and organizations stay connected. PrimeRoute makes delivery operations effortless.",
+          "Instead of waiting for someone else to solve these problems, we built the solutions ourselves. ChapterSys reimagines how alumni networks and organizations stay connected. FlowSys makes delivery operations effortless.",
           "We're a company that believes in doing fewer things exceptionally well. Two products, built with care, designed to last."
         ]
       },
@@ -276,7 +276,7 @@
     },
     "primeroute": {
       "hero": {
-        "eyebrow": "Avernsys PrimeRoute",
+        "eyebrow": "Avernsys FlowSys",
         "titleLines": ["Last-mile delivery,", "solved."],
         "description": "Enter your orders. Get optimized delivery routes in seconds. Faster deliveries, lower costs, zero guesswork.",
         "primaryCta": "Start Optimizing"
@@ -306,7 +306,7 @@
         {
           "label": "Speed",
           "title": "Results in seconds, not hours.",
-          "description": "PrimeRoute's optimization engine processes thousands of delivery points in real time. No waiting, no manual route planning. Just instant, optimized routes your drivers can follow immediately."
+          "description": "The FlowSys optimization engine processes thousands of delivery points in real time. No waiting, no manual route planning. Just instant, optimized routes your drivers can follow immediately."
         },
         {
           "label": "Optimization",
@@ -316,12 +316,12 @@
         {
           "label": "Integration",
           "title": "Plugs into what you already use.",
-          "description": "API-first architecture means PrimeRoute works with your existing systems. Connect your order management, warehouse, or e-commerce platform. Up and running in hours, not weeks."
+          "description": "API-first architecture means FlowSys works with your existing systems. Connect your order management, warehouse, or e-commerce platform. Up and running in hours, not weeks."
         }
       ],
       "cta": {
         "titleLines": ["Stop wasting miles.", "Start delivering smarter."],
-        "description": "Whether you deliver 50 orders a day or 5,000, PrimeRoute scales with you. Let's optimize your last mile.",
+        "description": "Whether you deliver 50 orders a day or 5,000, FlowSys scales with you. Let's optimize your last mile.",
         "primaryCta": "Get Started",
         "secondaryCta": "See a Demo"
       }
@@ -345,7 +345,7 @@
         "subjectPlaceholder": "Select a topic",
         "subjectOptions": [
           { "value": "chaptersys", "label": "ChapterSys" },
-          { "value": "primeroute", "label": "PrimeRoute" },
+          { "value": "primeroute", "label": "FlowSys" },
           { "value": "general", "label": "General Inquiry" },
           { "value": "partnership", "label": "Partnership" }
         ],
@@ -363,7 +363,7 @@
       "links": [
         { "key": "home", "label": "Home" },
         { "key": "chaptersys", "label": "ChapterSys" },
-        { "key": "primeroute", "label": "PrimeRoute" },
+        { "key": "primeroute", "label": "FlowSys" },
         { "key": "contact", "label": "Contact" }
       ]
     }
@@ -372,7 +372,7 @@
     "homeOpenGraph": {
       "eyebrow": "Technology that connects people and operations",
       "title": "Avernsys",
-      "description": "Two products, one vision. ChapterSys connects organizations. PrimeRoute solves last-mile delivery.",
+      "description": "Two products, one vision. ChapterSys connects organizations. FlowSys solves last-mile delivery.",
       "tone": "neutral",
       "highlights": [
         {
@@ -381,7 +381,7 @@
           "description": "Private social networking for organizations and alumni."
         },
         {
-          "label": "PrimeRoute",
+          "label": "FlowSys",
           "title": "Smarter delivery routes",
           "description": "Optimize last-mile logistics in seconds."
         },
@@ -405,7 +405,7 @@
         },
         {
           "label": "Product 02",
-          "title": "PrimeRoute",
+          "title": "FlowSys",
           "description": "Route optimization for last-mile operations."
         }
       ]
@@ -434,7 +434,7 @@
       ]
     },
     "primeroute": {
-      "eyebrow": "PrimeRoute",
+      "eyebrow": "FlowSys",
       "title": "Last-mile delivery, solved.",
       "description": "Turn orders into optimized routes in seconds with an API-first engine built for operational speed.",
       "tone": "blue",

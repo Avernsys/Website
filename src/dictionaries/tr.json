@@ -18,7 +18,7 @@
     "languageLabel": "Dil",
     "links": [
       { "key": "chaptersys", "label": "ChapterSys" },
-      { "key": "primeroute", "label": "PrimeRoute" },
+      { "key": "primeroute", "label": "FlowSys" },
       { "key": "about", "label": "Hakkımızda" },
       { "key": "contact", "label": "İletişim" }
     ]
@@ -30,7 +30,7 @@
         "title": "Ürünler",
         "links": [
           { "key": "chaptersys", "label": "ChapterSys" },
-          { "key": "primeroute", "label": "PrimeRoute" }
+          { "key": "primeroute", "label": "FlowSys" }
         ]
       },
       {
@@ -45,7 +45,7 @@
   "seo": {
     "home": {
       "title": "Avernsys | Bağlı Kurumlar ve Rota Optimizasyonu için Yazılım",
-      "description": "Avernsys, kurumları bir araya getiren ve son kilometre operasyonlarını optimize eden B2B yazılımlar geliştirir. ChapterSys ve PrimeRoute bu vizyonun iki ürünüdür.",
+      "description": "Avernsys, kurumları bir araya getiren ve son kilometre operasyonlarını optimize eden B2B yazılımlar geliştirir. ChapterSys ve FlowSys bu vizyonun iki ürünüdür.",
       "keywords": [
         "Avernsys",
         "B2B yazılım şirketi",
@@ -69,12 +69,12 @@
     },
     "contact": {
       "title": "Avernsys ile İletişime Geçin",
-      "description": "ChapterSys ve PrimeRoute için demo talep etmek, sorularınızı iletmek ya da iş birliği konuşmak için Avernsys ile iletişime geçin.",
+      "description": "ChapterSys ve FlowSys için demo talep etmek, sorularınızı iletmek ya da iş birliği konuşmak için Avernsys ile iletişime geçin.",
       "keywords": [
         "Avernsys iletişim",
         "Avernsys demo",
         "ChapterSys demo",
-        "PrimeRoute demo"
+        "FlowSys demo"
       ],
       "socialImageAlt": "Avernsys ana sayfa önizlemesi"
     },
@@ -92,17 +92,17 @@
       "socialImageAlt": "ChapterSys sosyal medya önizlemesi"
     },
     "primeroute": {
-      "title": "PrimeRoute | Son Kilometre Rota Optimizasyon Yazılımı",
-      "description": "PrimeRoute, teslimat ekiplerinin rotalarını saniyeler içinde optimize ederek daha düşük maliyet, daha hızlı teslimat ve daha verimli operasyon sunar.",
+      "title": "FlowSys | Son Kilometre Rota Optimizasyon Yazılımı",
+      "description": "FlowSys, teslimat ekiplerinin rotalarını saniyeler içinde optimize ederek daha düşük maliyet, daha hızlı teslimat ve daha verimli operasyon sunar.",
       "keywords": [
-        "PrimeRoute",
+        "FlowSys",
         "rota optimizasyon yazılımı",
         "son kilometre teslimat yazılımı",
         "dağıtım rota planlama",
         "filo rota optimizasyonu",
         "lojistik optimizasyon yazılımı"
       ],
-      "socialImageAlt": "PrimeRoute sosyal medya önizlemesi"
+      "socialImageAlt": "FlowSys sosyal medya önizlemesi"
     }
   },
   "structuredData": {
@@ -154,7 +154,7 @@
             "hoverGlow": "from-amber-500/[0.03]"
           },
           {
-            "name": "Avernsys PrimeRoute",
+            "name": "Avernsys FlowSys",
             "tagline": "Son kilometreyi daha akıllı yönetin.",
             "description": "Siparişlerinizi saniyeler içinde optimize edilmiş rotalara dönüştürün. Daha az kilometre, daha düşük maliyet, daha düzenli teslimat.",
             "key": "primeroute",
@@ -180,7 +180,7 @@
         "title": "Hikayemiz",
         "paragraphs": [
           "Avernsys, kurumların üyeleriyle daha güçlü bağlar kurması ve şirketlerin son kilometre operasyonlarını daha iyi yönetmesi gerektiğini fark eden iki kişinin girişimiyle doğdu.",
-          "Bu problemleri başkasının çözmesini beklemek yerine, ürünleri kendimiz geliştirdik. ChapterSys topluluk bağlarını yeniden düşünüyor. PrimeRoute ise teslimat operasyonlarını daha hızlı ve daha verimli hale getiriyor.",
+          "Bu problemleri başkasının çözmesini beklemek yerine, ürünleri kendimiz geliştirdik. ChapterSys topluluk bağlarını yeniden düşünüyor. FlowSys ise teslimat operasyonlarını daha hızlı ve daha verimli hale getiriyor.",
           "Az sayıda işe odaklanıp bunu çok iyi yapmak isteyen bir şirketiz. Özenle geliştirilen, uzun ömürlü iki ürün."
         ]
       },
@@ -276,7 +276,7 @@
     },
     "primeroute": {
       "hero": {
-        "eyebrow": "Avernsys PrimeRoute",
+        "eyebrow": "Avernsys FlowSys",
         "titleLines": ["Son kilometreyi", "daha akıllı yönetin."],
         "description": "Siparişlerinizi yükleyin, saniyeler içinde optimize edilmiş teslimat rotalarına dönüşsün. Daha hızlı teslimat, daha düşük maliyet, daha net operasyon.",
         "primaryCta": "Optimizasyona başla"
@@ -306,7 +306,7 @@
         {
           "label": "Hız",
           "title": "Saatler değil, saniyeler içinde sonuç.",
-          "description": "PrimeRoute binlerce teslimat noktasını gerçek zamanlı olarak optimize eder. Manuel planlama yerine sürücülerinizin hemen kullanabileceği rotalar üretir."
+          "description": "FlowSys binlerce teslimat noktasını gerçek zamanlı olarak optimize eder. Manuel planlama yerine sürücülerinizin hemen kullanabileceği rotalar üretir."
         },
         {
           "label": "Optimizasyon",
@@ -316,12 +316,12 @@
         {
           "label": "Entegrasyon",
           "title": "Mevcut sistemlerinize uyum sağlar.",
-          "description": "API öncelikli mimarisi sayesinde PrimeRoute, mevcut sipariş, depo ve e-ticaret altyapınızla hızla entegre olur."
+          "description": "API öncelikli mimarisi sayesinde FlowSys, mevcut sipariş, depo ve e-ticaret altyapınızla hızla entegre olur."
         }
       ],
       "cta": {
         "titleLines": ["Boşa kilometre yapmayın.", "Teslimatı daha akıllı yönetin."],
-        "description": "Günde 50 teslimat da yapsanız 5.000 teslimat da, PrimeRoute sizinle birlikte ölçeklenir. Son kilometreyi birlikte optimize edelim.",
+        "description": "Günde 50 teslimat da yapsanız 5.000 teslimat da, FlowSys sizinle birlikte ölçeklenir. Son kilometreyi birlikte optimize edelim.",
         "primaryCta": "Başlayın",
         "secondaryCta": "Demoyu görün"
       }
@@ -345,7 +345,7 @@
         "subjectPlaceholder": "Bir konu seçin",
         "subjectOptions": [
           { "value": "chaptersys", "label": "ChapterSys" },
-          { "value": "primeroute", "label": "PrimeRoute" },
+          { "value": "primeroute", "label": "FlowSys" },
           { "value": "general", "label": "Genel Bilgi" },
           { "value": "partnership", "label": "İş Birliği" }
         ],
@@ -363,7 +363,7 @@
       "links": [
         { "key": "home", "label": "Ana sayfa" },
         { "key": "chaptersys", "label": "ChapterSys" },
-        { "key": "primeroute", "label": "PrimeRoute" },
+        { "key": "primeroute", "label": "FlowSys" },
         { "key": "contact", "label": "İletişim" }
       ]
     }
@@ -372,7 +372,7 @@
     "homeOpenGraph": {
       "eyebrow": "İnsanları ve operasyonları bir araya getiren teknoloji",
       "title": "Avernsys",
-      "description": "İki ürün, tek vizyon. ChapterSys kurumları birbirine bağlar. PrimeRoute son kilometre teslimatı optimize eder.",
+      "description": "İki ürün, tek vizyon. ChapterSys kurumları birbirine bağlar. FlowSys son kilometre teslimatı optimize eder.",
       "tone": "neutral",
       "highlights": [
         {
@@ -381,7 +381,7 @@
           "description": "Kurumlar ve mezunlar için kapalı sosyal ağ deneyimi."
         },
         {
-          "label": "PrimeRoute",
+          "label": "FlowSys",
           "title": "Daha akıllı teslimat rotaları",
           "description": "Son kilometre lojistiğini saniyeler içinde optimize edin."
         },
@@ -405,7 +405,7 @@
         },
         {
           "label": "Ürün 02",
-          "title": "PrimeRoute",
+          "title": "FlowSys",
           "description": "Son kilometre operasyonları için rota optimizasyonu."
         }
       ]
@@ -434,7 +434,7 @@
       ]
     },
     "primeroute": {
-      "eyebrow": "PrimeRoute",
+      "eyebrow": "FlowSys",
       "title": "Son kilometreyi daha akıllı yönetin.",
       "description": "Operasyon hızı için tasarlanmış API öncelikli bir motorla siparişleri saniyeler içinde optimize edilmiş rotalara dönüştürün.",
       "tone": "blue",
