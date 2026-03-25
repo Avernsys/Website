@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { brandLogo } from "./brand";
 import { founders } from "./founders";
 import { getDictionary } from "./i18n";
 import {
@@ -213,6 +214,10 @@ test("organization and WebSite JSON-LD use stable ids and localized descriptions
 
   assert.equal(englishOrg["@id"], schemaOrganizationId());
   assert.equal(englishOrg.description, siteConfig.description);
+  assert.deepEqual(englishOrg.logo, {
+    "@type": "ImageObject",
+    url: absoluteUrl(brandLogo.src),
+  });
   assert.deepEqual(turkishSite.publisher, { "@id": schemaOrganizationId() });
   assert.equal(turkishSite["@id"], schemaWebSiteId("tr"));
   assert.equal(
@@ -268,6 +273,7 @@ test("founder Person JSON-LD uses localized bios", () => {
 
   assert.equal(person["@id"], `${absoluteUrl("/about")}#doruk-yalcin`);
   assert.deepEqual(person.worksFor, { "@id": schemaOrganizationId() });
+  assert.equal(person.image, absoluteUrl(founders[0].photo.src));
   assert.match(String(person.description), /Amazon/);
 });
 

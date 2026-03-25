@@ -83,11 +83,16 @@ export function AboutPageView({ locale }: AboutPageViewProps) {
 
               return (
                 <AnimatedSection key={founder.name} delay={index * 0.15}>
-                  <div className="rounded-3xl glass p-10">
-                    <div className="w-20 h-20 rounded-full bg-white/[0.06] mb-6 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-white/20">
-                        {founder.name[0]}
-                      </span>
+                  <div className="rounded-3xl glass p-6 sm:p-8 h-full">
+                    <div className="relative mb-6 aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-white/[0.04]">
+                      <img
+                        src={founder.photo.src}
+                        alt={founder.photo.alt}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-cover"
+                        style={{ objectPosition: founder.photo.objectPosition }}
+                      />
                     </div>
                     <h3 className="text-xl font-semibold mb-1">
                       {founder.name}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLink } from "@/components/BrandLink";
 import { getDictionary, getPagePath, type Locale, type PageLinkKey } from "@/lib/i18n";
 
 type FooterProps = {
@@ -14,12 +15,12 @@ export function Footer({ locale }: FooterProps) {
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Brand */}
           <div>
-            <Link
+            <BrandLink
               href={getPagePath(locale, "home")}
-              className="text-[15px] font-semibold tracking-[-0.01em]"
-            >
-              {dictionary.navigation.brand}
-            </Link>
+              name={dictionary.navigation.brand}
+              className="w-fit"
+              imageWrapperClassName="h-10 w-10 rounded-xl"
+            />
             <p className="mt-3 text-sm text-gray-500 max-w-[240px]">
               {dictionary.footer.brandDescription}
             </p>

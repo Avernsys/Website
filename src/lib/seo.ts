@@ -11,6 +11,7 @@ import {
   type Locale,
   type PageKey,
 } from "@/lib/i18n";
+import { brandLogo } from "@/lib/brand";
 import { founders } from "@/lib/founders";
 
 function parseSameAsUrls(raw: string | undefined): string[] {
@@ -206,7 +207,7 @@ export function buildOrganizationJsonLd(locale: Locale) {
     description: dictionary.site.description,
     logo: {
       "@type": "ImageObject",
-      url: absoluteUrl("/icon"),
+      url: absoluteUrl(brandLogo.src),
     },
     ...(siteConfig.sameAs.length > 0 ? { sameAs: siteConfig.sameAs } : {}),
     founder: founders.map((founder) => ({
@@ -303,6 +304,7 @@ export function buildFounderPersonJsonLd(
     name: founder.name,
     jobTitle: profile.role,
     description: profile.bio,
+    image: absoluteUrl(founder.photo.src),
     worksFor: { "@id": schemaOrganizationId() },
   };
 }

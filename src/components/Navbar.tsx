@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { BrandLink } from "@/components/BrandLink";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { getDictionary, getPagePath, type Locale, type PageLinkKey } from "@/lib/i18n";
 
@@ -47,12 +48,10 @@ export function Navbar({ locale }: NavbarProps) {
       >
         <div className="mx-auto max-w-[1200px] px-6 flex items-center justify-between h-[60px]">
           {/* Logo */}
-          <Link
+          <BrandLink
             href={getPagePath(locale, "home")}
-            className="text-[15px] font-semibold tracking-[-0.01em] text-white hover:opacity-80 transition-opacity"
-          >
-            {dictionary.navigation.brand}
-          </Link>
+            name={dictionary.navigation.brand}
+          />
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
