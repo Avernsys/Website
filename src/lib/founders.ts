@@ -5,6 +5,7 @@ type Founder = {
     src: string;
     alt: string;
     objectPosition: string;
+    scale: number;
   };
 };
 
@@ -15,7 +16,8 @@ export const founders = [
     photo: {
       src: "/founders/doruk.jpg",
       alt: "Doruk Yalcin, co-founder of Avernsys",
-      objectPosition: "68% 30%",
+      objectPosition: "70% 22%",
+      scale: 2.35,
     },
   },
   {
@@ -24,7 +26,8 @@ export const founders = [
     photo: {
       src: "/founders/murat.jpeg",
       alt: "Murat Baki, co-founder of Avernsys",
-      objectPosition: "50% 24%",
+      objectPosition: "50% 18%",
+      scale: 2.1,
     },
   },
 ] as const satisfies readonly Founder[];

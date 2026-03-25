@@ -84,15 +84,24 @@ export function AboutPageView({ locale }: AboutPageViewProps) {
               return (
                 <AnimatedSection key={founder.name} delay={index * 0.15}>
                   <div className="rounded-3xl glass p-6 sm:p-8 h-full">
-                    <div className="relative mb-6 aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-white/[0.04]">
-                      <img
-                        src={founder.photo.src}
-                        alt={founder.photo.alt}
-                        loading="lazy"
-                        decoding="async"
-                        className="h-full w-full object-cover"
-                        style={{ objectPosition: founder.photo.objectPosition }}
-                      />
+                    <div className="mb-6 flex justify-center md:justify-start">
+                      <div className="relative flex h-36 w-36 items-center justify-center rounded-full border border-white/[0.14] bg-white/[0.02] p-1.5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] sm:h-40 sm:w-40">
+                        <div className="absolute inset-[5px] rounded-full border border-white/[0.08]" />
+                        <div className="relative h-full w-full overflow-hidden rounded-full bg-white/[0.04]">
+                          <img
+                            src={founder.photo.src}
+                            alt={founder.photo.alt}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-full w-full object-cover"
+                            style={{
+                              objectPosition: founder.photo.objectPosition,
+                              transform: `scale(${founder.photo.scale})`,
+                              transformOrigin: "center",
+                            }}
+                          />
+                        </div>
+                      </div>
                     </div>
                     <h3 className="text-xl font-semibold mb-1">
                       {founder.name}
