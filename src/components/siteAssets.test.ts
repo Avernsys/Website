@@ -19,6 +19,6 @@ test("about page renders the founder portrait assets", () => {
   assert.match(markup, /src="\/founders\/doruk\.jpg"/);
   assert.match(markup, /src="\/founders\/murat\.jpeg"/);
   assert.match(markup, /rounded-full border border-white\/\[0\.14\]/);
-  assert.match(markup, /transform:scale\(2\.35\)/);
+  assert.match(markup, /transform:scale\(1\.95\)/);
   assert.match(markup, /transform:scale\(2\.1\)/);
 });
