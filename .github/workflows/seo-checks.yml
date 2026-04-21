@@ -36,10 +36,10 @@ jobs:
       - name: Wait for app
         run: npx -y wait-on http://127.0.0.1:3000
 
-      - name: Run Lighthouse SEO audits (home, ChapterSys, PrimeRoute)
+      - name: Run Lighthouse SEO audits (home, about, FlowSys)
         run: |
           set -e
-          for spec in "home|http://127.0.0.1:3000" "chaptersys|http://127.0.0.1:3000/chaptersys" "primeroute|http://127.0.0.1:3000/primeroute"; do
+          for spec in "home|http://127.0.0.1:3000" "about|http://127.0.0.1:3000/about" "flowsys|http://127.0.0.1:3000/flowsys"; do
             label="${spec%%|*}"
             url="${spec#*|}"
             out="lighthouse-seo-${label}.json"
