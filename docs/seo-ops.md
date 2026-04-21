@@ -19,7 +19,9 @@ This repo now supports site-wide SEO and analytics wiring in code, but a few ste
 
 - Verify the `avernsys.com` domain property.
 - Submit `https://avernsys.com/sitemap.xml`.
-- Inspect `/`, `/chaptersys`, and `/primeroute` after deploy.
+- Inspect `/`, `/flowsys`, `/about`, and the founder profile pages after deploy.
+- Confirm `/chaptersys` returns `410 Gone` with `X-Robots-Tag: noindex, noarchive`.
+- Confirm `/primeroute` permanently redirects to `/flowsys`.
 - Request indexing for any new or updated page.
 
 ### Bing Webmaster Tools
@@ -90,4 +92,4 @@ This repo now supports site-wide SEO and analytics wiring in code, but a few ste
 
 - The site now exposes `https://avernsys.com/indexnow-key.txt` when `INDEXNOW_KEY` is set.
 - Submit all core pages with `npm run seo:indexnow`.
-- Submit specific pages with `npm run seo:indexnow -- https://avernsys.com/chaptersys`.
+- Submit specific pages with `npm run seo:indexnow -- https://avernsys.com/flowsys`.

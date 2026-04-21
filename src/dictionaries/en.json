@@ -8,7 +8,7 @@
   },
   "site": {
     "name": "Avernsys",
-    "description": "Avernsys builds B2B software for connected organizations and last-mile delivery optimization.",
+    "description": "Avernsys builds FlowSys, last-mile route optimization software for delivery teams.",
     "tagline": "Built for what's next.",
     "copyright": "All rights reserved."
   },
@@ -17,10 +17,18 @@
     "menuLabel": "Toggle menu",
     "languageLabel": "Language",
     "links": [
-      { "key": "chaptersys", "label": "ChapterSys" },
-      { "key": "primeroute", "label": "FlowSys" },
-      { "key": "about", "label": "About" },
-      { "key": "contact", "label": "Contact" }
+      {
+        "key": "primeroute",
+        "label": "FlowSys"
+      },
+      {
+        "key": "about",
+        "label": "About"
+      },
+      {
+        "key": "contact",
+        "label": "Contact"
+      }
     ]
   },
   "footer": {
@@ -29,36 +37,44 @@
       {
         "title": "Products",
         "links": [
-          { "key": "chaptersys", "label": "ChapterSys" },
-          { "key": "primeroute", "label": "FlowSys" }
+          {
+            "key": "primeroute",
+            "label": "FlowSys"
+          }
         ]
       },
       {
         "title": "Company",
         "links": [
-          { "key": "about", "label": "About" },
-          { "key": "contact", "label": "Contact" }
+          {
+            "key": "about",
+            "label": "About"
+          },
+          {
+            "key": "contact",
+            "label": "Contact"
+          }
         ]
       }
     ]
   },
   "seo": {
     "home": {
-      "title": "Avernsys | Software for Connected Organizations and Route Optimization",
-      "description": "Avernsys builds B2B software that connects organizations and optimizes last-mile operations with ChapterSys and FlowSys.",
+      "title": "Avernsys | FlowSys Route Optimization Software",
+      "description": "Avernsys builds FlowSys, last-mile route optimization software that helps delivery teams plan smarter routes, lower costs, and move faster.",
       "keywords": [
         "Avernsys",
-        "B2B software company",
-        "alumni platform software",
-        "member community platform",
+        "FlowSys",
         "last-mile delivery software",
-        "route optimization software"
+        "route optimization software",
+        "delivery routing software",
+        "logistics optimization software"
       ],
       "socialImageAlt": "Avernsys homepage preview"
     },
     "about": {
       "title": "About Avernsys",
-      "description": "Meet the Avernsys founders and learn how we build thoughtful software for member communities and delivery operations.",
+      "description": "Meet the Avernsys founders and learn how we build FlowSys for last-mile delivery operations.",
       "keywords": [
         "about Avernsys",
         "Avernsys founders",
@@ -69,27 +85,15 @@
     },
     "contact": {
       "title": "Contact Avernsys",
-      "description": "Contact Avernsys to request a demo, ask questions about ChapterSys and FlowSys, or discuss a partnership.",
+      "description": "Contact Avernsys to request a FlowSys demo, ask questions about route optimization, or discuss a partnership.",
       "keywords": [
         "contact Avernsys",
         "Avernsys demo",
-        "ChapterSys demo",
-        "FlowSys demo"
+        "FlowSys demo",
+        "route optimization demo",
+        "last-mile delivery software"
       ],
       "socialImageAlt": "Avernsys homepage preview"
-    },
-    "chaptersys": {
-      "title": "ChapterSys | Alumni and Member Community Platform",
-      "description": "ChapterSys is a private community platform for alumni associations and member organizations to discover businesses, build communities, and stay connected.",
-      "keywords": [
-        "ChapterSys",
-        "alumni platform",
-        "member community platform",
-        "association software",
-        "private social platform",
-        "organization community software"
-      ],
-      "socialImageAlt": "ChapterSys social preview"
     },
     "primeroute": {
       "title": "FlowSys | Last-Mile Route Optimization Software",
@@ -108,21 +112,12 @@
   "structuredData": {
     "organizationKnowsAbout": [
       "B2B software",
-      "Member community platforms",
-      "Alumni association software",
       "Last-mile delivery optimization",
-      "Route optimization software"
+      "Route optimization software",
+      "Delivery route planning",
+      "Logistics optimization software"
     ],
     "softwareApplications": {
-      "chaptersys": {
-        "applicationSubCategory": "Member community software",
-        "featureList": [
-          "Private community spaces for organizations and alumni",
-          "Member business discovery on an interactive map",
-          "Direct messaging, group chats, and community channels",
-          "Events and member profiles in one place"
-        ]
-      },
       "primeroute": {
         "applicationSubCategory": "Last-mile delivery software",
         "featureList": [
@@ -137,22 +132,21 @@
     "home": {
       "hero": {
         "eyebrow": "Introducing Avernsys",
-        "titleLines": ["Built for", "what's next."],
-        "description": "We build technology that connects people and moves things forward. Two products. One vision.",
+        "titleLines": [
+          "Built for",
+          "what's next."
+        ],
+        "description": "We build technology that moves delivery operations forward. One product. One focus.",
         "primaryCta": "Explore",
         "secondaryCta": "Get in touch"
       },
       "products": {
         "eyebrow": "Products",
-        "titleLines": ["Two products.", "Infinite possibilities."],
+        "titleLines": [
+          "One product.",
+          "Built with focus."
+        ],
         "items": [
-          {
-            "name": "ChapterSys",
-            "tagline": "Your organization, connected.",
-            "description": "A private social platform where alumni and members discover businesses, build communities, and stay connected - all in one place.",
-            "key": "chaptersys",
-            "hoverGlow": "from-amber-500/[0.03]"
-          },
           {
             "name": "Avernsys FlowSys",
             "tagline": "Last-mile delivery, solved.",
@@ -173,15 +167,18 @@
     "about": {
       "hero": {
         "eyebrow": "About",
-        "titleLines": ["Two founders.", "One mission."],
+        "titleLines": [
+          "Two founders.",
+          "One mission."
+        ],
         "description": "Avernsys was built on a simple belief: technology should connect people and make things work better. That's what we do."
       },
       "story": {
         "title": "Our story",
         "paragraphs": [
-          "Avernsys started with two people who saw gaps in how organizations connect their members and how businesses handle last-mile logistics.",
-          "Instead of waiting for someone else to solve these problems, we built the solutions ourselves. ChapterSys reimagines how alumni networks and organizations stay connected. FlowSys makes delivery operations effortless.",
-          "We're a company that believes in doing fewer things exceptionally well. Two products, built with care, designed to last."
+          "Avernsys started with two people who saw how much time businesses lose to inefficient last-mile logistics.",
+          "Instead of waiting for someone else to solve it, we built FlowSys: route optimization software that turns delivery orders into efficient routes in seconds.",
+          "We're a company that believes in doing fewer things exceptionally well. FlowSys is built with care, designed to last, and focused on one operational problem that matters."
         ]
       },
       "founders": {
@@ -217,73 +214,22 @@
         ]
       }
     },
-    "chaptersys": {
-      "hero": {
-        "eyebrow": "ChapterSys",
-        "titleLines": ["Your organization,", "connected."],
-        "description": "A private social platform built for organizations and their alumni. Discover businesses, form communities, and stay connected - all in one space.",
-        "primaryCta": "Request a Demo"
-      },
-      "steps": {
-        "eyebrow": "How it works",
-        "titleLines": ["Three steps.", "That's it."],
-        "items": [
-          {
-            "step": "01",
-            "title": "Set up your chapter",
-            "description": "Create your organization's private space. Customize branding, set verification rules, and invite your administrators."
-          },
-          {
-            "step": "02",
-            "title": "Grow your network",
-            "description": "Invite members by email, link, or integration. Verified alumni join, build profiles, and list their businesses."
-          },
-          {
-            "step": "03",
-            "title": "Watch it thrive",
-            "description": "Members discover businesses, form groups, plan events, and stay connected - all organically, all in one place."
-          }
-        ]
-      },
-      "features": [
-        {
-          "label": "Discovery",
-          "title": "\"Find a\" - your alumni network on a map.",
-          "description": "Members list their businesses and services on an interactive map. Need a lawyer? A photographer? A caterer? Search, discover, and support fellow alumni. Only verified members appear."
-        },
-        {
-          "label": "Community",
-          "title": "Real conversations, real connections.",
-          "description": "Direct messaging, group chats, and community channels built for organizations. No noise, no ads - just the people who matter. Form interest groups, plan reunions, or simply catch up."
-        },
-        {
-          "label": "Events",
-          "title": "From campus to calendar.",
-          "description": "Create, share, and manage events effortlessly. Reunions, networking dinners, workshops - your organization's events live where your community already is."
-        },
-        {
-          "label": "Business Profiles",
-          "title": "Showcase what you've built.",
-          "description": "Every member gets a profile to highlight their professional journey and businesses. Make your work visible to a community that wants to support you."
-        }
-      ],
-      "cta": {
-        "titleLines": ["Ready to bring your", "organization together?"],
-        "description": "ChapterSys is built for organizations that value their community. Let's talk about how it can work for yours.",
-        "primaryCta": "Get Started",
-        "secondaryCta": "Contact Sales"
-      }
-    },
     "primeroute": {
       "hero": {
         "eyebrow": "Avernsys FlowSys",
-        "titleLines": ["Last-mile delivery,", "solved."],
+        "titleLines": [
+          "Last-mile delivery,",
+          "solved."
+        ],
         "description": "Enter your orders. Get optimized delivery routes in seconds. Faster deliveries, lower costs, zero guesswork.",
         "primaryCta": "Start Optimizing"
       },
       "steps": {
         "eyebrow": "How it works",
-        "titleLines": ["Three steps.", "That's it."],
+        "titleLines": [
+          "Three steps.",
+          "That's it."
+        ],
         "items": [
           {
             "step": "01",
@@ -320,7 +266,10 @@
         }
       ],
       "cta": {
-        "titleLines": ["Stop wasting miles.", "Start delivering smarter."],
+        "titleLines": [
+          "Stop wasting miles.",
+          "Start delivering smarter."
+        ],
         "description": "Whether you deliver 50 orders a day or 5,000, FlowSys scales with you. Let's optimize your last mile.",
         "primaryCta": "Get Started",
         "secondaryCta": "See a Demo"
@@ -329,7 +278,9 @@
     "contact": {
       "hero": {
         "eyebrow": "Contact",
-        "titleLines": ["Let's talk."],
+        "titleLines": [
+          "Let's talk."
+        ],
         "description": "Have a question, want a demo, or just want to say hello? We'd love to hear from you."
       },
       "success": {
@@ -344,10 +295,18 @@
         "subjectLabel": "Subject",
         "subjectPlaceholder": "Select a topic",
         "subjectOptions": [
-          { "value": "chaptersys", "label": "ChapterSys" },
-          { "value": "primeroute", "label": "FlowSys" },
-          { "value": "general", "label": "General Inquiry" },
-          { "value": "partnership", "label": "Partnership" }
+          {
+            "value": "primeroute",
+            "label": "FlowSys"
+          },
+          {
+            "value": "general",
+            "label": "General Inquiry"
+          },
+          {
+            "value": "partnership",
+            "label": "Partnership"
+          }
         ],
         "messageLabel": "Message",
         "messagePlaceholder": "Tell us what you're looking for...",
@@ -361,75 +320,60 @@
       "secondaryCta": "Contact",
       "navigationLabel": "Popular pages",
       "links": [
-        { "key": "home", "label": "Home" },
-        { "key": "chaptersys", "label": "ChapterSys" },
-        { "key": "primeroute", "label": "FlowSys" },
-        { "key": "contact", "label": "Contact" }
+        {
+          "key": "home",
+          "label": "Home"
+        },
+        {
+          "key": "primeroute",
+          "label": "FlowSys"
+        },
+        {
+          "key": "contact",
+          "label": "Contact"
+        }
       ]
     }
   },
   "shareImages": {
     "homeOpenGraph": {
-      "eyebrow": "Technology that connects people and operations",
+      "eyebrow": "Last-mile route optimization",
       "title": "Avernsys",
-      "description": "Two products, one vision. ChapterSys connects organizations. FlowSys solves last-mile delivery.",
+      "description": "One product, one focus. FlowSys optimizes delivery routes for faster, leaner operations.",
       "tone": "neutral",
       "highlights": [
         {
-          "label": "ChapterSys",
-          "title": "Connected communities",
-          "description": "Private social networking for organizations and alumni."
+          "label": "FlowSys",
+          "title": "Smarter routes",
+          "description": "Optimize last-mile delivery plans in seconds."
         },
         {
-          "label": "FlowSys",
-          "title": "Smarter delivery routes",
-          "description": "Optimize last-mile logistics in seconds."
+          "label": "Operations",
+          "title": "Less waste",
+          "description": "Reduce manual planning, miles, and delivery drag."
         },
         {
           "label": "Avernsys",
           "title": "Built for what's next",
-          "description": "Modern product design for practical operations."
+          "description": "Focused product design for practical logistics teams."
         }
       ]
     },
     "homeTwitter": {
       "eyebrow": "Avernsys",
       "title": "Built for what's next.",
-      "description": "A product company focused on connected organizations and route optimization.",
+      "description": "A product company focused on last-mile route optimization.",
       "tone": "amber",
       "highlights": [
         {
-          "label": "Product 01",
-          "title": "ChapterSys",
-          "description": "Community software for alumni and member networks."
+          "label": "FlowSys",
+          "title": "Route optimization",
+          "description": "Last-mile planning for delivery teams."
         },
         {
-          "label": "Product 02",
-          "title": "FlowSys",
-          "description": "Route optimization for last-mile operations."
-        }
-      ]
-    },
-    "chaptersys": {
-      "eyebrow": "ChapterSys",
-      "title": "Your organization, connected.",
-      "description": "Private community software for alumni networks, member discovery, and verified business listings.",
-      "tone": "amber",
-      "highlights": [
-        {
-          "label": "Private spaces",
-          "title": "Members only",
-          "description": "Keep your chapter or organization focused and verified."
-        },
-        {
-          "label": "Discovery",
-          "title": "Find alumni businesses",
-          "description": "Support trusted people and services inside your network."
-        },
-        {
-          "label": "Community",
-          "title": "Stay connected",
-          "description": "Groups, events, and messaging in one place."
+          "label": "Avernsys",
+          "title": "Focused software",
+          "description": "One product, built carefully."
         }
       ]
     },

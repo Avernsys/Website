@@ -1,14 +1,16 @@
 import { StructuredData } from "@/components/StructuredData";
 import { AboutPageView } from "@/components/pages/AboutPageView";
-import { ChapterSysPageView } from "@/components/pages/ChapterSysPageView";
 import { ContactPageView } from "@/components/pages/ContactPageView";
+import { FounderProfilePageView } from "@/components/pages/FounderProfilePageView";
 import { HomePageView } from "@/components/pages/HomePageView";
 import { PrimeRoutePageView } from "@/components/pages/PrimeRoutePageView";
+import type { FounderProfile } from "@/lib/founders";
 import { getPageLabel, getPagePath, type Locale } from "@/lib/i18n";
 import {
   buildAllFoundersPersonJsonLd,
   buildBaseStructuredData,
   buildBreadcrumbJsonLd,
+  buildFounderProfilePageJsonLd,
   buildHomeItemListJsonLd,
   buildSoftwareApplicationJsonLd,
   buildWebPageJsonLd,
@@ -57,6 +59,31 @@ export function renderLocalizedAboutPage(locale: Locale) {
   );
 }
 
+export function renderLocalizedFounderProfilePage(
+  locale: Locale,
+  founder: FounderProfile,
+) {
+  const homeLabel = getPageLabel(locale, "home");
+  const aboutLabel = getPageLabel(locale, "about");
+
+  return (
+    <>
+      <StructuredData
+        data={[
+          ...buildBaseStructuredData(locale),
+          buildFounderProfilePageJsonLd(locale, founder),
+          buildBreadcrumbJsonLd(locale, [
+            { name: homeLabel, path: "/" },
+            { name: aboutLabel, path: "/about" },
+            { name: founder.name, path: `/about/${founder.slug}` },
+          ]),
+        ]}
+      />
+      <FounderProfilePageView locale={locale} founder={founder} />
+    </>
+  );
+}
+
 export function renderLocalizedContactPage(locale: Locale) {
   const homeLabel = getPageLabel(locale, "home");
   const currentLabel = getPageLabel(locale, "contact");
@@ -74,33 +101,6 @@ export function renderLocalizedContactPage(locale: Locale) {
         ]}
       />
       <ContactPageView locale={locale} />
-    </>
-  );
-}
-
-export function renderLocalizedChapterSysPage(locale: Locale) {
-  const homeLabel = getPageLabel(locale, "home");
-  const currentLabel = getPageLabel(locale, "chaptersys");
-  const applicationId = schemaSoftwareApplicationId(
-    getPagePath(locale, "chaptersys"),
-  );
-
-  return (
-    <>
-      <StructuredData
-        data={[
-          ...buildBaseStructuredData(locale),
-          buildWebPageJsonLd(locale, "chaptersys", {
-            mainEntityId: applicationId,
-          }),
-          buildSoftwareApplicationJsonLd(locale, "chaptersys"),
-          buildBreadcrumbJsonLd(locale, [
-            { name: homeLabel, path: "/" },
-            { name: currentLabel, path: "/chaptersys" },
-          ]),
-        ]}
-      />
-      <ChapterSysPageView locale={locale} />
     </>
   );
 }

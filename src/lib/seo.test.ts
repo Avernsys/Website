@@ -7,6 +7,8 @@ import {
   absoluteUrl,
   buildBreadcrumbJsonLd,
   buildFounderPersonJsonLd,
+  buildFounderProfileMetadata,
+  buildFounderProfilePageJsonLd,
   buildHomeItemListJsonLd,
   buildOrganizationJsonLd,
   buildPageMetadata,
@@ -17,6 +19,7 @@ import {
   getIndexablePages,
   getPageSeo,
   resolvePageTitle,
+  schemaFounderPersonId,
   schemaOrganizationId,
   schemaSoftwareApplicationId,
   schemaWebSiteId,
@@ -82,7 +85,7 @@ function getTwitterImageUrl(pageMetadata: ReturnType<typeof buildPageMetadata>) 
 }
 
 test("builds absolute URLs from relative paths", () => {
-  assert.equal(absoluteUrl("/chaptersys"), "https://avernsys.com/chaptersys");
+  assert.equal(absoluteUrl("/flowsys"), "https://avernsys.com/flowsys");
   assert.equal(absoluteUrl("contact"), "https://avernsys.com/contact");
 });
 
@@ -93,41 +96,41 @@ test("resolvePageTitle appends brand only when not already in title", () => {
   );
   assert.equal(resolvePageTitle(getPageSeo("en", "about")), "About Avernsys");
   assert.equal(
-    resolvePageTitle(getPageSeo("en", "chaptersys")),
-    "ChapterSys | Alumni and Member Community Platform | Avernsys",
+    resolvePageTitle(getPageSeo("en", "primeroute")),
+    "FlowSys | Last-Mile Route Optimization Software | Avernsys",
   );
 });
 
 test("builds English route metadata with localized alternates", () => {
-  const metadata = buildPageMetadata("en", "chaptersys");
+  const metadata = buildPageMetadata("en", "primeroute");
 
   assert.equal(
     getMetadataAbsoluteTitle(metadata),
-    "ChapterSys | Alumni and Member Community Platform | Avernsys",
+    "FlowSys | Last-Mile Route Optimization Software | Avernsys",
   );
   assert.equal(
     metadata.alternates?.canonical,
-    "https://avernsys.com/chaptersys",
+    "https://avernsys.com/flowsys",
   );
   assert.equal(
     metadata.alternates?.languages?.tr,
-    "https://avernsys.com/tr/chaptersys",
+    "https://avernsys.com/tr/flowsys",
   );
   assert.equal(
     metadata.alternates?.languages?.de,
-    "https://avernsys.com/de/chaptersys",
+    "https://avernsys.com/de/flowsys",
   );
   assert.equal(
     metadata.alternates?.languages?.nl,
-    "https://avernsys.com/nl/chaptersys",
+    "https://avernsys.com/nl/flowsys",
   );
   assert.equal(
     getOpenGraphImageUrl(metadata),
-    "https://avernsys.com/chaptersys/opengraph-image",
+    "https://avernsys.com/flowsys/opengraph-image",
   );
   assert.equal(
     getTwitterImageUrl(metadata),
-    "https://avernsys.com/chaptersys/twitter-image",
+    "https://avernsys.com/flowsys/twitter-image",
   );
 });
 
@@ -189,10 +192,12 @@ test("builds breadcrumb schema with locale-aware URLs", () => {
   );
 });
 
-test("organization JSON-LD omits sameAs when empty", () => {
+test("organization JSON-LD includes the company LinkedIn profile", () => {
   const org = buildOrganizationJsonLd("en") as Record<string, unknown>;
 
-  assert.equal("sameAs" in org, false);
+  assert.deepEqual(org.sameAs, [
+    "https://www.linkedin.com/company/avernsys/",
+  ]);
 });
 
 test("organization JSON-LD lists all supported languages in the contact point", () => {
@@ -227,14 +232,14 @@ test("organization and WebSite JSON-LD use stable ids and localized descriptions
 });
 
 test("WebPage JSON-LD references localized WebSite and main entity ids", () => {
-  const page = buildWebPageJsonLd("tr", "chaptersys", {
-    mainEntityId: schemaSoftwareApplicationId("/tr/chaptersys"),
+  const page = buildWebPageJsonLd("tr", "primeroute", {
+    mainEntityId: schemaSoftwareApplicationId("/tr/flowsys"),
   }) as Record<string, unknown>;
 
   assert.deepEqual(page.isPartOf, { "@id": schemaWebSiteId("tr") });
   assert.deepEqual(page.about, { "@id": schemaOrganizationId() });
   assert.deepEqual(page.mainEntity, {
-    "@id": schemaSoftwareApplicationId("/tr/chaptersys"),
+    "@id": schemaSoftwareApplicationId("/tr/flowsys"),
   });
 });
 
@@ -255,14 +260,8 @@ test("home ItemList JSON-LD lists localized product URLs", () => {
     itemListElement: Array<{ item?: string }>;
   };
 
-  assert.equal(
-    list.itemListElement[0]?.item,
-    absoluteUrl("/tr/chaptersys"),
-  );
-  assert.equal(
-    list.itemListElement[1]?.item,
-    absoluteUrl("/tr/flowsys"),
-  );
+  assert.equal(list.itemListElement.length, 1);
+  assert.equal(list.itemListElement[0]?.item, absoluteUrl("/tr/flowsys"));
 });
 
 test("founder Person JSON-LD uses localized bios", () => {
@@ -271,10 +270,49 @@ test("founder Person JSON-LD uses localized bios", () => {
     unknown
   >;
 
-  assert.equal(person["@id"], `${absoluteUrl("/about")}#doruk-yalcin`);
+  assert.equal(person["@id"], schemaFounderPersonId(founders[0]));
   assert.deepEqual(person.worksFor, { "@id": schemaOrganizationId() });
   assert.equal(person.image, absoluteUrl(founders[0].photo.src));
+  assert.deepEqual(person.sameAs, [
+    "https://www.linkedin.com/in/doruk-yalcin/",
+  ]);
   assert.match(String(person.description), /Amazon/);
+});
+
+test("founder profile metadata uses portrait images and localized alternates", () => {
+  const metadata = buildFounderProfileMetadata("tr", founders[0]);
+
+  assert.equal(
+    getMetadataAbsoluteTitle(metadata),
+    "Doruk Yalcin | Avernsys Co-Founder",
+  );
+  assert.equal(
+    metadata.alternates?.canonical,
+    "https://avernsys.com/tr/about/doruk-yalcin",
+  );
+  assert.equal(
+    metadata.alternates?.languages?.en,
+    "https://avernsys.com/about/doruk-yalcin",
+  );
+  assert.equal(
+    getOpenGraphImageUrl(metadata),
+    "https://avernsys.com/founders/doruk-yalcin-avernsys-co-founder.jpg",
+  );
+});
+
+test("founder profile JSON-LD marks the founder as the main entity", () => {
+  const profilePage = buildFounderProfilePageJsonLd("en", founders[1]) as {
+    mainEntity?: Record<string, unknown>;
+  };
+
+  assert.equal(
+    profilePage.mainEntity?.["@id"],
+    schemaFounderPersonId(founders[1]),
+  );
+  assert.equal(profilePage.mainEntity?.name, "Murat Baki");
+  assert.deepEqual(profilePage.mainEntity?.sameAs, [
+    "https://www.linkedin.com/in/murat-baki-mb/",
+  ]);
 });
 
 test("JSON-LD builders round-trip through JSON.stringify", () => {
@@ -283,8 +321,9 @@ test("JSON-LD builders round-trip through JSON.stringify", () => {
     buildWebSiteJsonLd("en"),
     buildWebPageJsonLd("en", "contact"),
     buildHomeItemListJsonLd("tr"),
-    buildSoftwareApplicationJsonLd("en", "chaptersys"),
+    buildSoftwareApplicationJsonLd("en", "primeroute"),
     buildFounderPersonJsonLd("en", founders[1]),
+    buildFounderProfilePageJsonLd("en", founders[0]),
     buildBreadcrumbJsonLd("en", [{ name: "Home", path: "/" }]),
   ];
 
@@ -308,7 +347,7 @@ test("builds verification metadata from env values", () => {
 test("returns all indexable pages across all locales", () => {
   const pages = getIndexablePages();
 
-  assert.equal(pages.length, 20);
+  assert.equal(pages.length, 24);
   assert.ok(
     pages.some((page) => page.locale === "en" && page.path === "/contact"),
   );
@@ -320,5 +359,16 @@ test("returns all indexable pages across all locales", () => {
   );
   assert.ok(
     pages.some((page) => page.locale === "nl" && page.path === "/nl/contact"),
+  );
+  assert.equal(
+    pages.some((page) => page.path.includes("chaptersys")),
+    false,
+  );
+  assert.ok(
+    pages.some(
+      (page) =>
+        page.path === "/about/doruk-yalcin" &&
+        page.images?.includes(absoluteUrl(founders[0].photo.src)),
+    ),
   );
 });

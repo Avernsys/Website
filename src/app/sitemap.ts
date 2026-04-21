@@ -9,5 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       : {}),
     changeFrequency: page.path === "/" ? "weekly" : "monthly",
     priority: page.path === "/" ? 1 : 0.8,
+    ...(page.images && page.images.length > 0 ? { images: page.images } : {}),
   }));
 }

@@ -2,7 +2,6 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { renderToStaticMarkup } from "react-dom/server";
 import { AboutPageView } from "./AboutPageView";
-import { ChapterSysPageView } from "./ChapterSysPageView";
 import { ContactPageView } from "./ContactPageView";
 import { NotFoundPageView } from "./NotFoundPageView";
 import { PrimeRoutePageView } from "./PrimeRoutePageView";
@@ -18,7 +17,6 @@ test("getPageHeroSectionClassName keeps the shared navbar offset and extra class
 test("non-home page heroes include spacing below the fixed navbar", () => {
   const pages = [
     renderToStaticMarkup(<AboutPageView locale="en" />),
-    renderToStaticMarkup(<ChapterSysPageView locale="en" />),
     renderToStaticMarkup(<PrimeRoutePageView locale="en" />),
     renderToStaticMarkup(<ContactPageView locale="en" />),
     renderToStaticMarkup(<NotFoundPageView locale="en" />),
@@ -31,4 +29,3 @@ test("non-home page heroes include spacing below the fixed navbar", () => {
     );
   }
 });
-

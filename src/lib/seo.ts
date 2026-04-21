@@ -12,7 +12,7 @@ import {
   type PageKey,
 } from "@/lib/i18n";
 import { brandLogo } from "@/lib/brand";
-import { founders } from "@/lib/founders";
+import { founders, type FounderProfile } from "@/lib/founders";
 
 function parseSameAsUrls(raw: string | undefined): string[] {
   if (!raw?.trim()) {
@@ -33,7 +33,12 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
     "https://avernsys.com",
   description: getDictionary(defaultLocale).site.description,
-  sameAs: parseSameAsUrls(process.env.NEXT_PUBLIC_ORGANIZATION_SAME_AS),
+  sameAs: Array.from(
+    new Set([
+      "https://www.linkedin.com/company/avernsys/",
+      ...parseSameAsUrls(process.env.NEXT_PUBLIC_ORGANIZATION_SAME_AS),
+    ]),
+  ),
 };
 
 type PageSeo = {
@@ -43,6 +48,7 @@ type PageSeo = {
   keywords: string[];
   lastModified?: string;
   socialImageAlt: string;
+  images?: string[];
 };
 
 function buildAlternateLanguageMetadata(path: string) {
@@ -55,11 +61,10 @@ function buildAlternateLanguageMetadata(path: string) {
 }
 
 const lastModifiedByPage: Record<PageKey, string> = {
-  home: "2025-03-21",
-  about: "2025-03-21",
-  contact: "2025-03-21",
-  chaptersys: "2025-03-21",
-  primeroute: "2025-03-21",
+  home: "2026-04-21",
+  about: "2026-04-21",
+  contact: "2026-04-21",
+  primeroute: "2026-04-21",
 };
 
 export type Breadcrumb = {
@@ -88,15 +93,23 @@ export function schemaSoftwareApplicationId(path: string) {
   return `${absoluteUrl(path)}#softwareapplication`;
 }
 
-function founderPersonId(name: string) {
-  const slug = name.toLowerCase().replace(/\s+/g, "-");
-  return `${absoluteUrl("/about")}#${slug}`;
+export function getFounderProfilePath(
+  locale: Locale,
+  founder: FounderProfile,
+) {
+  return localizePath(locale, `/about/${founder.slug}`);
+}
+
+export function schemaFounderPersonId(founder: FounderProfile) {
+  return `${absoluteUrl(`/about/${founder.slug}`)}#person`;
+}
+
+function schemaFounderProfilePageId(locale: Locale, founder: FounderProfile) {
+  return `${absoluteUrl(getFounderProfilePath(locale, founder))}#profilepage`;
 }
 
 function getOpenGraphImage(locale: Locale, pageKey: PageKey) {
   switch (pageKey) {
-    case "chaptersys":
-      return absoluteUrl(localizePath(locale, "/chaptersys/opengraph-image"));
     case "primeroute":
       return absoluteUrl(localizePath(locale, "/flowsys/opengraph-image"));
     default:
@@ -106,13 +119,19 @@ function getOpenGraphImage(locale: Locale, pageKey: PageKey) {
 
 function getTwitterImage(locale: Locale, pageKey: PageKey) {
   switch (pageKey) {
-    case "chaptersys":
-      return absoluteUrl(localizePath(locale, "/chaptersys/twitter-image"));
     case "primeroute":
       return absoluteUrl(localizePath(locale, "/flowsys/twitter-image"));
     default:
       return absoluteUrl(localizePath(locale, "/twitter-image"));
   }
+}
+
+function getPageImages(pageKey: PageKey) {
+  if (pageKey !== "about") {
+    return [];
+  }
+
+  return founders.map((founder) => absoluteUrl(founder.photo.src));
 }
 
 export function getPageSeo(locale: Locale, pageKey: PageKey): PageSeo {
@@ -126,6 +145,31 @@ export function getPageSeo(locale: Locale, pageKey: PageKey): PageSeo {
     keywords: [...page.keywords],
     lastModified: lastModifiedByPage[pageKey],
     socialImageAlt: page.socialImageAlt,
+    images: getPageImages(pageKey),
+  };
+}
+
+export function getFounderProfileSeo(
+  locale: Locale,
+  founder: FounderProfile,
+): PageSeo {
+  const dictionary = getDictionary(locale);
+  const profile = dictionary.pages.about.founders.people[founder.key];
+
+  return {
+    title: `${founder.name} | Avernsys Co-Founder`,
+    description: `${founder.name} is a ${profile.role.toLowerCase()} of Avernsys. ${profile.bio}`,
+    path: getFounderProfilePath(locale, founder),
+    keywords: [
+      founder.name,
+      `${founder.name} Avernsys`,
+      `${founder.name} co-founder`,
+      "Avernsys founder",
+      "FlowSys founder",
+    ],
+    lastModified: "2026-04-21",
+    socialImageAlt: founder.photo.alt,
+    images: [absoluteUrl(founder.photo.src)],
   };
 }
 
@@ -195,6 +239,58 @@ export function buildPageMetadata(
   };
 }
 
+export function buildFounderProfileMetadata(
+  locale: Locale,
+  founder: FounderProfile,
+): Metadata {
+  const dictionary = getDictionary(locale);
+  const page = getFounderProfileSeo(locale, founder);
+  const canonical = absoluteUrl(page.path);
+  const profileBasePath = `/about/${founder.slug}`;
+  const profileImage = absoluteUrl(founder.photo.src);
+
+  return {
+    title: { absolute: page.title },
+    description: page.description,
+    keywords: page.keywords,
+    alternates: {
+      canonical,
+      languages: buildAlternateLanguageMetadata(profileBasePath),
+    },
+    openGraph: {
+      type: "profile",
+      url: canonical,
+      siteName: siteConfig.name,
+      locale: dictionary.language.ogLocale,
+      title: page.title,
+      description: page.description,
+      images: [
+        {
+          url: profileImage,
+          alt: founder.photo.alt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.title,
+      description: page.description,
+      images: [profileImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+  };
+}
+
 export function buildOrganizationJsonLd(locale: Locale) {
   const dictionary = getDictionary(locale);
 
@@ -211,7 +307,7 @@ export function buildOrganizationJsonLd(locale: Locale) {
     },
     ...(siteConfig.sameAs.length > 0 ? { sameAs: siteConfig.sameAs } : {}),
     founder: founders.map((founder) => ({
-      "@id": founderPersonId(founder.name),
+      "@id": schemaFounderPersonId(founder),
     })),
     knowsAbout: [...dictionary.structuredData.organizationKnowsAbout],
     contactPoint: [
@@ -292,25 +388,48 @@ export function buildBaseStructuredData(locale: Locale) {
 
 export function buildFounderPersonJsonLd(
   locale: Locale,
-  founder: (typeof founders)[number],
+  founder: FounderProfile,
 ) {
+  return {
+    "@context": "https://schema.org",
+    ...buildFounderPersonNode(locale, founder),
+  };
+}
+
+function buildFounderPersonNode(locale: Locale, founder: FounderProfile) {
   const dictionary = getDictionary(locale);
   const profile = dictionary.pages.about.founders.people[founder.key];
 
   return {
-    "@context": "https://schema.org",
     "@type": "Person",
-    "@id": founderPersonId(founder.name),
+    "@id": schemaFounderPersonId(founder),
     name: founder.name,
+    url: absoluteUrl(getFounderProfilePath(defaultLocale, founder)),
     jobTitle: profile.role,
     description: profile.bio,
     image: absoluteUrl(founder.photo.src),
+    sameAs: [...founder.sameAs],
     worksFor: { "@id": schemaOrganizationId() },
   };
 }
 
 export function buildAllFoundersPersonJsonLd(locale: Locale) {
   return founders.map((founder) => buildFounderPersonJsonLd(locale, founder));
+}
+
+export function buildFounderProfilePageJsonLd(
+  locale: Locale,
+  founder: FounderProfile,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": schemaFounderProfilePageId(locale, founder),
+    url: absoluteUrl(getFounderProfilePath(locale, founder)),
+    name: `${founder.name} | ${siteConfig.name}`,
+    inLanguage: getDictionary(locale).language.htmlLang,
+    mainEntity: buildFounderPersonNode(locale, founder),
+  };
 }
 
 export function buildBreadcrumbJsonLd(locale: Locale, items: Breadcrumb[]) {
@@ -328,19 +447,18 @@ export function buildBreadcrumbJsonLd(locale: Locale, items: Breadcrumb[]) {
 
 export function buildSoftwareApplicationJsonLd(
   locale: Locale,
-  pageKey: Extract<PageKey, "chaptersys" | "primeroute">,
+  pageKey: Extract<PageKey, "primeroute">,
 ) {
   const dictionary = getDictionary(locale);
   const page = getPageSeo(locale, pageKey);
-  const category =
-    pageKey === "chaptersys" ? "BusinessApplication" : "LogisticsApplication";
+  const category = "LogisticsApplication";
   const structuredData = dictionary.structuredData.softwareApplications[pageKey];
 
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": schemaSoftwareApplicationId(page.path),
-    name: pageKey === "chaptersys" ? "ChapterSys" : "FlowSys",
+    name: "FlowSys",
     applicationCategory: category,
     applicationSubCategory: structuredData.applicationSubCategory,
     operatingSystem: "Web",
@@ -368,7 +486,7 @@ export function buildVerificationMetadata(
 }
 
 export function getIndexablePages() {
-  return locales.flatMap((locale) =>
+  const pages = locales.flatMap((locale) =>
     pageKeys.map((pageKey) => {
       const page = getPageSeo(locale, pageKey);
       return {
@@ -379,4 +497,19 @@ export function getIndexablePages() {
       };
     }),
   );
+
+  const founderProfilePages = locales.flatMap((locale) =>
+    founders.map((founder) => {
+      const page = getFounderProfileSeo(locale, founder);
+      return {
+        ...page,
+        locale,
+        pageKey: "founderProfile" as const,
+        founderKey: founder.key,
+        url: absoluteUrl(page.path),
+      };
+    }),
+  );
+
+  return [...pages, ...founderProfilePages];
 }

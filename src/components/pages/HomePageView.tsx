@@ -15,6 +15,10 @@ type HomePageViewProps = {
 export function HomePageView({ locale }: HomePageViewProps) {
   const dictionary = getDictionary(locale);
   const page = dictionary.pages.home;
+  const productGridClassName =
+    page.products.items.length === 1
+      ? "grid max-w-[680px] mx-auto gap-6"
+      : "grid md:grid-cols-2 gap-6";
 
   return (
     <>
@@ -93,7 +97,7 @@ export function HomePageView({ locale }: HomePageViewProps) {
             </h2>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className={productGridClassName}>
             {page.products.items.map((product, index) => (
               <AnimatedSection key={product.name} delay={index * 0.15}>
                 <Link

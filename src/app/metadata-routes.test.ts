@@ -15,7 +15,7 @@ test("publishes a crawlable robots policy with sitemap", () => {
 test("publishes sitemap entries for every localized indexable page", () => {
   const entries = sitemap();
 
-  assert.equal(entries.length, 20);
+  assert.equal(entries.length, 24);
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/"));
   assert.ok(
     entries.some((entry) => entry.url === "https://avernsys.com/flowsys"),
@@ -31,6 +31,19 @@ test("publishes sitemap entries for every localized indexable page", () => {
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/nl"));
   assert.ok(
     entries.some((entry) => entry.url === "https://avernsys.com/nl/flowsys"),
+  );
+  assert.ok(
+    entries.some(
+      (entry) =>
+        entry.url === "https://avernsys.com/about/doruk-yalcin" &&
+        entry.images?.includes(
+          "https://avernsys.com/founders/doruk-yalcin-avernsys-co-founder.jpg",
+        ),
+    ),
+  );
+  assert.equal(
+    entries.some((entry) => entry.url.includes("chaptersys")),
+    false,
   );
   assert.ok(
     entries.every((entry) => entry.lastModified instanceof Date),

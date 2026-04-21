@@ -181,7 +181,14 @@ export function ShareImage({
         }}
       />
 
-      <div style={{ display: "flex", alignItems: "center", gap: "16px", zIndex: 1 }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "16px",
+          position: "relative",
+        }}
+      >
         <BrandMark tone={tone} size={76} />
         <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
           <div
@@ -197,9 +204,8 @@ export function ShareImage({
           </div>
           <div
             style={{
-              display: "inline-flex",
+              display: "flex",
               alignItems: "center",
-              width: "fit-content",
               padding: "8px 12px",
               borderRadius: "999px",
               background: colors.chipBg,
@@ -214,7 +220,14 @@ export function ShareImage({
         </div>
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "24px", zIndex: 1 }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "24px",
+          position: "relative",
+        }}
+      >
         <h1
           style={{
             fontSize: "72px",
@@ -244,22 +257,21 @@ export function ShareImage({
       {highlights.length > 0 ? (
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: `repeat(${Math.min(highlights.length, 3)}, 1fr)`,
+            display: "flex",
             gap: "16px",
-            zIndex: 1,
+            position: "relative",
           }}
         >
           {highlights.slice(0, 3).map((highlight) => (
             <div
               key={highlight.label}
               style={{
+                flex: 1,
                 minHeight: "150px",
                 padding: "20px 22px",
                 borderRadius: "24px",
                 background: "rgba(255,255,255,0.03)",
                 border: "1px solid rgba(255,255,255,0.08)",
-                backdropFilter: "blur(16px)",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
@@ -276,7 +288,12 @@ export function ShareImage({
               >
                 {highlight.label}
               </div>
-              <div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
                 <div
                   style={{
                     fontSize: "30px",
@@ -308,7 +325,7 @@ export function ShareImage({
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          zIndex: 1,
+          position: "relative",
           paddingTop: "8px",
         }}
       >

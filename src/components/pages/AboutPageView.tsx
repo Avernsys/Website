@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { headingClassNames } from "@/components/headingStyles";
 import { TextLines } from "@/components/TextLines";
 import { founders } from "@/lib/founders";
-import { getDictionary, type Locale } from "@/lib/i18n";
+import { getDictionary, localizePath, type Locale } from "@/lib/i18n";
 import { getPageHeroSectionClassName } from "./pageHero";
 
 type AboutPageViewProps = {
@@ -80,10 +81,18 @@ export function AboutPageView({ locale }: AboutPageViewProps) {
           <div className="grid md:grid-cols-2 gap-6 max-w-[800px] mx-auto">
             {founders.map((founder, index) => {
               const profile = page.founders.people[founder.key];
+              const profilePath = localizePath(
+                locale,
+                `/about/${founder.slug}`,
+              );
 
               return (
                 <AnimatedSection key={founder.name} delay={index * 0.15}>
-                  <div className="rounded-3xl glass p-6 sm:p-8 h-full">
+                  <Link
+                    href={profilePath}
+                    className="group block h-full rounded-3xl glass p-6 transition-all duration-500 hover:border-white/[0.12] hover:bg-white/[0.04] sm:p-8"
+                    aria-label={founder.name}
+                  >
                     <div className="mb-6 flex justify-center md:justify-start">
                       <div className="relative flex h-36 w-36 items-center justify-center rounded-full border border-white/[0.14] bg-white/[0.02] p-1.5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] sm:h-40 sm:w-40">
                         <div className="absolute inset-[5px] rounded-full border border-white/[0.08]" />
@@ -103,14 +112,14 @@ export function AboutPageView({ locale }: AboutPageViewProps) {
                         </div>
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold mb-1">
+                    <h3 className="text-xl font-semibold mb-1 transition-colors duration-300 group-hover:text-white">
                       {founder.name}
                     </h3>
                     <p className="text-sm text-gray-500 mb-4">{profile.role}</p>
                     <p className="text-sm text-gray-400 leading-relaxed">
                       {profile.bio}
                     </p>
-                  </div>
+                  </Link>
                 </AnimatedSection>
               );
             })}

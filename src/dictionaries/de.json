@@ -8,7 +8,7 @@
   },
   "site": {
     "name": "Avernsys",
-    "description": "Avernsys entwickelt B2B-Software für vernetzte Organisationen und effizientere Last-Mile-Logistik.",
+    "description": "Avernsys entwickelt FlowSys, Software zur Last-Mile-Routenoptimierung für Lieferteams.",
     "tagline": "Für das, was morgen zählt.",
     "copyright": "Alle Rechte vorbehalten."
   },
@@ -17,10 +17,18 @@
     "menuLabel": "Menü öffnen oder schließen",
     "languageLabel": "Sprache",
     "links": [
-      { "key": "chaptersys", "label": "ChapterSys" },
-      { "key": "primeroute", "label": "FlowSys" },
-      { "key": "about", "label": "Über uns" },
-      { "key": "contact", "label": "Kontakt" }
+      {
+        "key": "primeroute",
+        "label": "FlowSys"
+      },
+      {
+        "key": "about",
+        "label": "Über uns"
+      },
+      {
+        "key": "contact",
+        "label": "Kontakt"
+      }
     ]
   },
   "footer": {
@@ -29,36 +37,44 @@
       {
         "title": "Produkte",
         "links": [
-          { "key": "chaptersys", "label": "ChapterSys" },
-          { "key": "primeroute", "label": "FlowSys" }
+          {
+            "key": "primeroute",
+            "label": "FlowSys"
+          }
         ]
       },
       {
         "title": "Unternehmen",
         "links": [
-          { "key": "about", "label": "Über uns" },
-          { "key": "contact", "label": "Kontakt" }
+          {
+            "key": "about",
+            "label": "Über uns"
+          },
+          {
+            "key": "contact",
+            "label": "Kontakt"
+          }
         ]
       }
     ]
   },
   "seo": {
     "home": {
-      "title": "Avernsys | Software für vernetzte Organisationen und intelligente Routenplanung",
-      "description": "Avernsys entwickelt B2B-Software, die Organisationen enger vernetzt und Last-Mile-Abläufe mit ChapterSys und FlowSys effizienter macht.",
+      "title": "Avernsys | FlowSys Software zur Last-Mile-Routenoptimierung",
+      "description": "Avernsys entwickelt FlowSys, Software zur Last-Mile-Routenoptimierung, die Lieferteams bessere Touren, niedrigere Kosten und schnellere Abläufe ermöglicht.",
       "keywords": [
         "Avernsys",
-        "B2B-Softwareunternehmen",
-        "Alumni-Plattform",
-        "Mitglieder-Community-Plattform",
-        "Last-Mile-Software",
-        "Routenoptimierungssoftware"
+        "FlowSys",
+        "Last-Mile-Liefersoftware",
+        "Routenoptimierungssoftware",
+        "Lieferplanung Software",
+        "Logistikoptimierung Software"
       ],
       "socialImageAlt": "Vorschau der Avernsys-Startseite"
     },
     "about": {
       "title": "Über Avernsys",
-      "description": "Lernen Sie die Gründer von Avernsys kennen und erfahren Sie, wie wir durchdachte Software für Communities und Lieferprozesse entwickeln.",
+      "description": "Lernen Sie die Gründer von Avernsys kennen und erfahren Sie, wie wir FlowSys für Last-Mile-Lieferprozesse entwickeln.",
       "keywords": [
         "Über Avernsys",
         "Avernsys Gründer",
@@ -69,27 +85,15 @@
     },
     "contact": {
       "title": "Kontakt mit Avernsys",
-      "description": "Sprechen Sie mit Avernsys über Demos für ChapterSys und FlowSys, Fragen zu unseren Produkten oder mögliche Partnerschaften.",
+      "description": "Kontaktieren Sie Avernsys für eine FlowSys-Demo, Fragen zur Routenoptimierung oder mögliche Partnerschaften.",
       "keywords": [
         "Avernsys Kontakt",
         "Avernsys Demo",
-        "ChapterSys Demo",
-        "FlowSys Demo"
+        "FlowSys Demo",
+        "Routenoptimierung Demo",
+        "Last-Mile-Liefersoftware"
       ],
       "socialImageAlt": "Vorschau der Avernsys-Startseite"
-    },
-    "chaptersys": {
-      "title": "ChapterSys | Plattform für Alumni- und Mitgliedercommunities",
-      "description": "ChapterSys ist eine geschlossene Community-Plattform für Alumni-Vereine und mitgliedsbasierte Organisationen. Mitglieder entdecken Unternehmen, bauen Beziehungen aus und bleiben aktiv verbunden.",
-      "keywords": [
-        "ChapterSys",
-        "Alumni-Plattform",
-        "Mitglieder-Community-Plattform",
-        "Verbandssoftware",
-        "geschlossene soziale Plattform",
-        "Community-Software für Organisationen"
-      ],
-      "socialImageAlt": "Social-Vorschau für ChapterSys"
     },
     "primeroute": {
       "title": "FlowSys | Software zur Last-Mile-Routenoptimierung",
@@ -108,21 +112,12 @@
   "structuredData": {
     "organizationKnowsAbout": [
       "B2B-Software",
-      "Plattformen für Mitgliedercommunities",
-      "Software für Alumni-Verbände",
-      "Optimierung der letzten Meile",
-      "Routenoptimierungssoftware"
+      "Last-Mile-Lieferoptimierung",
+      "Routenoptimierungssoftware",
+      "Tourenplanung für Lieferteams",
+      "Logistikoptimierung Software"
     ],
     "softwareApplications": {
-      "chaptersys": {
-        "applicationSubCategory": "Software für Mitgliedercommunities",
-        "featureList": [
-          "Geschlossene Community-Bereiche für Organisationen und Alumni",
-          "Unternehmen und Services von Mitgliedern auf einer interaktiven Karte entdecken",
-          "Direktnachrichten, Gruppenchats und Community-Kanäle",
-          "Events und Mitgliederprofile an einem Ort verwalten"
-        ]
-      },
       "primeroute": {
         "applicationSubCategory": "Software für die letzte Meile",
         "featureList": [
@@ -137,22 +132,21 @@
     "home": {
       "hero": {
         "eyebrow": "Avernsys",
-        "titleLines": ["Gebaut für", "den nächsten Schritt."],
-        "description": "Wir entwickeln Produkte, die Menschen verbinden und Abläufe spürbar besser machen. Zwei Produkte, ein klarer Fokus.",
+        "titleLines": [
+          "Gebaut für",
+          "den nächsten Schritt."
+        ],
+        "description": "Wir bauen Technologie, die Lieferprozesse voranbringt. Ein Produkt. Ein klarer Fokus.",
         "primaryCta": "Produkte ansehen",
         "secondaryCta": "Kontakt aufnehmen"
       },
       "products": {
         "eyebrow": "Produkte",
-        "titleLines": ["Zwei Produkte.", "Ein klarer Anspruch."],
+        "titleLines": [
+          "Ein Produkt.",
+          "Klarer Fokus."
+        ],
         "items": [
-          {
-            "name": "ChapterSys",
-            "tagline": "Ihre Organisation, wirklich vernetzt.",
-            "description": "Eine geschlossene Community-Plattform, in der Alumni und Mitglieder Unternehmen entdecken, Beziehungen pflegen und dauerhaft miteinander in Kontakt bleiben.",
-            "key": "chaptersys",
-            "hoverGlow": "from-amber-500/[0.03]"
-          },
           {
             "name": "Avernsys FlowSys",
             "tagline": "Die letzte Meile im Griff.",
@@ -173,15 +167,18 @@
     "about": {
       "hero": {
         "eyebrow": "Über uns",
-        "titleLines": ["Zwei Gründer.", "Ein gemeinsamer Anspruch."],
+        "titleLines": [
+          "Zwei Gründer.",
+          "Ein gemeinsamer Anspruch."
+        ],
         "description": "Avernsys entstand aus einer einfachen Überzeugung: Gute Technologie bringt Menschen zusammen und sorgt dafür, dass Dinge besser funktionieren."
       },
       "story": {
         "title": "Unsere Geschichte",
         "paragraphs": [
-          "Avernsys begann mit zwei Menschen, die Lücken darin gesehen haben, wie Organisationen ihre Mitglieder vernetzen und wie Unternehmen ihre letzte Meile steuern.",
-          "Statt darauf zu warten, dass jemand anderes diese Probleme löst, haben wir die Lösungen selbst gebaut. ChapterSys denkt Community-Verbindungen neu. FlowSys macht Lieferprozesse einfacher und effizienter.",
-          "Wir glauben daran, lieber wenige Dinge wirklich gut zu machen. Zwei Produkte, mit Sorgfalt entwickelt und darauf ausgelegt, lange relevant zu bleiben."
+          "Avernsys begann mit zwei Menschen, die gesehen haben, wie viel Zeit Unternehmen durch ineffiziente Last-Mile-Logistik verlieren.",
+          "Statt darauf zu warten, dass jemand anderes dieses Problem löst, haben wir FlowSys gebaut: Software zur Routenoptimierung, die Lieferaufträge in Sekunden in effiziente Touren verwandelt.",
+          "Wir glauben daran, wenige Dinge außergewöhnlich gut zu machen. FlowSys wird mit Sorgfalt gebaut, ist auf Langlebigkeit ausgelegt und konzentriert sich auf ein operatives Problem, das wirklich zählt."
         ]
       },
       "founders": {
@@ -217,73 +214,22 @@
         ]
       }
     },
-    "chaptersys": {
-      "hero": {
-        "eyebrow": "ChapterSys",
-        "titleLines": ["Ihre Organisation,", "wirklich vernetzt."],
-        "description": "Eine geschlossene Community-Plattform für Alumni-Netzwerke, Mitgliedsorganisationen und exklusive Communities. Mitglieder finden einander, entdecken Unternehmen und bleiben an einem Ort verbunden.",
-        "primaryCta": "Demo anfragen"
-      },
-      "steps": {
-        "eyebrow": "So funktioniert's",
-        "titleLines": ["Drei Schritte.", "Mehr braucht es nicht."],
-        "items": [
-          {
-            "step": "01",
-            "title": "Ihre Community aufsetzen",
-            "description": "Richten Sie den privaten Bereich Ihrer Organisation ein, passen Sie das Branding an, definieren Sie Verifizierungsregeln und laden Sie Ihr Team ein."
-          },
-          {
-            "step": "02",
-            "title": "Ihr Netzwerk aktivieren",
-            "description": "Laden Sie Mitglieder per E-Mail, Link oder Integration ein. Verifizierte Alumni treten bei, erstellen Profile und machen ihr Unternehmen sichtbar."
-          },
-          {
-            "step": "03",
-            "title": "Wachsen lassen",
-            "description": "Mitglieder entdecken Unternehmen, gründen Gruppen, planen Events und bleiben ganz natürlich miteinander in Kontakt."
-          }
-        ]
-      },
-      "features": [
-        {
-          "label": "Entdecken",
-          "title": "Ihr Alumni-Netzwerk direkt auf der Karte.",
-          "description": "Mitglieder können ihre Unternehmen und Services auf einer interaktiven Karte sichtbar machen. Sie suchen eine Anwältin, einen Fotografen oder einen Caterer? Finden Sie passende Kontakte im eigenen Netzwerk und unterstützen Sie Alumni, denen Sie vertrauen."
-        },
-        {
-          "label": "Community",
-          "title": "Echte Gespräche. Echte Beziehungen.",
-          "description": "Direktnachrichten, Gruppenchats und Community-Kanäle, die speziell für Organisationen gedacht sind. Keine Ablenkung, keine Werbung, sondern die Menschen, die wirklich zählen."
-        },
-        {
-          "label": "Events",
-          "title": "Von der Community direkt in den Kalender.",
-          "description": "Erstellen, teilen und organisieren Sie Veranstaltungen ohne Umwege. Klassentreffen, Networking-Abende oder Workshops finden genau dort statt, wo Ihre Community ohnehin schon zusammenkommt."
-        },
-        {
-          "label": "Business-Profile",
-          "title": "Zeigen Sie, was Sie aufgebaut haben.",
-          "description": "Jedes Mitglied erhält ein Profil, um den beruflichen Weg und das eigene Unternehmen sichtbar zu machen. So entsteht Reichweite in einer Community, die echtes Interesse und Vertrauen mitbringt."
-        }
-      ],
-      "cta": {
-        "titleLines": ["Bereit, Ihre Organisation", "enger zusammenzubringen?"],
-        "description": "ChapterSys ist für Organisationen gemacht, die ihre Community ernst nehmen. Lassen Sie uns besprechen, wie es für Ihre Struktur aussehen kann.",
-        "primaryCta": "Loslegen",
-        "secondaryCta": "Vertrieb kontaktieren"
-      }
-    },
     "primeroute": {
       "hero": {
         "eyebrow": "Avernsys FlowSys",
-        "titleLines": ["Die letzte Meile,", "endlich effizient."],
+        "titleLines": [
+          "Die letzte Meile,",
+          "endlich effizient."
+        ],
         "description": "Laden Sie Ihre Aufträge hoch und erhalten Sie in Sekunden optimierte Touren. Schnellere Zustellungen, geringere Kosten und weniger Rätselraten im Tagesgeschäft.",
         "primaryCta": "Jetzt optimieren"
       },
       "steps": {
         "eyebrow": "So funktioniert's",
-        "titleLines": ["Drei Schritte.", "Mehr braucht es nicht."],
+        "titleLines": [
+          "Drei Schritte.",
+          "Mehr braucht es nicht."
+        ],
         "items": [
           {
             "step": "01",
@@ -320,7 +266,10 @@
         }
       ],
       "cta": {
-        "titleLines": ["Schluss mit unnötigen Kilometern.", "Liefern Sie intelligenter."],
+        "titleLines": [
+          "Schluss mit unnötigen Kilometern.",
+          "Liefern Sie intelligenter."
+        ],
         "description": "Ob 50 Stopps am Tag oder 5.000: FlowSys wächst mit Ihrem Betrieb mit. Lassen Sie uns Ihre letzte Meile gemeinsam optimieren.",
         "primaryCta": "Loslegen",
         "secondaryCta": "Demo ansehen"
@@ -329,7 +278,9 @@
     "contact": {
       "hero": {
         "eyebrow": "Kontakt",
-        "titleLines": ["Sprechen wir miteinander."],
+        "titleLines": [
+          "Sprechen wir miteinander."
+        ],
         "description": "Sie haben Fragen, möchten eine Demo sehen oder einfach Kontakt aufnehmen? Wir freuen uns auf Ihre Nachricht."
       },
       "success": {
@@ -344,10 +295,18 @@
         "subjectLabel": "Thema",
         "subjectPlaceholder": "Thema auswählen",
         "subjectOptions": [
-          { "value": "chaptersys", "label": "ChapterSys" },
-          { "value": "primeroute", "label": "FlowSys" },
-          { "value": "general", "label": "Allgemeine Anfrage" },
-          { "value": "partnership", "label": "Partnerschaft" }
+          {
+            "value": "primeroute",
+            "label": "FlowSys"
+          },
+          {
+            "value": "general",
+            "label": "Allgemeine Anfrage"
+          },
+          {
+            "value": "partnership",
+            "label": "Partnerschaft"
+          }
         ],
         "messageLabel": "Nachricht",
         "messagePlaceholder": "Worum geht es bei Ihnen?",
@@ -361,75 +320,60 @@
       "secondaryCta": "Kontakt",
       "navigationLabel": "Beliebte Seiten",
       "links": [
-        { "key": "home", "label": "Startseite" },
-        { "key": "chaptersys", "label": "ChapterSys" },
-        { "key": "primeroute", "label": "FlowSys" },
-        { "key": "contact", "label": "Kontakt" }
+        {
+          "key": "home",
+          "label": "Startseite"
+        },
+        {
+          "key": "primeroute",
+          "label": "FlowSys"
+        },
+        {
+          "key": "contact",
+          "label": "Kontakt"
+        }
       ]
     }
   },
   "shareImages": {
     "homeOpenGraph": {
-      "eyebrow": "Technologie, die Menschen und Abläufe verbindet",
+      "eyebrow": "Last-Mile-Routenoptimierung",
       "title": "Avernsys",
-      "description": "Zwei Produkte, ein klarer Fokus. ChapterSys vernetzt Organisationen. FlowSys optimiert die letzte Meile.",
+      "description": "Ein Produkt, ein Fokus. FlowSys optimiert Lieferrouten für schnellere und effizientere Abläufe.",
       "tone": "neutral",
       "highlights": [
         {
-          "label": "ChapterSys",
-          "title": "Stärkere Communities",
-          "description": "Geschlossene Community-Software für Organisationen und Alumni."
+          "label": "FlowSys",
+          "title": "Bessere Touren",
+          "description": "Optimieren Sie Last-Mile-Routen in Sekunden."
         },
         {
-          "label": "FlowSys",
-          "title": "Bessere Lieferrouten",
-          "description": "Optimieren Sie die letzte Meile in Sekunden."
+          "label": "Betrieb",
+          "title": "Weniger Aufwand",
+          "description": "Reduzieren Sie manuelle Planung, Wege und Reibung."
         },
         {
           "label": "Avernsys",
-          "title": "Für das, was morgen zählt",
-          "description": "Moderne Produkte für reale operative Anforderungen."
+          "title": "Built for what's next",
+          "description": "Fokussiertes Produktdesign für praktische Logistikteams."
         }
       ]
     },
     "homeTwitter": {
       "eyebrow": "Avernsys",
       "title": "Für das, was morgen zählt.",
-      "description": "Ein Produktunternehmen für vernetzte Organisationen und intelligente Routenplanung.",
+      "description": "Ein Produktunternehmen mit Fokus auf Last-Mile-Routenoptimierung.",
       "tone": "amber",
       "highlights": [
         {
-          "label": "Produkt 01",
-          "title": "ChapterSys",
-          "description": "Community-Software für Alumni- und Mitgliedernetzwerke."
+          "label": "FlowSys",
+          "title": "Routenoptimierung",
+          "description": "Last-Mile-Planung für Lieferteams."
         },
         {
-          "label": "Produkt 02",
-          "title": "FlowSys",
-          "description": "Routenoptimierung für Last-Mile-Abläufe."
-        }
-      ]
-    },
-    "chaptersys": {
-      "eyebrow": "ChapterSys",
-      "title": "Ihre Organisation, wirklich vernetzt.",
-      "description": "Geschlossene Community-Software für Alumni-Netzwerke, Mitgliederverzeichnisse und verifizierte Unternehmensprofile.",
-      "tone": "amber",
-      "highlights": [
-        {
-          "label": "Private Räume",
-          "title": "Nur für Mitglieder",
-          "description": "Halten Sie Ihre Community fokussiert, sicher und verifiziert."
-        },
-        {
-          "label": "Entdecken",
-          "title": "Alumni-Unternehmen finden",
-          "description": "Finden Sie vertrauenswürdige Kontakte und Services im eigenen Netzwerk."
-        },
-        {
-          "label": "Community",
-          "title": "Verbunden bleiben",
-          "description": "Gruppen, Events und Nachrichten an einem Ort."
+          "label": "Avernsys",
+          "title": "Fokussierte Software",
+          "description": "Ein Produkt, sorgfältig gebaut."
         }
       ]
     },

@@ -24,7 +24,6 @@ export const pageKeys = [
   "home",
   "about",
   "contact",
-  "chaptersys",
   "primeroute",
 ] as const;
 
@@ -35,7 +34,6 @@ export const pageBasePaths: Record<PageKey, string> = {
   home: "/",
   about: "/about",
   contact: "/contact",
-  chaptersys: "/chaptersys",
   primeroute: "/flowsys",
 };
 
@@ -67,12 +65,8 @@ export function getPageLabel(locale: Locale, pageKey: PageKey): string {
       ?.label || dictionary.site.name;
   }
 
-  if (pageKey === "chaptersys") {
-    return dictionary.pages.home.products.items[0]?.name || "ChapterSys";
-  }
-
   if (pageKey === "primeroute") {
-    return dictionary.pages.home.products.items[1]?.name || "FlowSys";
+    return dictionary.pages.home.products.items[0]?.name || "FlowSys";
   }
 
   return (

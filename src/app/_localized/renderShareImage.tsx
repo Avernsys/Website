@@ -2,8 +2,8 @@ import { ImageResponse } from "next/og";
 import { ShareImage, type ShareTone } from "@/app/_seo/share-image";
 import { getDictionary, type Locale } from "@/lib/i18n";
 
-type ShareImageKey = "homeOpenGraph" | "homeTwitter" | "chaptersys" | "primeroute";
-type ShareImagePageKey = "home" | "chaptersys" | "primeroute";
+type ShareImageKey = "homeOpenGraph" | "homeTwitter" | "primeroute";
+type ShareImagePageKey = "home" | "primeroute";
 
 export const shareImageSize = {
   width: 1200,

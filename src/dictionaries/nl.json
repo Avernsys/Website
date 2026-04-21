@@ -8,7 +8,7 @@
   },
   "site": {
     "name": "Avernsys",
-    "description": "Avernsys bouwt B2B-software voor organisaties die mensen willen verbinden en last-mile-operaties slimmer willen aansturen.",
+    "description": "Avernsys bouwt FlowSys, software voor last-mile routeoptimalisatie voor bezorgteams.",
     "tagline": "Gebouwd voor wat morgen vraagt.",
     "copyright": "Alle rechten voorbehouden."
   },
@@ -17,10 +17,18 @@
     "menuLabel": "Menu openen of sluiten",
     "languageLabel": "Taal",
     "links": [
-      { "key": "chaptersys", "label": "ChapterSys" },
-      { "key": "primeroute", "label": "FlowSys" },
-      { "key": "about", "label": "Over ons" },
-      { "key": "contact", "label": "Contact" }
+      {
+        "key": "primeroute",
+        "label": "FlowSys"
+      },
+      {
+        "key": "about",
+        "label": "Over ons"
+      },
+      {
+        "key": "contact",
+        "label": "Contact"
+      }
     ]
   },
   "footer": {
@@ -29,36 +37,44 @@
       {
         "title": "Producten",
         "links": [
-          { "key": "chaptersys", "label": "ChapterSys" },
-          { "key": "primeroute", "label": "FlowSys" }
+          {
+            "key": "primeroute",
+            "label": "FlowSys"
+          }
         ]
       },
       {
         "title": "Bedrijf",
         "links": [
-          { "key": "about", "label": "Over ons" },
-          { "key": "contact", "label": "Contact" }
+          {
+            "key": "about",
+            "label": "Over ons"
+          },
+          {
+            "key": "contact",
+            "label": "Contact"
+          }
         ]
       }
     ]
   },
   "seo": {
     "home": {
-      "title": "Avernsys | Software voor verbonden organisaties en slimme routeplanning",
-      "description": "Avernsys bouwt B2B-software die organisaties dichter bij elkaar brengt en last-mile-processen slimmer maakt met ChapterSys en FlowSys.",
+      "title": "Avernsys | FlowSys software voor last-mile routeoptimalisatie",
+      "description": "Avernsys bouwt FlowSys, software voor last-mile routeoptimalisatie waarmee bezorgteams slimmer plannen, kosten verlagen en sneller leveren.",
       "keywords": [
         "Avernsys",
-        "B2B softwarebedrijf",
-        "alumni platform",
-        "community platform voor leden",
-        "last-mile software",
-        "route optimalisatie software"
+        "FlowSys",
+        "last-mile bezorgsoftware",
+        "routeoptimalisatie software",
+        "bezorgroutes software",
+        "logistieke optimalisatie software"
       ],
       "socialImageAlt": "Voorbeeld van de homepage van Avernsys"
     },
     "about": {
       "title": "Over Avernsys",
-      "description": "Maak kennis met de oprichters van Avernsys en ontdek hoe wij doordachte software bouwen voor communities en bezorgoperaties.",
+      "description": "Maak kennis met de oprichters van Avernsys en ontdek hoe we FlowSys bouwen voor last-mile bezorgoperaties.",
       "keywords": [
         "over Avernsys",
         "Avernsys oprichters",
@@ -69,27 +85,15 @@
     },
     "contact": {
       "title": "Contact met Avernsys",
-      "description": "Neem contact op met Avernsys voor een demo van ChapterSys of FlowSys, productvragen of een mogelijk partnership.",
+      "description": "Neem contact op met Avernsys voor een FlowSys-demo, vragen over routeoptimalisatie of een mogelijk partnership.",
       "keywords": [
-        "Avernsys contact",
+        "contact Avernsys",
         "Avernsys demo",
-        "ChapterSys demo",
-        "FlowSys demo"
+        "FlowSys demo",
+        "routeoptimalisatie demo",
+        "last-mile bezorgsoftware"
       ],
       "socialImageAlt": "Voorbeeld van de homepage van Avernsys"
-    },
-    "chaptersys": {
-      "title": "ChapterSys | Platform voor alumni- en ledencommunities",
-      "description": "ChapterSys is een besloten communityplatform voor alumniverenigingen en organisaties met leden. Ontdek bedrijven, bouw relaties op en houd de community levend.",
-      "keywords": [
-        "ChapterSys",
-        "alumni platform",
-        "ledencommunity platform",
-        "verenigingssoftware",
-        "besloten sociaal platform",
-        "community software voor organisaties"
-      ],
-      "socialImageAlt": "Social preview van ChapterSys"
     },
     "primeroute": {
       "title": "FlowSys | Software voor last-mile routeoptimalisatie",
@@ -108,21 +112,12 @@
   "structuredData": {
     "organizationKnowsAbout": [
       "B2B-software",
-      "platforms voor ledencommunities",
-      "software voor alumniverenigingen",
-      "optimalisatie van de last mile",
-      "software voor routeoptimalisatie"
+      "Last-mile bezorgoptimalisatie",
+      "Routeoptimalisatie software",
+      "Bezorgroutes plannen",
+      "Logistieke optimalisatie software"
     ],
     "softwareApplications": {
-      "chaptersys": {
-        "applicationSubCategory": "software voor ledencommunities",
-        "featureList": [
-          "Besloten community-omgevingen voor organisaties en alumni",
-          "Bedrijven en diensten van leden ontdekken op een interactieve kaart",
-          "Directe berichten, groepschats en communitykanalen",
-          "Evenementen en ledenprofielen op één plek beheren"
-        ]
-      },
       "primeroute": {
         "applicationSubCategory": "software voor de last mile",
         "featureList": [
@@ -137,22 +132,21 @@
     "home": {
       "hero": {
         "eyebrow": "Avernsys",
-        "titleLines": ["Gebouwd voor", "de volgende stap."],
-        "description": "We bouwen producten die mensen dichter bij elkaar brengen en operaties soepeler laten lopen. Twee producten, één duidelijke visie.",
+        "titleLines": [
+          "Gebouwd voor",
+          "de volgende stap."
+        ],
+        "description": "We bouwen technologie die bezorgoperaties vooruithelpt. Eén product. Eén focus.",
         "primaryCta": "Bekijk de producten",
         "secondaryCta": "Neem contact op"
       },
       "products": {
         "eyebrow": "Producten",
-        "titleLines": ["Twee producten.", "Eén heldere richting."],
+        "titleLines": [
+          "Eén product.",
+          "Scherpe focus."
+        ],
         "items": [
-          {
-            "name": "ChapterSys",
-            "tagline": "Breng je organisatie echt samen.",
-            "description": "Een besloten communityplatform waar alumni en leden elkaar vinden, bedrijven ontdekken en op een natuurlijke manier met elkaar in contact blijven.",
-            "key": "chaptersys",
-            "hoverGlow": "from-amber-500/[0.03]"
-          },
           {
             "name": "Avernsys FlowSys",
             "tagline": "De last mile, slimmer geregeld.",
@@ -173,15 +167,18 @@
     "about": {
       "hero": {
         "eyebrow": "Over ons",
-        "titleLines": ["Twee oprichters.", "Eén duidelijke missie."],
+        "titleLines": [
+          "Twee oprichters.",
+          "Eén duidelijke missie."
+        ],
         "description": "Avernsys is ontstaan vanuit één overtuiging: technologie moet mensen verbinden en werkprocessen beter laten lopen."
       },
       "story": {
         "title": "Ons verhaal",
         "paragraphs": [
-          "Avernsys begon met twee mensen die zagen waar het misging: organisaties die hun leden onvoldoende weten te verbinden en bedrijven die te veel tijd verliezen op de last mile.",
-          "In plaats van te wachten tot iemand anders daar iets voor zou bouwen, hebben we die oplossingen zelf ontwikkeld. ChapterSys geeft communities een betere basis. FlowSys brengt rust en efficiëntie in bezorgoperaties.",
-          "Wij geloven in een kleine focus en hoge kwaliteit. Twee producten, met aandacht gebouwd en bedoeld om lang relevant te blijven."
+          "Avernsys begon met twee mensen die zagen hoeveel tijd bedrijven verliezen door inefficiënte last-mile logistiek.",
+          "In plaats van te wachten tot iemand anders dat zou oplossen, bouwden we FlowSys: software voor routeoptimalisatie die bezorgorders in seconden omzet in efficiënte routes.",
+          "We geloven in minder dingen uitzonderlijk goed doen. FlowSys wordt met zorg gebouwd, is ontworpen om lang mee te gaan en richt zich op één operationeel probleem dat ertoe doet."
         ]
       },
       "founders": {
@@ -217,73 +214,22 @@
         ]
       }
     },
-    "chaptersys": {
-      "hero": {
-        "eyebrow": "ChapterSys",
-        "titleLines": ["Breng je organisatie", "echt samen."],
-        "description": "Een besloten communityplatform voor alumninetwerken, ledenorganisaties en andere private communities. Leden vinden elkaar, ontdekken bedrijven en blijven op één plek verbonden.",
-        "primaryCta": "Vraag een demo aan"
-      },
-      "steps": {
-        "eyebrow": "Zo werkt het",
-        "titleLines": ["Drie stappen.", "Meer is het niet."],
-        "items": [
-          {
-            "step": "01",
-            "title": "Richt je community in",
-            "description": "Maak de private omgeving van je organisatie aan, pas de branding aan, stel verificatieregels in en nodig je beheerders uit."
-          },
-          {
-            "step": "02",
-            "title": "Activeer je netwerk",
-            "description": "Nodig leden uit via e-mail, link of integratie. Geverifieerde alumni sluiten aan, maken hun profiel compleet en zetten hun bedrijf op de kaart."
-          },
-          {
-            "step": "03",
-            "title": "Laat het groeien",
-            "description": "Leden ontdekken bedrijven, vormen groepen, organiseren events en houden het netwerk op een natuurlijke manier levend."
-          }
-        ]
-      },
-      "features": [
-        {
-          "label": "Ontdekken",
-          "title": "Je alumninetwerk zichtbaar op de kaart.",
-          "description": "Leden kunnen hun bedrijven en diensten tonen op een interactieve kaart. Zoek je een advocaat, fotograaf of cateraar? Dan vind je die gewoon binnen je eigen netwerk."
-        },
-        {
-          "label": "Community",
-          "title": "Echte gesprekken, echte verbinding.",
-          "description": "Directe berichten, groepschats en communitykanalen die zijn ontworpen voor organisaties. Geen ruis, geen advertenties, alleen de mensen die ertoe doen."
-        },
-        {
-          "label": "Evenementen",
-          "title": "Van community direct naar agenda.",
-          "description": "Maak events aan, deel ze en beheer ze zonder omwegen. Reünies, netwerkdiners of workshops leven op de plek waar je community toch al samenkomt."
-        },
-        {
-          "label": "Bedrijfsprofielen",
-          "title": "Laat zien wat je hebt opgebouwd.",
-          "description": "Elk lid krijgt een profiel om zijn of haar loopbaan en bedrijf zichtbaar te maken. Zo ontstaat bereik binnen een community die je al kent en vertrouwt."
-        }
-      ],
-      "cta": {
-        "titleLines": ["Klaar om je organisatie", "dichter bij elkaar te brengen?"],
-        "description": "ChapterSys is gebouwd voor organisaties die hun community serieus nemen. Laten we samen kijken hoe dat er voor jouw organisatie uit kan zien.",
-        "primaryCta": "Aan de slag",
-        "secondaryCta": "Praat met sales"
-      }
-    },
     "primeroute": {
       "hero": {
         "eyebrow": "Avernsys FlowSys",
-        "titleLines": ["De last mile,", "slimmer geregeld."],
+        "titleLines": [
+          "De last mile,",
+          "slimmer geregeld."
+        ],
         "description": "Voer je orders in en ontvang in seconden geoptimaliseerde routes. Snellere leveringen, lagere kosten en meer grip op de dagelijkse operatie.",
         "primaryCta": "Start met optimaliseren"
       },
       "steps": {
         "eyebrow": "Zo werkt het",
-        "titleLines": ["Drie stappen.", "Meer is het niet."],
+        "titleLines": [
+          "Drie stappen.",
+          "Meer is het niet."
+        ],
         "items": [
           {
             "step": "01",
@@ -320,7 +266,10 @@
         }
       ],
       "cta": {
-        "titleLines": ["Stop met onnodige kilometers.", "Ga slimmer leveren."],
+        "titleLines": [
+          "Stop met onnodige kilometers.",
+          "Ga slimmer leveren."
+        ],
         "description": "Of je nu 50 orders per dag bezorgt of 5.000, FlowSys groeit met je mee. Laten we samen je last mile optimaliseren.",
         "primaryCta": "Aan de slag",
         "secondaryCta": "Bekijk een demo"
@@ -329,7 +278,9 @@
     "contact": {
       "hero": {
         "eyebrow": "Contact",
-        "titleLines": ["Laten we kennismaken."],
+        "titleLines": [
+          "Laten we kennismaken."
+        ],
         "description": "Heb je een vraag, wil je een demo of gewoon even contact? We horen graag van je."
       },
       "success": {
@@ -344,10 +295,18 @@
         "subjectLabel": "Onderwerp",
         "subjectPlaceholder": "Kies een onderwerp",
         "subjectOptions": [
-          { "value": "chaptersys", "label": "ChapterSys" },
-          { "value": "primeroute", "label": "FlowSys" },
-          { "value": "general", "label": "Algemene vraag" },
-          { "value": "partnership", "label": "Partnership" }
+          {
+            "value": "primeroute",
+            "label": "FlowSys"
+          },
+          {
+            "value": "general",
+            "label": "Algemene vraag"
+          },
+          {
+            "value": "partnership",
+            "label": "Partnership"
+          }
         ],
         "messageLabel": "Bericht",
         "messagePlaceholder": "Vertel kort waar je naar op zoek bent...",
@@ -361,75 +320,60 @@
       "secondaryCta": "Contact",
       "navigationLabel": "Populaire pagina's",
       "links": [
-        { "key": "home", "label": "Home" },
-        { "key": "chaptersys", "label": "ChapterSys" },
-        { "key": "primeroute", "label": "FlowSys" },
-        { "key": "contact", "label": "Contact" }
+        {
+          "key": "home",
+          "label": "Home"
+        },
+        {
+          "key": "primeroute",
+          "label": "FlowSys"
+        },
+        {
+          "key": "contact",
+          "label": "Contact"
+        }
       ]
     }
   },
   "shareImages": {
     "homeOpenGraph": {
-      "eyebrow": "Technologie die mensen en operatie samenbrengt",
+      "eyebrow": "Last-mile routeoptimalisatie",
       "title": "Avernsys",
-      "description": "Twee producten, één duidelijke visie. ChapterSys verbindt organisaties. FlowSys optimaliseert de last mile.",
+      "description": "Eén product, één focus. FlowSys optimaliseert bezorgroutes voor snellere en slankere operaties.",
       "tone": "neutral",
       "highlights": [
         {
-          "label": "ChapterSys",
-          "title": "Sterkere communities",
-          "description": "Besloten communitysoftware voor organisaties en alumni."
+          "label": "FlowSys",
+          "title": "Slimmere routes",
+          "description": "Optimaliseer last-mile bezorgplannen in seconden."
         },
         {
-          "label": "FlowSys",
-          "title": "Slimmere bezorgroutes",
-          "description": "Optimaliseer de last mile in seconden."
+          "label": "Operatie",
+          "title": "Minder verspilling",
+          "description": "Minder handmatige planning, kilometers en vertraging."
         },
         {
           "label": "Avernsys",
-          "title": "Gebouwd voor wat morgen vraagt",
-          "description": "Moderne producten voor echte operationele uitdagingen."
+          "title": "Built for what's next",
+          "description": "Gefocust productontwerp voor praktische logistieke teams."
         }
       ]
     },
     "homeTwitter": {
       "eyebrow": "Avernsys",
       "title": "Gebouwd voor wat morgen vraagt.",
-      "description": "Een productbedrijf voor verbonden organisaties en slimme routeplanning.",
+      "description": "Een productbedrijf met focus op last-mile routeoptimalisatie.",
       "tone": "amber",
       "highlights": [
         {
-          "label": "Product 01",
-          "title": "ChapterSys",
-          "description": "Communitysoftware voor alumni- en ledengroepen."
+          "label": "FlowSys",
+          "title": "Routeoptimalisatie",
+          "description": "Last-mile planning voor bezorgteams."
         },
         {
-          "label": "Product 02",
-          "title": "FlowSys",
-          "description": "Routeoptimalisatie voor last-mile-operaties."
-        }
-      ]
-    },
-    "chaptersys": {
-      "eyebrow": "ChapterSys",
-      "title": "Breng je organisatie echt samen.",
-      "description": "Besloten communitysoftware voor alumninetwerken, ledenoverzichten en geverifieerde bedrijfsprofielen.",
-      "tone": "amber",
-      "highlights": [
-        {
-          "label": "Besloten omgeving",
-          "title": "Alleen voor leden",
-          "description": "Houd je community gefocust, veilig en vertrouwd."
-        },
-        {
-          "label": "Ontdekken",
-          "title": "Vind alumni-bedrijven",
-          "description": "Ontdek betrouwbare mensen en diensten binnen je eigen netwerk."
-        },
-        {
-          "label": "Community",
-          "title": "Blijf verbonden",
-          "description": "Groepen, events en berichten op één plek."
+          "label": "Avernsys",
+          "title": "Gefocuste software",
+          "description": "Eén product, zorgvuldig gebouwd."
         }
       ]
     },
