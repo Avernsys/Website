@@ -1,5 +1,5 @@
 import { permanentRedirect } from "next/navigation";
 
 export default function PrimeRoutePageRedirect() {
-  permanentRedirect("/flowsys");
+  permanentRedirect("/rotasal");
 }

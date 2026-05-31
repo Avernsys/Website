@@ -27,6 +27,7 @@ export function renderLocalizedHomePage(locale: Locale) {
           buildWebPageJsonLd(locale, "home", {
             mainEntityId: schemaOrganizationId(),
           }),
+          ...buildAllFoundersPersonJsonLd(locale),
           buildHomeItemListJsonLd(locale),
         ]}
       />
@@ -123,7 +124,7 @@ export function renderLocalizedPrimeRoutePage(locale: Locale) {
           buildSoftwareApplicationJsonLd(locale, "primeroute"),
           buildBreadcrumbJsonLd(locale, [
             { name: homeLabel, path: "/" },
-            { name: currentLabel, path: "/flowsys" },
+            { name: currentLabel, path: "/rotasal" },
           ]),
         ]}
       />

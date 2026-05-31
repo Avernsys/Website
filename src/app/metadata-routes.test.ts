@@ -18,19 +18,19 @@ test("publishes sitemap entries for every localized indexable page", () => {
   assert.equal(entries.length, 24);
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/"));
   assert.ok(
-    entries.some((entry) => entry.url === "https://avernsys.com/flowsys"),
+    entries.some((entry) => entry.url === "https://avernsys.com/rotasal"),
   );
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/tr"));
   assert.ok(
-    entries.some((entry) => entry.url === "https://avernsys.com/tr/flowsys"),
+    entries.some((entry) => entry.url === "https://avernsys.com/tr/rotasal"),
   );
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/de"));
   assert.ok(
-    entries.some((entry) => entry.url === "https://avernsys.com/de/flowsys"),
+    entries.some((entry) => entry.url === "https://avernsys.com/de/rotasal"),
   );
   assert.ok(entries.some((entry) => entry.url === "https://avernsys.com/nl"));
   assert.ok(
-    entries.some((entry) => entry.url === "https://avernsys.com/nl/flowsys"),
+    entries.some((entry) => entry.url === "https://avernsys.com/nl/rotasal"),
   );
   assert.ok(
     entries.some(

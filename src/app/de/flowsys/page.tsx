@@ -1,10 +1,5 @@
-import { renderLocalizedPrimeRoutePage } from "@/app/_localized/renderPage";
-import { buildPageMetadata } from "@/lib/seo";
+import { permanentRedirect } from "next/navigation";
 
-const locale = "de" as const;
-
-export const metadata = buildPageMetadata(locale, "primeroute");
-
-export default function GermanFlowSysPage() {
-  return renderLocalizedPrimeRoutePage(locale);
+export default function GermanFlowSysPageRedirect() {
+  permanentRedirect("/de/rotasal");
 }

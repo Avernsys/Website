@@ -28,6 +28,7 @@ function parseSameAsUrls(raw: string | undefined): string[] {
 export const siteConfig = {
   name: "Avernsys",
   legalName: "Avernsys",
+  alternateName: "Avernsys Software",
   domain: "avernsys.com",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
@@ -111,7 +112,7 @@ function schemaFounderProfilePageId(locale: Locale, founder: FounderProfile) {
 function getOpenGraphImage(locale: Locale, pageKey: PageKey) {
   switch (pageKey) {
     case "primeroute":
-      return absoluteUrl(localizePath(locale, "/flowsys/opengraph-image"));
+      return absoluteUrl(localizePath(locale, "/rotasal/opengraph-image"));
     default:
       return absoluteUrl(localizePath(locale, "/opengraph-image"));
   }
@@ -120,7 +121,7 @@ function getOpenGraphImage(locale: Locale, pageKey: PageKey) {
 function getTwitterImage(locale: Locale, pageKey: PageKey) {
   switch (pageKey) {
     case "primeroute":
-      return absoluteUrl(localizePath(locale, "/flowsys/twitter-image"));
+      return absoluteUrl(localizePath(locale, "/rotasal/twitter-image"));
     default:
       return absoluteUrl(localizePath(locale, "/twitter-image"));
   }
@@ -165,7 +166,7 @@ export function getFounderProfileSeo(
       `${founder.name} Avernsys`,
       `${founder.name} co-founder`,
       "Avernsys founder",
-      "FlowSys founder",
+      "Rotasal founder",
     ],
     lastModified: "2026-04-21",
     socialImageAlt: founder.photo.alt,
@@ -299,6 +300,9 @@ export function buildOrganizationJsonLd(locale: Locale) {
     "@type": "Organization",
     "@id": schemaOrganizationId(),
     name: siteConfig.legalName,
+    alternateName: siteConfig.alternateName,
+    disambiguatingDescription:
+      dictionary.structuredData.organizationDisambiguation,
     url: siteConfig.url,
     description: dictionary.site.description,
     logo: {
@@ -331,6 +335,7 @@ export function buildWebSiteJsonLd(locale: Locale) {
     "@type": "WebSite",
     "@id": schemaWebSiteId(locale),
     name: siteConfig.name,
+    alternateName: siteConfig.alternateName,
     url: absoluteUrl(getPagePath(locale, "home")),
     description: dictionary.site.description,
     inLanguage: dictionary.language.htmlLang,
@@ -404,12 +409,34 @@ function buildFounderPersonNode(locale: Locale, founder: FounderProfile) {
     "@type": "Person",
     "@id": schemaFounderPersonId(founder),
     name: founder.name,
+    ...(founder.alternateNames && founder.alternateNames.length > 0
+      ? {
+          alternateName:
+            founder.alternateNames.length === 1
+              ? founder.alternateNames[0]
+              : [...founder.alternateNames],
+        }
+      : {}),
+    givenName: founder.givenName,
+    familyName: founder.familyName,
     url: absoluteUrl(getFounderProfilePath(defaultLocale, founder)),
-    jobTitle: profile.role,
+    jobTitle: `${profile.role} of ${siteConfig.name}`,
     description: profile.bio,
     image: absoluteUrl(founder.photo.src),
     sameAs: [...founder.sameAs],
+    knowsAbout: [...founder.knowsAbout],
     worksFor: { "@id": schemaOrganizationId() },
+    ...(founder.affiliation
+      ? {
+          affiliation: {
+            "@type": "Organization",
+            name: founder.affiliation.name,
+            ...(founder.affiliation.sameAs
+              ? { sameAs: founder.affiliation.sameAs }
+              : {}),
+          },
+        }
+      : {}),
   };
 }
 
@@ -458,7 +485,7 @@ export function buildSoftwareApplicationJsonLd(
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": schemaSoftwareApplicationId(page.path),
-    name: "FlowSys",
+    name: "Rotasal",
     applicationCategory: category,
     applicationSubCategory: structuredData.applicationSubCategory,
     operatingSystem: "Web",

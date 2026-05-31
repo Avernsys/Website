@@ -34,7 +34,7 @@ export const pageBasePaths: Record<PageKey, string> = {
   home: "/",
   about: "/about",
   contact: "/contact",
-  primeroute: "/flowsys",
+  primeroute: "/rotasal",
 };
 
 export function getDictionary(locale: Locale): Dictionary {
@@ -66,7 +66,7 @@ export function getPageLabel(locale: Locale, pageKey: PageKey): string {
   }
 
   if (pageKey === "primeroute") {
-    return dictionary.pages.home.products.items[0]?.name || "FlowSys";
+    return dictionary.pages.home.products.items[0]?.name || "Rotasal";
   }
 
   return (

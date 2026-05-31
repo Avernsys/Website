@@ -8,7 +8,7 @@
   },
   "site": {
     "name": "Avernsys",
-    "description": "Avernsys bouwt FlowSys, software voor last-mile routeoptimalisatie voor bezorgteams.",
+    "description": "Avernsys bouwt Rotasal, software voor last-mile routeoptimalisatie voor bezorgteams.",
     "tagline": "Gebouwd voor wat morgen vraagt.",
     "copyright": "Alle rechten voorbehouden."
   },
@@ -19,7 +19,7 @@
     "links": [
       {
         "key": "primeroute",
-        "label": "FlowSys"
+        "label": "Rotasal"
       },
       {
         "key": "about",
@@ -39,7 +39,7 @@
         "links": [
           {
             "key": "primeroute",
-            "label": "FlowSys"
+            "label": "Rotasal"
           }
         ]
       },
@@ -60,11 +60,11 @@
   },
   "seo": {
     "home": {
-      "title": "Avernsys | FlowSys software voor last-mile routeoptimalisatie",
-      "description": "Avernsys bouwt FlowSys, software voor last-mile routeoptimalisatie waarmee bezorgteams slimmer plannen, kosten verlagen en sneller leveren.",
+      "title": "Avernsys | Rotasal software voor last-mile routeoptimalisatie",
+      "description": "Avernsys bouwt Rotasal, software voor last-mile routeoptimalisatie waarmee bezorgteams slimmer plannen, kosten verlagen en sneller leveren.",
       "keywords": [
         "Avernsys",
-        "FlowSys",
+        "Rotasal",
         "last-mile bezorgsoftware",
         "routeoptimalisatie software",
         "bezorgroutes software",
@@ -74,7 +74,7 @@
     },
     "about": {
       "title": "Over Avernsys",
-      "description": "Maak kennis met de oprichters van Avernsys en ontdek hoe we FlowSys bouwen voor last-mile bezorgoperaties.",
+      "description": "Maak kennis met de oprichters van Avernsys en ontdek hoe we Rotasal bouwen voor last-mile bezorgoperaties.",
       "keywords": [
         "over Avernsys",
         "Avernsys oprichters",
@@ -85,28 +85,28 @@
     },
     "contact": {
       "title": "Contact met Avernsys",
-      "description": "Neem contact op met Avernsys voor een FlowSys-demo, vragen over routeoptimalisatie of een mogelijk partnership.",
+      "description": "Neem contact op met Avernsys voor een Rotasal-demo, vragen over routeoptimalisatie of een mogelijk partnership.",
       "keywords": [
         "contact Avernsys",
         "Avernsys demo",
-        "FlowSys demo",
+        "Rotasal demo",
         "routeoptimalisatie demo",
         "last-mile bezorgsoftware"
       ],
       "socialImageAlt": "Voorbeeld van de homepage van Avernsys"
     },
     "primeroute": {
-      "title": "FlowSys | Software voor last-mile routeoptimalisatie",
-      "description": "FlowSys helpt bezorgteams om de last mile in seconden te optimaliseren, met slimmere routes, lagere kosten en betrouwbaardere leveringen.",
+      "title": "Rotasal | Software voor last-mile routeoptimalisatie",
+      "description": "Rotasal helpt bezorgteams om de last mile in seconden te optimaliseren, met slimmere routes, lagere kosten en betrouwbaardere leveringen.",
       "keywords": [
-        "FlowSys",
+        "Rotasal",
         "route optimalisatie software",
         "last-mile software",
         "bezorgroutes software",
         "fleet route planning",
         "logistieke optimalisatie software"
       ],
-      "socialImageAlt": "Social preview van FlowSys"
+      "socialImageAlt": "Social preview van Rotasal"
     }
   },
   "structuredData": {
@@ -117,6 +117,7 @@
       "Bezorgroutes plannen",
       "Logistieke optimalisatie software"
     ],
+    "organizationDisambiguation": "Avernsys is een onafhankelijk softwarebedrijf dat Rotasal bouwt, een platform voor het optimaliseren van last-mile bezorgroutes. Avernsys is niet gelieerd aan bedrijven met een vergelijkbare naam.",
     "softwareApplications": {
       "primeroute": {
         "applicationSubCategory": "software voor de last mile",
@@ -148,7 +149,7 @@
         ],
         "items": [
           {
-            "name": "Avernsys FlowSys",
+            "name": "Avernsys Rotasal",
             "tagline": "De last mile, slimmer geregeld.",
             "description": "Zet orders in seconden om naar geoptimaliseerde routes. Minder verspilling, lagere kosten en meer rust in de dagelijkse operatie.",
             "key": "primeroute",
@@ -177,8 +178,8 @@
         "title": "Ons verhaal",
         "paragraphs": [
           "Avernsys begon met twee mensen die zagen hoeveel tijd bedrijven verliezen door inefficiënte last-mile logistiek.",
-          "In plaats van te wachten tot iemand anders dat zou oplossen, bouwden we FlowSys: software voor routeoptimalisatie die bezorgorders in seconden omzet in efficiënte routes.",
-          "We geloven in minder dingen uitzonderlijk goed doen. FlowSys wordt met zorg gebouwd, is ontworpen om lang mee te gaan en richt zich op één operationeel probleem dat ertoe doet."
+          "In plaats van te wachten tot iemand anders dat zou oplossen, bouwden we Rotasal: software voor routeoptimalisatie die bezorgorders in seconden omzet in efficiënte routes.",
+          "We geloven in minder dingen uitzonderlijk goed doen. Rotasal wordt met zorg gebouwd, is ontworpen om lang mee te gaan en richt zich op één operationeel probleem dat ertoe doet."
         ]
       },
       "founders": {
@@ -216,7 +217,7 @@
     },
     "primeroute": {
       "hero": {
-        "eyebrow": "Avernsys FlowSys",
+        "eyebrow": "Avernsys Rotasal",
         "titleLines": [
           "De last mile,",
           "slimmer geregeld."
@@ -252,7 +253,7 @@
         {
           "label": "Snelheid",
           "title": "Resultaten in seconden, niet in uren.",
-          "description": "FlowSys verwerkt duizenden afleverpunten in realtime. Geen handmatige planning meer, maar direct routes waar je chauffeurs meteen mee verder kunnen."
+          "description": "Rotasal verwerkt duizenden afleverpunten in realtime. Geen handmatige planning meer, maar direct routes waar je chauffeurs meteen mee verder kunnen."
         },
         {
           "label": "Optimalisatie",
@@ -262,7 +263,7 @@
         {
           "label": "Integratie",
           "title": "Past in wat je al gebruikt.",
-          "description": "Dankzij een API-first architectuur sluit FlowSys aan op je bestaande systemen. Van ordermanagement tot warehouse en e-commerce: koppelen gaat snel en zonder gedoe."
+          "description": "Dankzij een API-first architectuur sluit Rotasal aan op je bestaande systemen. Van ordermanagement tot warehouse en e-commerce: koppelen gaat snel en zonder gedoe."
         }
       ],
       "cta": {
@@ -270,7 +271,7 @@
           "Stop met onnodige kilometers.",
           "Ga slimmer leveren."
         ],
-        "description": "Of je nu 50 orders per dag bezorgt of 5.000, FlowSys groeit met je mee. Laten we samen je last mile optimaliseren.",
+        "description": "Of je nu 50 orders per dag bezorgt of 5.000, Rotasal groeit met je mee. Laten we samen je last mile optimaliseren.",
         "primaryCta": "Aan de slag",
         "secondaryCta": "Bekijk een demo"
       }
@@ -297,7 +298,7 @@
         "subjectOptions": [
           {
             "value": "primeroute",
-            "label": "FlowSys"
+            "label": "Rotasal"
           },
           {
             "value": "general",
@@ -326,7 +327,7 @@
         },
         {
           "key": "primeroute",
-          "label": "FlowSys"
+          "label": "Rotasal"
         },
         {
           "key": "contact",
@@ -339,11 +340,11 @@
     "homeOpenGraph": {
       "eyebrow": "Last-mile routeoptimalisatie",
       "title": "Avernsys",
-      "description": "Eén product, één focus. FlowSys optimaliseert bezorgroutes voor snellere en slankere operaties.",
+      "description": "Eén product, één focus. Rotasal optimaliseert bezorgroutes voor snellere en slankere operaties.",
       "tone": "neutral",
       "highlights": [
         {
-          "label": "FlowSys",
+          "label": "Rotasal",
           "title": "Slimmere routes",
           "description": "Optimaliseer last-mile bezorgplannen in seconden."
         },
@@ -366,7 +367,7 @@
       "tone": "amber",
       "highlights": [
         {
-          "label": "FlowSys",
+          "label": "Rotasal",
           "title": "Routeoptimalisatie",
           "description": "Last-mile planning voor bezorgteams."
         },
@@ -378,7 +379,7 @@
       ]
     },
     "primeroute": {
-      "eyebrow": "FlowSys",
+      "eyebrow": "Rotasal",
       "title": "De last mile, slimmer geregeld.",
       "description": "Zet orders in seconden om in geoptimaliseerde routes met een API-first engine voor snelle operationele keuzes.",
       "tone": "blue",

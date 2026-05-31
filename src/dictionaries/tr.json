@@ -8,7 +8,7 @@
   },
   "site": {
     "name": "Avernsys",
-    "description": "Avernsys, teslimat ekipleri için son kilometre rota optimizasyon yazılımı FlowSys'i geliştirir.",
+    "description": "Avernsys, teslimat ekipleri için son kilometre rota optimizasyon yazılımı Rotasal'i geliştirir.",
     "tagline": "Yarının ihtiyaçları için.",
     "copyright": "Tüm hakları saklıdır."
   },
@@ -19,7 +19,7 @@
     "links": [
       {
         "key": "primeroute",
-        "label": "FlowSys"
+        "label": "Rotasal"
       },
       {
         "key": "about",
@@ -39,7 +39,7 @@
         "links": [
           {
             "key": "primeroute",
-            "label": "FlowSys"
+            "label": "Rotasal"
           }
         ]
       },
@@ -60,11 +60,11 @@
   },
   "seo": {
     "home": {
-      "title": "Avernsys | FlowSys Son Kilometre Rota Optimizasyon Yazılımı",
-      "description": "Avernsys, teslimat ekiplerinin daha akıllı rota planlamasına, maliyetleri düşürmesine ve daha hızlı teslimat yapmasına yardımcı olan FlowSys son kilometre rota optimizasyon yazılımını geliştirir.",
+      "title": "Avernsys | Rotasal Son Kilometre Rota Optimizasyon Yazılımı",
+      "description": "Avernsys, teslimat ekiplerinin daha akıllı rota planlamasına, maliyetleri düşürmesine ve daha hızlı teslimat yapmasına yardımcı olan Rotasal son kilometre rota optimizasyon yazılımını geliştirir.",
       "keywords": [
         "Avernsys",
-        "FlowSys",
+        "Rotasal",
         "son kilometre teslimat yazılımı",
         "rota optimizasyon yazılımı",
         "teslimat rota planlama",
@@ -74,7 +74,7 @@
     },
     "about": {
       "title": "Avernsys Hakkında",
-      "description": "Avernsys kurucularını tanıyın ve FlowSys'i son kilometre teslimat operasyonları için nasıl geliştirdiğimizi öğrenin.",
+      "description": "Avernsys kurucularını tanıyın ve Rotasal'i son kilometre teslimat operasyonları için nasıl geliştirdiğimizi öğrenin.",
       "keywords": [
         "Avernsys hakkında",
         "Avernsys kurucuları",
@@ -85,28 +85,28 @@
     },
     "contact": {
       "title": "Avernsys ile İletişime Geçin",
-      "description": "FlowSys demosu talep etmek, rota optimizasyonu hakkında soru sormak veya iş birliği konuşmak için Avernsys ile iletişime geçin.",
+      "description": "Rotasal demosu talep etmek, rota optimizasyonu hakkında soru sormak veya iş birliği konuşmak için Avernsys ile iletişime geçin.",
       "keywords": [
         "Avernsys iletişim",
         "Avernsys demo",
-        "FlowSys demo",
+        "Rotasal demo",
         "rota optimizasyon demosu",
         "son kilometre teslimat yazılımı"
       ],
       "socialImageAlt": "Avernsys ana sayfa önizlemesi"
     },
     "primeroute": {
-      "title": "FlowSys | Son Kilometre Rota Optimizasyon Yazılımı",
-      "description": "FlowSys, teslimat ekiplerinin rotalarını saniyeler içinde optimize ederek daha düşük maliyet, daha hızlı teslimat ve daha verimli operasyon sunar.",
+      "title": "Rotasal | Son Kilometre Rota Optimizasyon Yazılımı",
+      "description": "Rotasal, teslimat ekiplerinin rotalarını saniyeler içinde optimize ederek daha düşük maliyet, daha hızlı teslimat ve daha verimli operasyon sunar.",
       "keywords": [
-        "FlowSys",
+        "Rotasal",
         "rota optimizasyon yazılımı",
         "son kilometre teslimat yazılımı",
         "dağıtım rota planlama",
         "filo rota optimizasyonu",
         "lojistik optimizasyon yazılımı"
       ],
-      "socialImageAlt": "FlowSys sosyal medya önizlemesi"
+      "socialImageAlt": "Rotasal sosyal medya önizlemesi"
     }
   },
   "structuredData": {
@@ -117,6 +117,7 @@
       "Teslimat rota planlama",
       "Lojistik optimizasyon yazılımı"
     ],
+    "organizationDisambiguation": "Avernsys, son kilometre teslimat rotalarini optimize eden Rotasal platformunu gelistiren bagimsiz bir yazilim sirketidir. Avernsys, benzer adli sirketlerle baglantili degildir.",
     "softwareApplications": {
       "primeroute": {
         "applicationSubCategory": "Son kilometre teslimat yazılımı",
@@ -148,7 +149,7 @@
         ],
         "items": [
           {
-            "name": "Avernsys FlowSys",
+            "name": "Avernsys Rotasal",
             "tagline": "Son kilometreyi daha akıllı yönetin.",
             "description": "Siparişlerinizi saniyeler içinde optimize edilmiş rotalara dönüştürün. Daha az kilometre, daha düşük maliyet, daha düzenli teslimat.",
             "key": "primeroute",
@@ -177,8 +178,8 @@
         "title": "Hikayemiz",
         "paragraphs": [
           "Avernsys, şirketlerin verimsiz son kilometre lojistiği yüzünden ne kadar zaman kaybettiğini gören iki kişiyle başladı.",
-          "Bu problemi başkasının çözmesini beklemek yerine FlowSys'i geliştirdik: teslimat siparişlerini saniyeler içinde verimli rotalara dönüştüren rota optimizasyon yazılımı.",
-          "Az sayıda işi çok iyi yapmaya inanıyoruz. FlowSys özenle geliştiriliyor, uzun vadeli kullanılmak üzere tasarlanıyor ve gerçekten önemli olan tek bir operasyon problemine odaklanıyor."
+          "Bu problemi başkasının çözmesini beklemek yerine Rotasal'i geliştirdik: teslimat siparişlerini saniyeler içinde verimli rotalara dönüştüren rota optimizasyon yazılımı.",
+          "Az sayıda işi çok iyi yapmaya inanıyoruz. Rotasal özenle geliştiriliyor, uzun vadeli kullanılmak üzere tasarlanıyor ve gerçekten önemli olan tek bir operasyon problemine odaklanıyor."
         ]
       },
       "founders": {
@@ -216,7 +217,7 @@
     },
     "primeroute": {
       "hero": {
-        "eyebrow": "Avernsys FlowSys",
+        "eyebrow": "Avernsys Rotasal",
         "titleLines": [
           "Son kilometreyi",
           "daha akıllı yönetin."
@@ -252,7 +253,7 @@
         {
           "label": "Hız",
           "title": "Saatler değil, saniyeler içinde sonuç.",
-          "description": "FlowSys binlerce teslimat noktasını gerçek zamanlı olarak optimize eder. Manuel planlama yerine sürücülerinizin hemen kullanabileceği rotalar üretir."
+          "description": "Rotasal binlerce teslimat noktasını gerçek zamanlı olarak optimize eder. Manuel planlama yerine sürücülerinizin hemen kullanabileceği rotalar üretir."
         },
         {
           "label": "Optimizasyon",
@@ -262,7 +263,7 @@
         {
           "label": "Entegrasyon",
           "title": "Mevcut sistemlerinize uyum sağlar.",
-          "description": "API öncelikli mimarisi sayesinde FlowSys, mevcut sipariş, depo ve e-ticaret altyapınızla hızla entegre olur."
+          "description": "API öncelikli mimarisi sayesinde Rotasal, mevcut sipariş, depo ve e-ticaret altyapınızla hızla entegre olur."
         }
       ],
       "cta": {
@@ -270,7 +271,7 @@
           "Boşa kilometre yapmayın.",
           "Teslimatı daha akıllı yönetin."
         ],
-        "description": "Günde 50 teslimat da yapsanız 5.000 teslimat da, FlowSys sizinle birlikte ölçeklenir. Son kilometreyi birlikte optimize edelim.",
+        "description": "Günde 50 teslimat da yapsanız 5.000 teslimat da, Rotasal sizinle birlikte ölçeklenir. Son kilometreyi birlikte optimize edelim.",
         "primaryCta": "Başlayın",
         "secondaryCta": "Demoyu görün"
       }
@@ -297,7 +298,7 @@
         "subjectOptions": [
           {
             "value": "primeroute",
-            "label": "FlowSys"
+            "label": "Rotasal"
           },
           {
             "value": "general",
@@ -326,7 +327,7 @@
         },
         {
           "key": "primeroute",
-          "label": "FlowSys"
+          "label": "Rotasal"
         },
         {
           "key": "contact",
@@ -339,11 +340,11 @@
     "homeOpenGraph": {
       "eyebrow": "Son kilometre rota optimizasyonu",
       "title": "Avernsys",
-      "description": "Tek ürün, tek odak. FlowSys teslimat rotalarını daha hızlı ve verimli operasyonlar için optimize eder.",
+      "description": "Tek ürün, tek odak. Rotasal teslimat rotalarını daha hızlı ve verimli operasyonlar için optimize eder.",
       "tone": "neutral",
       "highlights": [
         {
-          "label": "FlowSys",
+          "label": "Rotasal",
           "title": "Daha akıllı rotalar",
           "description": "Son kilometre teslimat planlarını saniyeler içinde optimize edin."
         },
@@ -366,7 +367,7 @@
       "tone": "amber",
       "highlights": [
         {
-          "label": "FlowSys",
+          "label": "Rotasal",
           "title": "Rota optimizasyonu",
           "description": "Teslimat ekipleri için son kilometre planlama."
         },
@@ -378,7 +379,7 @@
       ]
     },
     "primeroute": {
-      "eyebrow": "FlowSys",
+      "eyebrow": "Rotasal",
       "title": "Son kilometreyi daha akıllı yönetin.",
       "description": "Operasyon hızı için tasarlanmış API öncelikli bir motorla siparişleri saniyeler içinde optimize edilmiş rotalara dönüştürün.",
       "tone": "blue",

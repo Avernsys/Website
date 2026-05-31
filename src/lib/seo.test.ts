@@ -85,7 +85,7 @@ function getTwitterImageUrl(pageMetadata: ReturnType<typeof buildPageMetadata>) 
 }
 
 test("builds absolute URLs from relative paths", () => {
-  assert.equal(absoluteUrl("/flowsys"), "https://avernsys.com/flowsys");
+  assert.equal(absoluteUrl("/rotasal"), "https://avernsys.com/rotasal");
   assert.equal(absoluteUrl("contact"), "https://avernsys.com/contact");
 });
 
@@ -97,7 +97,7 @@ test("resolvePageTitle appends brand only when not already in title", () => {
   assert.equal(resolvePageTitle(getPageSeo("en", "about")), "About Avernsys");
   assert.equal(
     resolvePageTitle(getPageSeo("en", "primeroute")),
-    "FlowSys | Last-Mile Route Optimization Software | Avernsys",
+    "Rotasal | Last-Mile Route Optimization Software | Avernsys",
   );
 });
 
@@ -106,31 +106,31 @@ test("builds English route metadata with localized alternates", () => {
 
   assert.equal(
     getMetadataAbsoluteTitle(metadata),
-    "FlowSys | Last-Mile Route Optimization Software | Avernsys",
+    "Rotasal | Last-Mile Route Optimization Software | Avernsys",
   );
   assert.equal(
     metadata.alternates?.canonical,
-    "https://avernsys.com/flowsys",
+    "https://avernsys.com/rotasal",
   );
   assert.equal(
     metadata.alternates?.languages?.tr,
-    "https://avernsys.com/tr/flowsys",
+    "https://avernsys.com/tr/rotasal",
   );
   assert.equal(
     metadata.alternates?.languages?.de,
-    "https://avernsys.com/de/flowsys",
+    "https://avernsys.com/de/rotasal",
   );
   assert.equal(
     metadata.alternates?.languages?.nl,
-    "https://avernsys.com/nl/flowsys",
+    "https://avernsys.com/nl/rotasal",
   );
   assert.equal(
     getOpenGraphImageUrl(metadata),
-    "https://avernsys.com/flowsys/opengraph-image",
+    "https://avernsys.com/rotasal/opengraph-image",
   );
   assert.equal(
     getTwitterImageUrl(metadata),
-    "https://avernsys.com/flowsys/twitter-image",
+    "https://avernsys.com/rotasal/twitter-image",
   );
 });
 
@@ -139,20 +139,20 @@ test("builds German route metadata with German locale and assets", () => {
 
   assert.equal(
     getMetadataAbsoluteTitle(metadata),
-    "FlowSys | Software zur Last-Mile-Routenoptimierung | Avernsys",
+    "Rotasal | Software zur Last-Mile-Routenoptimierung | Avernsys",
   );
   assert.equal(
     metadata.alternates?.canonical,
-    "https://avernsys.com/de/flowsys",
+    "https://avernsys.com/de/rotasal",
   );
   assert.equal(metadata.openGraph?.locale, "de_DE");
   assert.equal(
     getOpenGraphImageUrl(metadata),
-    "https://avernsys.com/de/flowsys/opengraph-image",
+    "https://avernsys.com/de/rotasal/opengraph-image",
   );
   assert.equal(
     getTwitterImageUrl(metadata),
-    "https://avernsys.com/de/flowsys/twitter-image",
+    "https://avernsys.com/de/rotasal/twitter-image",
   );
 });
 
@@ -161,34 +161,34 @@ test("builds Turkish route metadata with Turkish locale and assets", () => {
 
   assert.equal(
     getMetadataAbsoluteTitle(metadata),
-    "FlowSys | Son Kilometre Rota Optimizasyon Yazılımı | Avernsys",
+    "Rotasal | Son Kilometre Rota Optimizasyon Yazılımı | Avernsys",
   );
   assert.equal(
     metadata.alternates?.canonical,
-    "https://avernsys.com/tr/flowsys",
+    "https://avernsys.com/tr/rotasal",
   );
   assert.equal(metadata.openGraph?.locale, "tr_TR");
   assert.equal(
     getOpenGraphImageUrl(metadata),
-    "https://avernsys.com/tr/flowsys/opengraph-image",
+    "https://avernsys.com/tr/rotasal/opengraph-image",
   );
   assert.equal(
     getTwitterImageUrl(metadata),
-    "https://avernsys.com/tr/flowsys/twitter-image",
+    "https://avernsys.com/tr/rotasal/twitter-image",
   );
 });
 
 test("builds breadcrumb schema with locale-aware URLs", () => {
   const breadcrumb = buildBreadcrumbJsonLd("tr", [
     { name: "Ana sayfa", path: "/" },
-    { name: "FlowSys", path: "/flowsys" },
+    { name: "Rotasal", path: "/rotasal" },
   ]);
 
   assert.equal(breadcrumb.itemListElement.length, 2);
   assert.equal(breadcrumb.itemListElement[1].position, 2);
   assert.equal(
     breadcrumb.itemListElement[1].item,
-    "https://avernsys.com/tr/flowsys",
+    "https://avernsys.com/tr/rotasal",
   );
 });
 
@@ -233,13 +233,13 @@ test("organization and WebSite JSON-LD use stable ids and localized descriptions
 
 test("WebPage JSON-LD references localized WebSite and main entity ids", () => {
   const page = buildWebPageJsonLd("tr", "primeroute", {
-    mainEntityId: schemaSoftwareApplicationId("/tr/flowsys"),
+    mainEntityId: schemaSoftwareApplicationId("/tr/rotasal"),
   }) as Record<string, unknown>;
 
   assert.deepEqual(page.isPartOf, { "@id": schemaWebSiteId("tr") });
   assert.deepEqual(page.about, { "@id": schemaOrganizationId() });
   assert.deepEqual(page.mainEntity, {
-    "@id": schemaSoftwareApplicationId("/tr/flowsys"),
+    "@id": schemaSoftwareApplicationId("/tr/rotasal"),
   });
 });
 
@@ -252,7 +252,7 @@ test("SoftwareApplication JSON-LD includes localized featureList and publisher",
   assert.ok(Array.isArray(app.featureList));
   assert.equal((app.featureList as string[]).length >= 3, true);
   assert.deepEqual(app.publisher, { "@id": schemaOrganizationId() });
-  assert.equal(app.url, "https://avernsys.com/tr/flowsys");
+  assert.equal(app.url, "https://avernsys.com/tr/rotasal");
 });
 
 test("home ItemList JSON-LD lists localized product URLs", () => {
@@ -261,7 +261,7 @@ test("home ItemList JSON-LD lists localized product URLs", () => {
   };
 
   assert.equal(list.itemListElement.length, 1);
-  assert.equal(list.itemListElement[0]?.item, absoluteUrl("/tr/flowsys"));
+  assert.equal(list.itemListElement[0]?.item, absoluteUrl("/tr/rotasal"));
 });
 
 test("founder Person JSON-LD uses localized bios", () => {

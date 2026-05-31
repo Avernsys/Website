@@ -9,7 +9,7 @@ test("archived ChapterSys responses are gone and noindexed", async () => {
   assert.equal(response.status, 410);
   assert.equal(response.headers.get("X-Robots-Tag"), "noindex, noarchive");
   assert.match(body, /ChapterSys has been archived/);
-  assert.match(body, /href="\/flowsys"/);
+  assert.match(body, /href="\/rotasal"/);
 });
 
 test("archived ChapterSys HEAD responses omit the body", async () => {

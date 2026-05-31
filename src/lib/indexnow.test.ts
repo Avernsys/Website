@@ -25,7 +25,7 @@ test("builds IndexNow config from env", () => {
 
 test("builds an IndexNow payload with deduplicated absolute URLs", () => {
   const payload = buildIndexNowPayload(
-    ["/flowsys", "https://avernsys.com/flowsys", "/tr/flowsys"],
+    ["/rotasal", "https://avernsys.com/rotasal", "/tr/rotasal"],
     createEnv({
       INDEXNOW_KEY: "indexnow-key",
     }),
@@ -34,8 +34,8 @@ test("builds an IndexNow payload with deduplicated absolute URLs", () => {
   assert.ok(payload);
   assert.equal(payload?.key, "indexnow-key");
   assert.deepEqual(payload?.urlList, [
-    "https://avernsys.com/flowsys",
-    "https://avernsys.com/tr/flowsys",
+    "https://avernsys.com/rotasal",
+    "https://avernsys.com/tr/rotasal",
   ]);
 });
 
@@ -49,10 +49,10 @@ test("provides default IndexNow URLs for every supported locale", () => {
   const urls = getDefaultIndexNowUrls();
 
   assert.equal(urls.length, 24);
-  assert.ok(urls.includes("https://avernsys.com/flowsys"));
+  assert.ok(urls.includes("https://avernsys.com/rotasal"));
   assert.ok(urls.includes("https://avernsys.com/about/doruk-yalcin"));
-  assert.ok(urls.includes("https://avernsys.com/tr/flowsys"));
-  assert.ok(urls.includes("https://avernsys.com/de/flowsys"));
-  assert.ok(urls.includes("https://avernsys.com/nl/flowsys"));
+  assert.ok(urls.includes("https://avernsys.com/tr/rotasal"));
+  assert.ok(urls.includes("https://avernsys.com/de/rotasal"));
+  assert.ok(urls.includes("https://avernsys.com/nl/rotasal"));
   assert.equal(urls.some((url) => url.includes("chaptersys")), false);
 });

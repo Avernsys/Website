@@ -6,43 +6,43 @@ const copyByLocale: Record<
   {
     title: string;
     description: string;
-    flowSysLink: string;
+    rotasalLink: string;
     contactLink: string;
   }
 > = {
   en: {
     title: "ChapterSys has been archived",
     description:
-      "ChapterSys is no longer offered as an Avernsys product. Avernsys now focuses on FlowSys, our last-mile route optimization software.",
-    flowSysLink: "Visit FlowSys",
+      "ChapterSys is no longer offered as an Avernsys product. Avernsys now focuses on Rotasal, our last-mile route optimization software.",
+    rotasalLink: "Visit Rotasal",
     contactLink: "Contact Avernsys",
   },
   tr: {
     title: "ChapterSys arşivlendi",
     description:
-      "ChapterSys artık Avernsys ürünü olarak sunulmuyor. Avernsys artık son kilometre rota optimizasyon yazılımımız FlowSys'e odaklanıyor.",
-    flowSysLink: "FlowSys'i inceleyin",
+      "ChapterSys artık Avernsys ürünü olarak sunulmuyor. Avernsys artık son kilometre rota optimizasyon yazılımımız Rotasal'a odaklanıyor.",
+    rotasalLink: "Rotasal'ı inceleyin",
     contactLink: "Avernsys ile iletişime geçin",
   },
   de: {
     title: "ChapterSys wurde archiviert",
     description:
-      "ChapterSys wird nicht mehr als Avernsys-Produkt angeboten. Avernsys konzentriert sich jetzt auf FlowSys, unsere Software zur Last-Mile-Routenoptimierung.",
-    flowSysLink: "FlowSys ansehen",
+      "ChapterSys wird nicht mehr als Avernsys-Produkt angeboten. Avernsys konzentriert sich jetzt auf Rotasal, unsere Software zur Last-Mile-Routenoptimierung.",
+    rotasalLink: "Rotasal ansehen",
     contactLink: "Avernsys kontaktieren",
   },
   nl: {
     title: "ChapterSys is gearchiveerd",
     description:
-      "ChapterSys wordt niet langer aangeboden als Avernsys-product. Avernsys richt zich nu op FlowSys, onze software voor last-mile routeoptimalisatie.",
-    flowSysLink: "Bekijk FlowSys",
+      "ChapterSys wordt niet langer aangeboden als Avernsys-product. Avernsys richt zich nu op Rotasal, onze software voor last-mile routeoptimalisatie.",
+    rotasalLink: "Bekijk Rotasal",
     contactLink: "Neem contact op",
   },
 };
 
 function buildArchivedChapterSysHtml(locale: Locale) {
   const copy = copyByLocale[locale];
-  const flowSysUrl = getPagePath(locale, "primeroute");
+  const rotasalUrl = getPagePath(locale, "primeroute");
   const contactUrl = getPagePath(locale, "contact");
 
   return `<!doctype html>
@@ -101,7 +101,7 @@ function buildArchivedChapterSysHtml(locale: Locale) {
       <h1>${copy.title}</h1>
       <p>${copy.description}</p>
       <nav aria-label="Archived product links">
-        <a href="${flowSysUrl}">${copy.flowSysLink}</a>
+        <a href="${rotasalUrl}">${copy.rotasalLink}</a>
         <a href="${contactUrl}">${copy.contactLink}</a>
       </nav>
     </main>
